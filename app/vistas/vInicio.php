@@ -104,4 +104,4 @@ if (! empty($errores)) {
 
 <script src="../app/ajax/grafico.js"></script>
 <?php $contenido = ob_get_clean() ?>
-<?php include __DIR__ . './../templates/layout.php' ?>
+<?php include __DIR__ . './layout.php' ?>

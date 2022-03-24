@@ -6,7 +6,7 @@ require_once __DIR__ . '/../app/modelos/Model.php';
 //require_once __DIR__ . '/../app/modelos/classAnuncio.php';
 //require_once __DIR__ . '/../app/modelos/classMensaje.php';
 //require_once __DIR__ . '/../app/modelos/classUsuario.php';
-//require_once __DIR__ . '/../app/modelos/classSesion.php';
+require_once __DIR__ . '/../app/modelos/classSesion.php';
 //require_once __DIR__ . '/../app/modelos/classValidacion.php';
 //require_once __DIR__ . '/../app/libs/utils.php';
 require_once __DIR__ . '/../app/controladores/cController.php';
