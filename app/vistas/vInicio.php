@@ -67,14 +67,14 @@ if (! empty($errores)) {
                <h2 class="display-5 fw-bold">Sign Up<br> and Start <br>your classes now!</h2><br>
                <a type="button" href="index.php?ctl=registrarUsuario" class="btn btn-light">Sign Up</a>
               </div>
-              <div class="col-md-6 col-xs-12 pt-4">
+              <!-- <div class="col-md-6 col-xs-12 pt-4">
                <textarea id="inicio">
                  <h2>START OFFERING YOUR PRIVATE LESSONS</h2>
                  <p>Sign up and share your skills with others in need.</p>
                  <p>You can create an ad about your skills and share it with others, or if you want to search for private lessons, you can do it! Use the search bar to do so!</p>
                  <p>Create your profile and start <b>right now!</b></p>
                </textarea>
-              </div>
+              </div> -->
             </div>
       </div>
 </div>
