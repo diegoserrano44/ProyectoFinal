@@ -3,17 +3,17 @@
 //Carga del modelo y los controladores
 require_once __DIR__ . '/../app/Config.php';
 require_once __DIR__ . '/../app/modelos/Model.php';
-require_once __DIR__ . '/../app/modelos/classAnuncio.php';
-require_once __DIR__ . '/../app/modelos/classMensaje.php';
-require_once __DIR__ . '/../app/modelos/classUsuario.php';
-require_once __DIR__ . '/../app/modelos/classSesion.php';
-require_once __DIR__ . '/../app/modelos/classValidacion.php';
-require_once __DIR__ . '/../app/libs/utils.php';
-require_once __DIR__ . '/../app/controller/cController.php';
-require_once __DIR__ . '/../app/controller/cAnuncios.php';
-require_once __DIR__ . '/../app/controller/cMensajes.php';
-require_once __DIR__ . '/../app/controller/cUsuarios.php';
-require_once __DIR__ . '/../app/controller/cAjax.php';
+//require_once __DIR__ . '/../app/modelos/classAnuncio.php';
+//require_once __DIR__ . '/../app/modelos/classMensaje.php';
+//require_once __DIR__ . '/../app/modelos/classUsuario.php';
+//require_once __DIR__ . '/../app/modelos/classSesion.php';
+//require_once __DIR__ . '/../app/modelos/classValidacion.php';
+//require_once __DIR__ . '/../app/libs/utils.php';
+require_once __DIR__ . '/../app/controladores/cController.php';
+//require_once __DIR__ . '/../app/controller/cAnuncios.php';
+//require_once __DIR__ . '/../app/controller/cMensajes.php';
+require_once __DIR__ . '/../app/controladores/cUsuarios.php';
+//require_once __DIR__ . '/../app/controller/cAjax.php';
 
 
 /**
