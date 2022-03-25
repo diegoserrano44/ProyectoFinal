@@ -23,7 +23,7 @@ class cController{
     public function sinpermisos()
     {
 
-        require __DIR__ . '/../vistas/vSinpermisos.php';
+        require __DIR__ . '/../vistas/vSinPermisos.php';
     }
 
 
