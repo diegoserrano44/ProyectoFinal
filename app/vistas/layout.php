@@ -38,13 +38,13 @@
                 <div class="d-lg-flex align-items-center">
                 <?php 
                 if (isset($_SESSION['id_usuario'])) {
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAnuncios\">Lessons</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=crearAnuncio\">New ad</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarMensaje\">Messages</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Profile</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAnuncios\">Historias</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=crearAnuncio\">Foro</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
                     echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAnuncios\">List lessons</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAnuncios\">Historias</a>";
                     echo "<a class=\"nav-link nav-item bg-light textSecundario rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
                     echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
                 }
