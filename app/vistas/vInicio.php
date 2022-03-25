@@ -19,20 +19,20 @@ if (! empty($errores)) {
 <div class="jumbotrons jumbotron p-5 bg-dark text-white" style="width:100%;">
          <div class="container-fluid py-5">
             <div class="container">
-               <h1 class="display-5 fw-bold text-center">Welcome to Happy Ever Learning Programming</h1>
-               <p class="col-md-12 fs-5 text-center">Search your announcement or place yours</p>
-               <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-2">
+               <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
+               <p class="col-md-12 fs-5 text-center">Que sigas haciendo todo aquello que te gusta es nuestra misión</p>
+               <!-- <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-2">
                     <label for="buscador"></label>
                     <input type="text" id="buscador" name="buscador" placeholder="Search your class" required>
                     <button type="submit" class="boton-buscador" name="buscar" value="Search"><i class="fa fa-search"></i></button>
-               </form>
+               </form> -->
             </div>
          </div>
       </div>
 
 <section style="background-color: #2b2d30;">
 <div class="col-12 text-center p-4 text-white">
-    <h2>Why learning a programming language?</h2>
+    <h2>Por que necesito ayuda?</h2>
 </div>
 
 <div class="container mb-4 mt-4 text-white">
@@ -79,7 +79,7 @@ if (! empty($errores)) {
       </div>
 </div>
 
-<section class="text-white p-4 colorSecundario">
+<section class="text-white p-4">
   <div class="row col-md-12 col-sm-12 p-4">
     <div class="row col-md-6 col-sm-12 col-xs-12">
         <h3 class="d-flex justify-content-center">What we have to offer?</h3>

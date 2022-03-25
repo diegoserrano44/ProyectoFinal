@@ -30,7 +30,7 @@ $map = array(
     'inicio' => array('controller' =>'Controller', 'action' =>'inicio', 'nivel_usuario'=>0)
     */
     'inicio' => array('controller' =>'cController', 'action' =>'inicio', 'rol'=>0),    
-    'buscar' => array('controller' =>'cAnuncios', 'action' =>'buscar', 'rol'=>0),
+    //'buscar' => array('controller' =>'cAnuncios', 'action' =>'buscar', 'rol'=>0),
     'registrarUsuario' => array('controller' =>'cUsuarios', 'action' =>'registrarUsuario', 'rol'=>0),
     'registroGoogle' => array('controller' =>'cUsuarios', 'action' =>'registroGoogle', 'rol'=>0),
     'entrarUsuario' => array('controller' =>'cUsuarios', 'action' =>'entrarUsuario', 'rol'=>0),
@@ -38,13 +38,13 @@ $map = array(
     'entrarAdmin' => array('controller' =>'cUsuarios', 'action' =>'entrarAdmin', 'rol'=>0),
     'inicioAdmin' => array('controller' =>'cController', 'action' =>'inicioAdmin', 'rol'=>2),
     'listarUsuarios' => array('controller' =>'cUsuarios', 'action' =>'listarUsuarios', 'rol'=>1),
-    'listarAnuncios' => array('controller' =>'cAnuncios', 'action' =>'listarAnuncios', 'rol'=>0),
-    'listarAnunciosUsuario' => array('controller' =>'cAnuncios', 'action' =>'listarAnunciosUsuario', 'rol'=>0),      
-    'verAnuncio' => array('controller' =>'cAnuncios', 'action' =>'verAnuncio', 'rol'=>0),    
-    'crearAnuncio' => array('controller' =>'cAnuncios', 'action' =>'crearAnuncio', 'rol'=>1),
-    'modificarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'modificarAnuncio', 'rol'=>1),
+    //'listarAnuncios' => array('controller' =>'cAnuncios', 'action' =>'listarAnuncios', 'rol'=>0),
+    //'listarAnunciosUsuario' => array('controller' =>'cAnuncios', 'action' =>'listarAnunciosUsuario', 'rol'=>0),      
+    //'verAnuncio' => array('controller' =>'cAnuncios', 'action' =>'verAnuncio', 'rol'=>0),    
+    //'crearAnuncio' => array('controller' =>'cAnuncios', 'action' =>'crearAnuncio', 'rol'=>1),
+    //'modificarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'modificarAnuncio', 'rol'=>1),
     'cambiaImagen' => array('controller' =>'cAnuncios', 'action' =>'cambiaImagen', 'rol'=>1),
-    'eliminarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'eliminarAnuncio', 'rol'=>1),
+    //'eliminarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'eliminarAnuncio', 'rol'=>1),
     'verPerfil' => array('controller' =>'cUsuarios', 'action' =>'verPerfil', 'rol'=>1),
     'modificarPerfil' => array('controller' =>'cUsuarios', 'action' =>'modificarPerfil', 'rol'=>1),
     'eliminarPerfil' => array('controller' =>'cUsuarios', 'action' =>'eliminarPerfil', 'rol'=>2),
@@ -103,7 +103,6 @@ if ($controlador['rol']<=$_SESSION['rol']) {
         $controlador = $map['sinpermisos'];
         call_user_func(array(new $controlador['controller'],
             $controlador['action']));;
-        
     } 
 
 ?>

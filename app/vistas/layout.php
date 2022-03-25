@@ -29,10 +29,10 @@
                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if (isset($_GET['ctl'])) {
                     if((($_GET['ctl'] != 'inicio') || ($_GET['ctl'] == ""))){?>
-                <form class="d-flex" method="POST" action="index.php?ctl=buscar">
+                <!-- <form class="d-flex" method="POST" action="index.php?ctl=buscar">
                 <input class="navSearch form-control me-2 rounded-pill bg-dark border text-light border-secondary "  name="buscador" type="search" placeholder="Search ..." aria-label="Search">
                 <button class="btn btn-outline-success rounded-circle" type="submit" name="buscar" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
+                </form> -->
                 <?php }};?>
                 </div>
                 <div class="d-lg-flex align-items-center">
@@ -45,6 +45,7 @@
                     echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
                     echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAnuncios\">Historias</a>";
+                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=crearAnuncio\">Foro</a>";
                     echo "<a class=\"nav-link nav-item bg-light textSecundario rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
                     echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
                 }
