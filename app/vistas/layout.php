@@ -54,7 +54,7 @@
             </div>
         </div>
     </nav>
-<div class="text-black" id="contenido">
+<div class="text-black" id="contenido" style="background-color: skyblue;>
 
 <?php echo $contenido ?>
 

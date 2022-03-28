@@ -16,7 +16,7 @@ if (! empty($errores)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="./../app/ajax/tinyinicio.js"></script>
 
-<div class="jumbotrons jumbotron p-5 bg-dark text-white" style="width:100%;">
+<div class="jumbotrons jumbotron p-5 bg-light text-black" style="width:100%;">
          <div class="container-fluid py-5">
             <div class="container">
                <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
@@ -30,7 +30,7 @@ if (! empty($errores)) {
          </div>
       </div>
 
-<section style="background-color: #2b2d30;">
+<!-- <section style="background-color: #2b2d30;">
 <div class="col-12 text-center p-4 text-white">
     <h2>Por que necesito ayuda?</h2>
 </div>
@@ -58,28 +58,28 @@ if (! empty($errores)) {
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 </div>
 </div>
-</section>
+</section> -->
 
-<div class="jumbotron p-5 bg-dark text-white">
+<!--<div class="jumbotron p-5 bg-dark text-white">
         <div class="container-fluid py-5">
             <div class="row d-flex align-items-center">
               <div class="col-md-6 col-xs-12">
                <h2 class="display-5 fw-bold">Sign Up<br> and Start <br>your classes now!</h2><br>
                <a type="button" href="index.php?ctl=registrarUsuario" class="btn btn-light">Sign Up</a>
               </div>
-              <!-- <div class="col-md-6 col-xs-12 pt-4">
+               <div class="col-md-6 col-xs-12 pt-4">
                <textarea id="inicio">
                  <h2>START OFFERING YOUR PRIVATE LESSONS</h2>
                  <p>Sign up and share your skills with others in need.</p>
                  <p>You can create an ad about your skills and share it with others, or if you want to search for private lessons, you can do it! Use the search bar to do so!</p>
                  <p>Create your profile and start <b>right now!</b></p>
                </textarea>
-              </div> -->
+              </div> 
             </div>
       </div>
-</div>
+</div>-->
 
-<section class="text-white p-4">
+<!-- <section class="text-white p-4">
   <div class="row col-md-12 col-sm-12 p-4">
     <div class="row col-md-6 col-sm-12 col-xs-12">
         <h3 class="d-flex justify-content-center">What we have to offer?</h3>
@@ -100,8 +100,8 @@ if (! empty($errores)) {
 </ul>
 </div>
 </div>
-</section>
+</section> -->
 
-<script src="../app/ajax/grafico.js"></script>
+<!-- <script src="../app/ajax/grafico.js"></script> -->
 <?php $contenido = ob_get_clean() ?>
 <?php include __DIR__ . './layout.php' ?>
