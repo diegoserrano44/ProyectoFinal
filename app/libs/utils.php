@@ -121,7 +121,7 @@ function enviarMail($para, $asunto, $mensaje)
 {
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: HELProgramming <admin@helprogramming.com>" . "\r\n";
+    $headers .= "From: HELProgramming <diegoserrano1644@gmail.com>" . "\r\n";
     if (mail($para, $asunto, $mensaje, $headers)) {
         return true;
     } else {

@@ -3,7 +3,7 @@
 class Config {
 
 static public $mvc_bd_hostname = "localhost";
-static public $mvc_bd_nombre = "unanuevavida";
+static public $mvc_bd_nombre = "dbs5310872";
 static public $mvc_bd_usuario = "root";
 static public $mvc_bd_clave = "";
 

@@ -601,8 +601,8 @@ class cUsuarios
                     $params['telefono']="*********";
                     $params['email']="*********";
                 }
-                $a = new Anuncio();
-                $params['anuncios'] = $a->listarAnunciosUsuario($id);
+                $a = new Historia();
+                $params['anuncios'] = $a->listarHistoriasUsuario($id);
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

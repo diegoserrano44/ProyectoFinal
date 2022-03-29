@@ -2,7 +2,7 @@
 
 ob_start();?>
 
-<main class="container-fluid perfilContainer my-3" id="perfilContainer">
+<main class="container-fluid perfilContainer" id="perfilContainer">
 <?php
 if (! empty($_SESSION['mensaje'])) {
     echo "<h4 class='errorMsg'>" . $_SESSION['mensaje'] . "</h4>";
@@ -110,8 +110,8 @@ window.onload = document.getElementById('foto_perfil').addEventListener("change"
 	}
 });
 </script>
-<script src="./../app/ajax/textoenriquecido.js"></script>
+<script src="./../web/js/textoenriquecido.js"></script>
 
 <?php $contenido = ob_get_clean() ?>
 
-<?php include __DIR__ . './vistas/layout.php' ?>
+<?php include __DIR__ . './layout.php' ?>

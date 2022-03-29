@@ -10,7 +10,7 @@ $anuncios= $params['anuncios'];
 
 <style>
 </style>
-<main class="container-fluid perfilContainer my-3">
+<main class="container-fluid perfilContainer">
 	<div class="row justify-content-center">
 		<div
 			class="d-grid mb-3 col-12 col-md-3 bg-light border-2 border-dark rounded-3 shadow imgContainerP">
@@ -124,4 +124,4 @@ $anuncios= $params['anuncios'];
 </main>
 <?php $contenido = ob_get_clean() ?>
 
-<?php include __DIR__ . './vistas/layout.php' ?>
+<?php include __DIR__ . './layout.php' ?>
