@@ -49,7 +49,7 @@ $map = array(
     //'verAnuncio' => array('controller' =>'cAnuncios', 'action' =>'verAnuncio', 'rol'=>0),    
     //'crearAnuncio' => array('controller' =>'cAnuncios', 'action' =>'crearAnuncio', 'rol'=>1),
     //'modificarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'modificarAnuncio', 'rol'=>1),
-    'cambiaImagen' => array('controller' =>'cAnuncios', 'action' =>'cambiaImagen', 'rol'=>1),
+    'cambiaImagen' => array('controller' =>'cHistorias', 'action' =>'cambiaImagen', 'rol'=>1),
     //'eliminarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'eliminarAnuncio', 'rol'=>1),
     'verPerfil' => array('controller' =>'cUsuarios', 'action' =>'verPerfil', 'rol'=>1),
     'modificarPerfil' => array('controller' =>'cUsuarios', 'action' =>'modificarPerfil', 'rol'=>1),
@@ -68,6 +68,7 @@ $map = array(
     'dameMensajes' => array('controller' =>'cAjax', 'action' =>'dameMensajes', 'rol'=>1),
     'eliminarHilo' => array('controller' =>'cAjax', 'action' =>'eliminarHilo', 'rol'=>1),
     'existeUsuario' => array('controller' =>'cAjax', 'action' =>'existeUsuario', 'rol'=>0),
+    'listaForo' => array('controller' =>'cForo', 'action' =>'listaForo', 'rol'=>0),
 
 );
 

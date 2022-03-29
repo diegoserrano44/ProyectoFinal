@@ -16,8 +16,8 @@
 <link href="../web/css/style.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<body class="bg-dark text-black">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand navTitle" href="index.php">Una Nueva Vida</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,17 +38,17 @@
                 <div class="d-lg-flex align-items-center">
                 <?php 
                 if (isset($_SESSION['id_usuario'])) {
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarAppsVR\">Apps VR</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarAppsVR\">Apps VR</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a class=\"nav-link nav-item bg-light textSecundario rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
-                    echo "<a class=\"nav-link nav-item text-white\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a class=\"nav-link nav-item bg-dark textSecundario rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
+                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
                 }
                 ?>
                 </div>
@@ -60,11 +60,11 @@
 <?php echo $contenido ?>
 
 </div>
-<footer class="bg-dark text-white d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between">
+<footer class="bg-light text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between">
             <div>
                 <ul class="list-group list-group-flush">
                     <h3>UNV Developer</h3>
-                    <li class="list-group-item listaFooter">Diego Serrano</li>
+                    <li class="list-group-item listaFooter bg-light text-black">Diego Serrano</li>
                 </ul>
             </div>
             <div class="p-4">
