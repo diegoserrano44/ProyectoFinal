@@ -16,7 +16,7 @@
 <link href="../web/css/style.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark text-black">
+<body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand navTitle" href="index.php">Una Nueva Vida</a>
@@ -72,9 +72,9 @@
             </div>
             <div class="d-flex flex-column justify-content-center">
             <div>
-                <a href="#"><i class="fa-3x fa-brands fa-instagram m-3 textSecundario"></i></a>
+                <!-- <a href="#"><i class="fa-3x fa-brands fa-instagram m-3 textSecundario"></i></a>
                 <a href="#"><i class="fa-3x fa-brands fa-linkedin m-3 textSecundario"></i></a>
-                <a href="#"><i class="fa-3x fa-brands fa-youtube m-3 textSecundario"></i></a>
+                <a href="#"><i class="fa-3x fa-brands fa-youtube m-3 textSecundario"></i></a> -->
             </div>
 
         <?php        
@@ -97,17 +97,17 @@
   <div class="modal-dialog" width="fit-content">
     <div class="modal-content text-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="contactAdminLabel">Send message</h5>
+        <h5 class="modal-title" id="contactAdminLabel">Enviar Mensaje</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form class=" " action="index.php?ctl=mandarMensaje&id=1" method="POST">
+      <form class="" action="index.php?ctl=mandarMensaje&id=1" method="POST">
         <input class="asuntoMensaje" type="text" name="asunto" placeholder="Subject"><br><br>
         <textarea class="contenidoMensaje" rows="6" placeholder="Message" name="mensaje"></textarea>
       </div>
       <div class="modal-footer">
-        <input type="submit" name="enviaContacto" value="Send message" class="btn colorSecundario">
-        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
+        <input type="submit" name="enviaContacto" value="Enviar Mensaje" class="btn colorSecundario">
+        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>
       </form>
       </div>
     </div>

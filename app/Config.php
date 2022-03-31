@@ -20,6 +20,6 @@ static public $controlEtiquetas = array('<h1>','<h2>','<h3>','<h4>','<h5>','<h6>
 
 static public $clientID = '871344324220-1srfarquv5kgh41fo4ufqud3i89e4eoj.apps.googleusercontent.com';
 static public $clientSecret = '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';
-static public $redirectUri = 'http://localhost/web/index.php?ctl=entrarUsuario';
+static public $redirectUri = 'https://localhost/web/index.php?ctl=entrarUsuario';
 }
 ?>
