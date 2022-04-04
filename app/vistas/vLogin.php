@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
 <main class="container-fluid">
-	<div class="container bg-light border-2 border-dark rounded-3 pb-5 px-5 shadow">
+	<div class="container bg-light border-2 border-dark rounded-3 pt-4 px-5 shadow" style="margin-top:100px;">
 		<h1 class="text-center fw-bold mb-4">Bienvenido a UNV</h1>
 		<?php
 		if (!empty($_SESSION['mensaje'])) {

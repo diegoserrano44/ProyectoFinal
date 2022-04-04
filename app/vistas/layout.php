@@ -47,7 +47,7 @@
                 }else{
                     echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
                     echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a class=\"nav-link nav-item bg-dark textSecundario rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
+                    echo "<a class=\"nav-link nav-item bg-success text-white rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
                     echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
                 }
                 ?>
@@ -55,7 +55,7 @@
             </div>
         </div>
     </nav>
-<div class="text-black" id="contenido" style="background-color: skyblue;">
+<div class="text-black" id="contenido" style="background-color: #FFFFFF;">
 
 <?php echo $contenido ?>
 

@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<main class="container-fluid mainContainer">
+<main class="container-fluid">
     <div class="container bg-light border-2 border-dark rounded-3 pt-4 pb-5 px-5 shadow registroContainer">
         <h1 class="text-center fw-bold mt-3 mb-4">Sign up</h1>
         <?php
