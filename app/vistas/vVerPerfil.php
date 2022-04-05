@@ -23,7 +23,7 @@ $anuncios= $params['anuncios'];
                     ?>    
                 <a class="text-center mb-3"
 				href=<?php echo "index.php?ctl=modificarPerfil&id=" . $params['id_usuario'] ?>><button
-					class="btn colorSecundario w-75">Modify profile</button></a>
+					class="btn colorSecundario w-75">Modificar Perfil</button></a>
                 <?php
                 } elseif ($_SESSION['rol'] == 2) {
                     ?>
@@ -36,9 +36,9 @@ $anuncios= $params['anuncios'];
             </div>
 		<div
 			class="col-12 col-md-8 bg-light border-2 border-dark rounded-3 shadow pt-2 pb-3 px-4 mb-3 infoContainer">
-			<h1 class="fw-bold text-center mb-3"><?php echo $params['usuario'] ?>'s info</h1>
+			<h1 class="fw-bold text-center mb-3">Perfil de <?php echo $params['usuario'] ?></h1>
 			<p>
-				<span class="d-inline-block fw-bold me-4 align-middle">Full name</span> <?php echo (isset($params['apellidos']))? $params['nombre'] . " " . $params['apellidos']: $params['nombre'] ?></p>
+				<span class="d-inline-block fw-bold me-4 align-middle">Nombre</span> <?php echo (isset($params['apellidos']))? $params['nombre'] . " " . $params['apellidos']: $params['nombre'] ?></p>
 			<hr>
 			<?php
 			if ($_SESSION['id_usuario'] == $params['id_usuario']) {
@@ -50,10 +50,10 @@ $anuncios= $params['anuncios'];
 	}
 	?>
 			<p>
-				<span class="d-inline-block fw-bold me-4 align-middle">Phone number</span> <?php echo (isset($params['telefono']) && !empty($params['telefono']))? $params['telefono']:"-" ?></p>
+				<span class="d-inline-block fw-bold me-4 align-middle">Teléfono</span> <?php echo (isset($params['telefono']) && !empty($params['telefono']))? $params['telefono']:"-" ?></p>
 			<hr>
 			<p>
-				<span class="d-inline-block fw-bold me-4 align-middle">Birthday</span> <?php echo $fecha ?></p>
+				<span class="d-inline-block fw-bold me-4 align-middle">Fecha de Nacimiento</span> <?php echo $fecha ?></p>
 		</div>
 	</div>
 	<div class="row justify-content-center">
@@ -63,26 +63,26 @@ $anuncios= $params['anuncios'];
 				<li class="nav-item" role="presentation">
 					<button class="nav-link active" id="pills-desc-tab"
 						data-bs-toggle="pill" data-bs-target="#pills-desc" type="button"
-						role="tab" aria-controls="pills-desc" aria-selected="true">Description</button>
+						role="tab" aria-controls="pills-desc" aria-selected="true">Descripcion</button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button class="nav-link" id="pills-portfolio-tab"
 						data-bs-toggle="pill" data-bs-target="#pills-portfolio"
 						type="button" role="tab" aria-controls="pills-portfolio"
-						aria-selected="false">Portfolio</button>
+						aria-selected="false">Mis VR apps</button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button class="nav-link" id="pills-adsUser-tab"
 						data-bs-toggle="pill" data-bs-target="#pills-adsUser"
 						type="button" role="tab" aria-controls="pills-adsUser"
-						aria-selected="false">Ads</button>
+						aria-selected="false">Mis historias</button>
 				</li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active text-justify" id="pills-desc"
-					role="tabpanel" aria-labelledby="pills-desc-tab"><?php echo (isset($params['descripcion'])&&!empty($params['descripcion']))?$params['descripcion']:"You haven't established a description yet." ?></div>
+					role="tabpanel" aria-labelledby="pills-desc-tab"><?php echo (isset($params['descripcion'])&&!empty($params['descripcion']))?$params['descripcion']:"Todavía no has escrito una descripción sobre ti" ?></div>
 				<div class="tab-pane fade text-justify " id="pills-portfolio"
-					role="tabpanel" aria-labelledby="pills-portfolio-tab"><?php echo (isset($params['portfolio'])&&!empty($params['portfolio']))?$params['portfolio']:"You haven't established a portfolio yet." ?></div>
+					role="tabpanel" aria-labelledby="pills-portfolio-tab"><?php echo (isset($params['portfolio'])&&!empty($params['portfolio']))?$params['portfolio']:"Todavía no te has descargado ninguna app de VR, si tienes unas gafas oculus quest Anímate!!" ?></div>
 				<div class="tab-pane fade text-justify " id="pills-adsUser"
 					role="tabpanel" aria-labelledby="pills-adsUser-tab"><?php
     if (count($anuncios) > 0) {
@@ -113,7 +113,7 @@ $anuncios= $params['anuncios'];
                             <?php
         echo "</div>";
     } else {
-        echo "You don't have any ads yet.";
+        echo "Aún no has escrito ni publicado ninguna historia, anímate y que todos conozcan tu historia";
     }
 
     ?>

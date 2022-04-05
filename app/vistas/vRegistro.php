@@ -2,7 +2,7 @@
 
 <main class="container-fluid">
     <div class="container bg-light border-2 border-dark rounded-3 pt-4 pb-5 px-5 shadow registroContainer">
-        <h1 class="text-center fw-bold mt-3 mb-4">Sign up</h1>
+        <h1 class="text-center fw-bold mt-3 mb-4">Registro</h1>
         <?php
         if (!empty($params['mensaje'])) {
             echo "<h4 class='errorMsg'>" . $params['mensaje'] . "</h4>";
@@ -17,9 +17,9 @@
         ?>
         <form class="needs-validation" method="POST" action="index.php?ctl=registrarUsuario" novalidate>
             <div class="container-fluid">
-                <div class="row row-cols-lg-3 has-validation mt-3 mb-4">
-                    <div class="col-lg-auto">
-                        <span class="d-inline-block fw-bold mb-3">Name</span>
+                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-center">
+                    <div class="col-lg-2">
+                        <span class="d-inline-block fw-bold mb-3">Nombre</span>
                     </div>
                     <div class="col-lg-4">
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="First name" required>
@@ -34,9 +34,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-start">
-                    <div class="col-lg-auto">
-                        <span class="d-inline-block form-label fw-bold mb-3">Birthday</span>
+                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-center">
+                    <div class="col-lg-2">
+                        <span class="d-inline-block form-label fw-bold mb-3">Fecha de Nacimiento</span>
                     </div>
                     <div class="col-lg-9">
                         <input type="date" class="form-control" name="fnacimiento" id="fnacimiento" required>
@@ -45,9 +45,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-start">
-                    <div class="col-lg-auto">
-                        <span class="d-inline-block form-label fw-bold mb-3">Contact info</span>
+                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-center">
+                    <div class="col-lg-2">
+                        <span class="d-inline-block form-label fw-bold mb-3">Información de Contacto</span>
                     </div>
                     <div class="col-lg-4">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
@@ -62,10 +62,9 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="row row-cols-lg-3 has-validation mt-3 mb-1 justify-content-start">
-                    <div class="col-lg-auto">
-                        <span class="d-inline-block form-label fw-bold mb-3">Username</span>
+                <div class="row row-cols-lg-3 has-validation mt-3 mb-1 justify-content-center">
+                    <div class="col-lg-2">
+                        <span class="d-inline-block form-label fw-bold mb-3">Usuario</span>
                     </div>
                     <div class="col-lg-9">
                         <input type="text" class="form-control" name="usuario" id="usuario" required  onkeyup="filtra(this.value)">
@@ -76,9 +75,9 @@
                     </div>
                 </div>
                 <div class="mt-1" id="resultado"></div>
-                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-start">
-                    <div class="col-lg-auto">
-                        <span class="d-inline-block form-label fw-bold mb-3">Password</span>
+                <div class="row row-cols-lg-3 has-validation mt-3 mb-4 justify-content-center">
+                    <div class="col-lg-2">
+                        <span class="d-inline-block form-label fw-bold mb-3">Contraseña</span>
                     </div>
                     <div class="col-lg-4">
                         <input type="password" class="form-control" name="password" id="password" required>

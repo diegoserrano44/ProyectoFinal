@@ -55,7 +55,7 @@ footer {
 	font-size: 1.5em;
 }
 
-.colorSecundario{
+/* .colorSecundario{
     background-color: #7738a7;
 	color:white;
 	
@@ -84,31 +84,25 @@ footer {
 	background-color:#7738a7;
 	color:white;
 
-}
+} */
 
 #contenido{
     min-height: 80vh;
 }
 
-.container {
-    position: relative;
-    /* margin-top: 20px; */
-}
-
 .perfilContainer {
 	width: 90%;
-	min-width: 375px;
 	margin-top: 5%;
 	color: black;
 }
 
 .loginContainer {
-    width: 40%;
-    max-width: 550px;
+	margin-top: 100px;
+    max-width: 600px;
 	color: black;
 }
 
-#buscador {
+/* #buscador {
 	width: 350px;
 	height: 40px;
 	font-size: 22px;
@@ -127,17 +121,7 @@ footer {
 	border-radius: 35px;
 	margin-left: 5px;
 	color: green;
-}
-
-.botonAzul {
-    background-color: #7738a7;
-    color: white;
-}
-
-.botonAzul:hover {
-    background-color: #5f2d84;
-    color: yellow;
-}
+} */
 
 .errorMsg {
     font-size: 16px;
@@ -175,7 +159,7 @@ footer {
 	}
 }
 
-ul.ks-cboxtags {
+/* ul.ks-cboxtags {
     list-style: none;
     padding: 20px;
 }
@@ -241,7 +225,7 @@ ul.ks-cboxtags li input[type="checkbox"] {
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
-}
+} */
 
 th, td {
     padding: 15px;
@@ -420,7 +404,8 @@ input#foto_perfil {
 
 .registroContainer {
     width: 100%;
-    max-width: 550px;
+	margin-top: 100px;
+    max-width: 1000px;
 	color: black;
 }
 .imgContainerP {
@@ -461,11 +446,11 @@ input#foto_perfil {
 
 
 @media ( min-width : 992px) {
-	.perfilContainer {
+	/* .perfilContainer {
 		width: 60%;
 		min-width: 800px;
 		margin-top: 0%;
-	}
+	} */
 	
 	.perfilContainer input {
 		width: 180px;

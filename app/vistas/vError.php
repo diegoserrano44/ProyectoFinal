@@ -2,10 +2,10 @@
 ob_start();
 ?>
 <div class="p-5 mb-4 bg-dark rounded-3 d-flex justify-content-center text-white">
-<h3>An error has occurred</h3>
+<h3>Ha habido un error</h3>
 </div>
 <div class="d-flex justify-content-center">
-    <a class="btn btn-danger" href="index.php?ctl=inicio">Go back to homepage</a>
+    <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a>
 </div>
 </div>
 <?php 

@@ -63,7 +63,7 @@ class cUsuarios
             }
         } else {
 
-            $login_button = '<a class="btn my-3 w-100 py-2 btn-lg btn-google btn-block text-uppercase btn-outline-white" href="' . $google_client->createAuthUrl() . '"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Login using Google</a>';
+            $login_button = '<a class="btn my-3 w-100 py-2 btn-lg btn-google btn-block text-uppercase btn-outline-white" href="' . $google_client->createAuthUrl() . '"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Inicia Sesión con Google</a>';
         }
         // Una vez se mandan los datos se comienzan con las comprobaciones
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
