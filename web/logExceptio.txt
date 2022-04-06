@@ -1,0 +1,12 @@
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''anuncios'' at line 10.38988500 1649240551
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''anuncios'' at line 10.79026000 1649240555
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.16699000 1649241576
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.40907700 1649241580
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.09201700 1649241586
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.23067000 1649241690
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.87126400 1649241690
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.19395700 1649241694
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.67508500 1649241821
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.82641400 1649255943
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.45486800 1649255954
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.57675500 1649256256

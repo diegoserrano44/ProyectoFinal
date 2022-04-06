@@ -29,14 +29,14 @@ if (! empty($errores)) {
 					title="Click to change profile pic" alt="Picture"></a>
 				<h2 class="fw-bold text-center"><?php echo $params['usuario'] ?></h2>
 				<a class="text-center mb-3"><button type="submit" form="form1"
-						class="btn colorSecundario w-75 text-center mb-3" name="saveChanges">Save
-						changes</button></a>
+						class="btn colorSecundario w-75 text-center mb-3" name="saveChanges">Guardar
+						cambios</button></a>
 			</div>
 			<div
 				class="col-12 col-md-8 bg-light border-2 border-dark rounded-3 shadow pt-2 pb-3 px-4 mb-3 infoContainer">
-				<h1 class="fw-bold text-center mb-3"><?php echo $params['usuario'] ?>'s info</h1>
+				<h1 class="fw-bold text-center mb-3">Perfil de <?php echo $params['usuario'] ?></h1>
 				<p>
-					<span class="d-inline-block fw-bold me-4 align-middle">Full name</span>
+					<span class="d-inline-block fw-bold me-4 align-middle">Nombre</span>
 					<input type="text" id="nombre" name="nombre"
 						value="<?php echo $params['nombre'] ?>" placeholder="First name"
 						required></input> <input type="text" id="apellidos" name="apellidos"
@@ -52,13 +52,13 @@ if (! empty($errores)) {
 				</p>
 				<hr>
 				<p>
-					<span class="d-inline-block fw-bold me-4 align-middle">Phone number</span>
+					<span class="d-inline-block fw-bold me-4 align-middle">Teléfono</span>
 					<input type="tel" id="tel" name="tel"
 						value="<?php echo (isset($params['telefono']) && !empty($params['telefono']))? $params['telefono']:"" ?>"></input>
 				</p>
 				<hr>
 				<p>
-					<span class="d-inline-block fw-bold me-4 align-middle">Birthday</span>
+					<span class="d-inline-block fw-bold me-4 align-middle">Fecha de nacimiento</span>
 					<input type="date" id="fNacimiento" name="fNacimiento"
 						value="<?php echo $params['fecha_nac'] ?>"></input>
 				</p>
@@ -72,13 +72,19 @@ if (! empty($errores)) {
 					<li class="nav-item" role="presentation">
 						<button class="nav-link active" id="pills-desc-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-desc" type="button"
-							role="tab" aria-controls="pills-desc" aria-selected="true">Description</button>
+							role="tab" aria-controls="pills-desc" aria-selected="true">Descripción</button>
 					</li>
 					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="pills-portfolio-tab"
-							data-bs-toggle="pill" data-bs-target="#pills-portfolio"
-							type="button" role="tab" aria-controls="pills-portfolio"
-							aria-selected="false">Portfolio</button>
+						<button class="nav-link" id="pills-vr_apps-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-vr_apps"
+							type="button" role="tab" aria-controls="pills-vr_apps"
+							aria-selected="false">Mis VR apps</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="pills-historias-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-historias"
+							type="button" role="tab" aria-controls="pills-historias"
+							aria-selected="false">Mis historias</button>
 					</li>
 				</ul>
 				<div class="tab-content" id="pills-tabContent">
@@ -86,9 +92,13 @@ if (! empty($errores)) {
 						role="tabpanel" aria-labelledby="pills-desc-tab">
 						<textarea id="descripcion" name="descripcion" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['descripcion']))?$params['descripcion']:"" ?></textarea>
 					</div>
-					<div class="tab-pane fade text-justify" id="pills-portfolio"
-						role="tabpanel" aria-labelledby="pills-portfolio-tab">
-						<textarea id="portfolio" name="portfolio" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['portfolio']))?$params['portfolio']:"" ?></textarea>
+					<div class="tab-pane fade text-justify" id="pills-vr_apps"
+						role="tabpanel" aria-labelledby="pills-vr_apps-tab">
+						<textarea id="vr_apps" name="vr_apps" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['vr_apps']))?$params['vr_apps']:"" ?></textarea>
+					</div>
+					<div class="tab-pane fade text-justify" id="pills-historias"
+						role="tabpanel" aria-labelledby="pills-historias-tab">
+						<textarea id="historias" name="historias" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['portfolio']))?$params['portfolio']:"" ?></textarea>
 					</div>
 				</div>
 			</div>

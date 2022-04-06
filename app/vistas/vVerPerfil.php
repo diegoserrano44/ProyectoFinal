@@ -5,7 +5,7 @@ $Mes = substr($params['fecha_nac'], 5, 2);
 $Dia = substr($params['fecha_nac'], 8, 2);
 $fecha = $Dia . "-" . $Mes . "-" . $A;
 
-$anuncios= $params['anuncios']; 
+$anuncios=$params['anuncios']; 
 ?>
 
 <style>
@@ -82,7 +82,7 @@ $anuncios= $params['anuncios'];
 				<div class="tab-pane fade show active text-justify" id="pills-desc"
 					role="tabpanel" aria-labelledby="pills-desc-tab"><?php echo (isset($params['descripcion'])&&!empty($params['descripcion']))?$params['descripcion']:"Todavía no has escrito una descripción sobre ti" ?></div>
 				<div class="tab-pane fade text-justify " id="pills-portfolio"
-					role="tabpanel" aria-labelledby="pills-portfolio-tab"><?php echo (isset($params['portfolio'])&&!empty($params['portfolio']))?$params['portfolio']:"Todavía no te has descargado ninguna app de VR, si tienes unas gafas oculus quest Anímate!!" ?></div>
+					role="tabpanel" aria-labelledby="pills-portfolio-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no te has descargado ninguna app de VR, si tienes unas gafas oculus quest Anímate!!" ?></div>
 				<div class="tab-pane fade text-justify " id="pills-adsUser"
 					role="tabpanel" aria-labelledby="pills-adsUser-tab"><?php
     if (count($anuncios) > 0) {

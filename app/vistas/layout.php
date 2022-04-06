@@ -55,11 +55,12 @@
             </div>
         </div>
     </nav>
-<div class="text-black" id="contenido" style="background-color: #FFFFFF;">
+<div class="text-black" id="contenido" style="">
 
 <?php echo $contenido ?>
 
 </div>
+
 <footer class="bg-light text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between">
             <div>
                 <ul class="list-group list-group-flush">

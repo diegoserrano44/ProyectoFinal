@@ -363,7 +363,7 @@ th, td {
 }
 
 .extraContainer {
-	width: 70%;
+	width: 100%;
 	min-width: 300px;
 	color: black;
 }
@@ -470,7 +470,7 @@ input#foto_perfil {
 		min-width: 500px;
 	}
 	.extraContainer {
-		width: 99%;
+		width: 100%;
 		min-width: 300px;
 		margin-bottom: 0%;
 	}

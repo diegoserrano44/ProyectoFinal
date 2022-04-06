@@ -630,7 +630,7 @@ class cUsuarios
                     'fecha_nac' => recoge('fNacimiento'),
                     'foto_perfil' => $_FILES['foto_perfil'],
                     'descripcion' => recogeEnriquecido('descripcion'),
-                    'portfolio' => recogeEnriquecido('portfolio')
+                    'vr_apps' => recogeEnriquecido('vr_apps')
                 );
 
                 $validacion = new Validacion();
@@ -641,7 +641,7 @@ class cUsuarios
                 $datos['fecha_nac'] = $params_aux['fecha_nac'];
                 $datos['foto_perfil'] = $params_aux['foto_perfil'];
                 $datos['descripcion'] = $params_aux['descripcion'];
-                $datos['portfolio'] = $params_aux['portfolio'];
+                $datos['vr_apps'] = $params_aux['vr_apps'];
 
                 $regla = array(
                     array(
@@ -686,9 +686,9 @@ class cUsuarios
                     );
                 }
 
-                if (!empty($params_aux['portfolio'])) {
+                if (!empty($params_aux['vr_apps'])) {
                     $regla[0] += array(
-                        'name' => 'portfolio',
+                        'name' => 'vr_apps',
                         'regla' => 'noEmpty'
                     );
                 }
@@ -715,7 +715,7 @@ class cUsuarios
                                 'telefono' => $params_aux['telefono'],
                                 'fecha_nac' => $params_aux['fecha_nac'],
                                 'descripcion' => $params_aux['descripcion'],
-                                'portfolio' => $params_aux['portfolio'],
+                                'vr_apps' => $params_aux['vr_apps'],
                                 'usuario' => $params['usuario'],
                                 'foto_perfil' => $params['foto_perfil']
                             );
@@ -729,7 +729,7 @@ class cUsuarios
                             'telefono' => $params_aux['telefono'],
                             'fecha_nac' => $params_aux['fecha_nac'],
                             'descripcion' => $params_aux['descripcion'],
-                            'portfolio' => $params_aux['portfolio'],
+                            'vr_apps' => $params_aux['vr_apps'],
                             'usuario' => $params['usuario'],
                             'foto_perfil' => $params['foto_perfil']
                         );
@@ -743,7 +743,7 @@ class cUsuarios
                         'telefono' => $params_aux['telefono'],
                         'fecha_nac' => $params_aux['fecha_nac'],
                         'descripcion' => $params_aux['descripcion'],
-                        'portfolio' => $params_aux['portfolio'],
+                        'vr_apps' => $params_aux['vr_apps'],
                         'usuario' => $params['usuario'],
                         'foto_perfil' => $params['foto_perfil']
                     );

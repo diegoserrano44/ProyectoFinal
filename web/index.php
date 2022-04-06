@@ -7,6 +7,7 @@ require_once __DIR__ . '/../app/modelos/classHistoria.php';
 require_once __DIR__ . '/../app/modelos/classMensaje.php';
 require_once __DIR__ . '/../app/modelos/classUsuario.php';
 require_once __DIR__ . '/../app/modelos/classSesion.php';
+require_once __DIR__ . '/../app/modelos/classForo.php';
 require_once __DIR__ . '/../app/modelos/classValidacion.php';
 require_once __DIR__ . '/../app/libs/utils.php';
 require_once __DIR__ . '/../app/controladores/cController.php';
@@ -14,6 +15,8 @@ require_once __DIR__ . '/../app/controladores/cHistorias.php';
 require_once __DIR__ . '/../app/controladores/cMensajes.php';
 require_once __DIR__ . '/../app/controladores/cUsuarios.php';
 require_once __DIR__ . '/../app/controladores/cAjax.php';
+require_once __DIR__ . '/../app/controladores/cForo.php';
+
 
 
 /**
@@ -39,8 +42,8 @@ $map = array(
     'inicioAdmin' => array('controller' =>'cController', 'action' =>'inicioAdmin', 'rol'=>2),
     'listarUsuarios' => array('controller' =>'cUsuarios', 'action' =>'listarUsuarios', 'rol'=>1),
     'listarHistorias' => array('controller' =>'cHistorias', 'action' =>'listarHistorias','rol'=>0),
-    'listarHistoriasUsuario' => array('controller' =>'cHistorias', 'action' =>'listarHistoriasUsuario','rol'=>0),
-    'verHistoria' => array('controller' =>'cHistorias', 'action' =>'verHistoria','rol'=>0),
+    //'listarHistoriasUsuario' => array('controller' =>'cHistorias', 'action' =>'listarHistoriasUsuario','rol'=>0),
+    //'verHistoria' => array('controller' =>'cHistorias', 'action' =>'verHistoria','rol'=>0),
     'crearHistoria' => array('controller' =>'cHistorias', 'action' =>'crearHistoria','rol'=>1),
     'modificarHistoria' => array('controller' =>'cHistorias', 'action' =>'modificarHistoria','rol'=>1),
     'eliminarHistoria' => array('controller' =>'cHistorias', 'action' =>'eliminarHistoria','rol'=>1),
@@ -56,20 +59,19 @@ $map = array(
     'eliminarPerfil' => array('controller' =>'cUsuarios', 'action' =>'eliminarPerfil', 'rol'=>2),
     'sinpermisos' => array('controller' =>'cController', 'action' =>'sinpermisos', 'rol'=>0),
     'salirUsuario' => array('controller' =>'cUsuarios', 'action' =>'salirUsuario', 'rol'=>1),
-    'listarMensaje' => array('controller' =>'cMensajes', 'action' =>'listarMensaje', 'rol'=>1),
-    'mandarMensaje' => array('controller' =>'cMensajes', 'action' =>'mandarMensaje', 'rol'=>1),
+    //'listarMensaje' => array('controller' =>'cMensajes', 'action' =>'listarMensaje', 'rol'=>1),
+    //'mandarMensaje' => array('controller' =>'cMensajes', 'action' =>'mandarMensaje', 'rol'=>1),
     'error' => array('controller' =>'cController', 'action' =>'error', 'rol'=>0),
     'activarUsuario' => array('controller' =>'cUsuarios', 'action' =>'activarUsuario', 'rol'=>0),
     'recordarPassword'=> array('controller' =>'cUsuarios', 'action' =>'recordarPassword', 'rol'=>0),
     'pidePassword'=> array('controller' =>'cUsuarios', 'action' =>'pidePassword', 'rol'=>0),
     'cambiarPassword'=> array('controller' =>'cUsuarios', 'action' =>'cambiarPassword', 'rol'=>0),
     'enviarPass'=> array('controller' =>'cUsuarios', 'action' =>'enviarPass', 'rol'=>0),
-    'responderMensaje' => array('controller' =>'cAjax', 'action' =>'responderMensaje', 'rol'=>1),
-    'dameMensajes' => array('controller' =>'cAjax', 'action' =>'dameMensajes', 'rol'=>1),
-    'eliminarHilo' => array('controller' =>'cAjax', 'action' =>'eliminarHilo', 'rol'=>1),
+    //'responderMensaje' => array('controller' =>'cAjax', 'action' =>'responderMensaje', 'rol'=>1),
+    //'dameMensajes' => array('controller' =>'cAjax', 'action' =>'dameMensajes', 'rol'=>1),
+    //'eliminarHilo' => array('controller' =>'cAjax', 'action' =>'eliminarHilo', 'rol'=>1),
     'existeUsuario' => array('controller' =>'cAjax', 'action' =>'existeUsuario', 'rol'=>0),
-    'listaForo' => array('controller' =>'cForo', 'action' =>'listaForo', 'rol'=>0),
-
+    'listarForo' => array('controller' =>'cForo', 'action' =>'listarForo', 'rol'=>0),
 );
 
 // Parseo de la ruta
