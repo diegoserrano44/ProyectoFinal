@@ -12,7 +12,8 @@
             </div>
          </div>
       </div>
-	  
+
+<div class="container">
 <div class="row" style="--bs-gutter-x: 0;">
 <a href="index.php?ctl=crearHistoria">Publica tu historia</a>
 <?php foreach ($historias as $historia) :?>
@@ -33,6 +34,7 @@
 		</div>
 		<?php endforeach; ?>
 	</div>
+</div>
 
 <?php $contenido = ob_get_clean() ?>
 

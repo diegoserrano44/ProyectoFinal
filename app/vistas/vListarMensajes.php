@@ -69,7 +69,7 @@ echo $params['hilos'];
 ?>;
 
 </script>
-<script src="./../app/ajax/listarmensajes.js">
+<script src="./../web/js/listarMensajes.js">
 </script>
 <?php
 $contenido = ob_get_clean();
