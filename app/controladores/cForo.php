@@ -3,9 +3,8 @@
 class cForo {
     public function listarForo() {
         try {
-            $foro = new Foro();
-            $foro->listarForo();
-        
+            $foros = new Foro();
+            $params = $foros->listarForo();
         // Recogemos los dos tipos de excepciones que se pueden producir
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

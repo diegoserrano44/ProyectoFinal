@@ -1,4 +1,6 @@
-<?php ob_start() ?>
+<?php ob_start()
+?>
+
 <div class="jumbotrons jumbotron p-5 bg-light text-black" style="width:100%;">
          <div class="container-fluid py-5">
             <div class="container">
@@ -54,55 +56,39 @@
 				</li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active text-justify" id="pills-general"
-					role="tabpanel" aria-labelledby="pills-general-tab"><?php echo $historia;?>
+				<div class="tab-pane fade show active text-justify" id="pills-general" role="tabpanel" aria-labelledby="pills-general-tab">
+					<?php foreach ($params as $a) {
+						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { ?>
+						<div class="row">
+							<div class="col-md-12">
+								<?php echo $a['asunto_tema']; ?>
+							</div> 
+						</div>
+					<?php }
+						else { 
+							echo "Todavía no has escrito una descripción sobre ti";
+						}
+					}
+					?>
 				</div>
 				<div class="tab-pane fade text-justify " id="pills-deportes"
-					role="tabpanel" aria-labelledby="pills-deportes-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
+					role="tabpanel" aria-labelledby="pills-deportes-tab"><?php echo (isset($params['usuario'])&&!empty($params['usuario']))?$params['usuario']:"Todavía no se ha publicado ningun tema en la categoría Deportes" ?>
 				</div>
-				<div class="tab-pane fade show active text-justify" id="pills-libre"
+				<div class="tab-pane fade show text-justify" id="pills-libre"
 					role="tabpanel" aria-labelledby="pills-libre-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
 				</div>
-				<div class="tab-pane fade show active text-justify" id="pills-casa"
+				<div class="tab-pane fade show text-justify" id="pills-casa"
 					role="tabpanel" aria-labelledby="pills-casa-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
 				</div>
-				<div class="tab-pane fade show active text-justify" id="pills-movilidad"
-					role="tabpanel" aria-labelledby="pills-movilidad-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */?>
+				<div class="tab-pane fade show text-justify" id="pills-movilidad"
+					role="tabpanel" aria-labelledby="pills-movilidad-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
 				</div>
-				<div class="tab-pane fade show active text-justify" id="pills-adaptaciones"
+				<div class="tab-pane fade show text-justify" id="pills-adaptaciones"
 					role="tabpanel" aria-labelledby="pills-adaptaciones-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
 				</div>
 
 				<div class="tab-pane fade text-justify " id="pills-adsUser"
-					role="tabpanel" aria-labelledby="pills-adsUser-tab"><?php
-    if (count($historias) > 0) {
-        echo "<div class=\"row\">";
-        ?>
-       <?php foreach ($historias as $historia) :?>
-		<div class="col-12">
-			<div class="card-group">
-				<div class="card m-3 p-3 mb-5 rounded sombra">
-					<img class="card-img-top" src="../app/categorias_img/<?php echo $historia['categoria_img']?>.png" alt="Card image cap" width="auto" height="">
-					<div class="card-body">
-						<h5 class="card-title text-dark text-truncate"> <?php echo $historia['titulo'] ?></h5>
-						<p class="card-text text-dark text-truncate"> <?php echo $historia['descripcion'] ?></p>
-						<div class="d-flex justify-content-between align-items-center bSee">
-							<b><p class="card-text text-dark text-truncate"> <?php echo $historia['precio']." €/h"?></p></b>			
-							<a href="index.php?ctl=verAnuncio&id=<?php echo $historia['id_anuncio']?>" ><i class="fa-solid fa-arrow-right-long"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php endforeach; ?>
-                            
-                            <?php
-        echo "</div>";
-    } else {
-        echo "Aún no has escrito ni publicado ninguna historia, anímate y que todos conozcan tu historia";
-    }
-
-    ?>
+					role="tabpanel" aria-labelledby="pills-adsUser-tab">
                 </div>
 			</div>
 		</div>
