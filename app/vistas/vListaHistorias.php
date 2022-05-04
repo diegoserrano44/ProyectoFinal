@@ -16,27 +16,26 @@
          </div>
       </div>
 
-<div class="container">
-<div class="row" style="--bs-gutter-x: 0;">
+<div class="row" style="--bs-gutter-x: 0; margin:5px;">
 <?php foreach ($historias as $historia) :?>
-		<div class="col-12">
-			<div class="card-group">
-				<div class="card m-3 p-3 mb-5 rounded sombra">
-					<!-- <img class="card-img-top" src="" alt="Card image cap" width="auto" height=""> -->
-					<div class="card-body">
-						<h5 class="card-title text-dark text-truncate"> <?php echo $historia['titulo'] ?></h5>
-						<p class="card-text text-dark" style=""> <?php echo $historia['descripcion'] ?></p>
-						<div class="d-flex justify-content-between align-items-center bSee">
-							<b><p class="card-text text-dark text-truncate"> <?php echo $historia['nombre']?></p></b>			
-							<a href="index.php?ctl=verAnuncio&id=<?php echo $historia['id_anuncio']?>" ><i class="fa-solid fa-arrow-right-long"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="accordion" id="accordionExample" style="padding: 15px;">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading<?php echo $historia['id_anuncio'];?>">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_anuncio'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_anuncio'];?>">
+        <?php echo $historia['titulo']; ?>
+      </button>
+    </h2>
+    <div id="collapse<?php echo $historia['id_anuncio'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_anuncio'];?>" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+	  <?php echo $historia['descripcion'];?>
+      </div>
+    </div>
+  </div>
+</div>
 		<?php endforeach; ?>
 	</div>
-</div>
+
+
 
 <?php $contenido = ob_get_clean() ?>
 

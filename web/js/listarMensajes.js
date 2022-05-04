@@ -43,7 +43,7 @@ function crearCaja(asunto, id) {
     boton.innerText = "#" + id + " - " + asunto;
 
     let para= document.createElement('div');
-    para.innerText=" - De: "+remite;
+    para.innerText=" Conversación con "+remite;
     para.className="rmte";
 
     let eye = document.createElement('button');

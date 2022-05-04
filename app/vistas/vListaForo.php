@@ -64,7 +64,7 @@
 								<?php echo $a['by_tema']." - ".$a['fecha_tema']; ?>
 							</div>
 							<div class="card-body">
-								<h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5>
+								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
 								<p class="card-text text-muted fs-6">Categoría: <?php echo $a['categoria_tema']; ?></p>
 							</div>
 						</div>
@@ -79,16 +79,16 @@
 					role="tabpanel" aria-labelledby="pills-deportes-tab"><?php echo (isset($params['usuario'])&&!empty($params['usuario']))?$params['usuario']:"Todavía no se ha publicado ningun tema en la categoría Deportes" ?>
 				</div>
 				<div class="tab-pane fade show text-justify" id="pills-libre"
-					role="tabpanel" aria-labelledby="pills-libre-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
+					role="tabpanel" aria-labelledby="pills-libre-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
 				</div>
 				<div class="tab-pane fade show text-justify" id="pills-casa"
-					role="tabpanel" aria-labelledby="pills-casa-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
+					role="tabpanel" aria-labelledby="pills-casa-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
 				</div>
 				<div class="tab-pane fade show text-justify" id="pills-movilidad"
 					role="tabpanel" aria-labelledby="pills-movilidad-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
 				</div>
 				<div class="tab-pane fade show text-justify" id="pills-adaptaciones"
-					role="tabpanel" aria-labelledby="pills-adaptaciones-tab"><?php /*echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" */ ?>
+					role="tabpanel" aria-labelledby="pills-adaptaciones-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
 				</div>
 
 				<div class="tab-pane fade text-justify " id="pills-adsUser"

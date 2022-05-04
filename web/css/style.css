@@ -276,13 +276,15 @@ th, td {
 .bMsj{
 	background-color: #fff;
 }
-.accordion-body {
+
+/* .accordion-body {
 	background-color: #212429;
 }
 
 .accordion-item{
 	border: 0;
-}
+} */
+
 .right_Mss {
 	align-self: flex-end;
 }
@@ -295,7 +297,7 @@ th, td {
 	color: #7738A7;
 }
 
-.accordion-button {
+/* .accordion-button {
 	font-size: 1.25rem;
 	text-transform: uppercase;
 	color: #7738A7;
@@ -313,7 +315,7 @@ th, td {
 .accordion-button:not(.collapsed) {
 	color: #7738A7;
 	background-color: #fff;
-}
+} */
 
 .icono {
 	background: none;

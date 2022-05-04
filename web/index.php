@@ -8,6 +8,7 @@ require_once __DIR__ . '/../app/modelos/classMensaje.php';
 require_once __DIR__ . '/../app/modelos/classUsuario.php';
 require_once __DIR__ . '/../app/modelos/classSesion.php';
 require_once __DIR__ . '/../app/modelos/classForo.php';
+require_once __DIR__ . '/../app/modelos/classApps.php';
 require_once __DIR__ . '/../app/modelos/classValidacion.php';
 require_once __DIR__ . '/../app/libs/utils.php';
 require_once __DIR__ . '/../app/controladores/cController.php';
@@ -16,6 +17,7 @@ require_once __DIR__ . '/../app/controladores/cMensajes.php';
 require_once __DIR__ . '/../app/controladores/cUsuarios.php';
 require_once __DIR__ . '/../app/controladores/cAjax.php';
 require_once __DIR__ . '/../app/controladores/cForo.php';
+require_once __DIR__ . '/../app/controladores/cApps.php';
 
 
 
@@ -47,13 +49,7 @@ $map = array(
     'crearHistoria' => array('controller' =>'cHistorias', 'action' =>'crearHistoria','rol'=>1),
     'modificarHistoria' => array('controller' =>'cHistorias', 'action' =>'modificarHistoria','rol'=>1),
     'eliminarHistoria' => array('controller' =>'cHistorias', 'action' =>'eliminarHistoria','rol'=>1),
-    //'listarAnuncios' => array('controller' =>'cAnuncios', 'action' =>'listarAnuncios', 'rol'=>0),
-    //'listarAnunciosUsuario' => array('controller' =>'cAnuncios', 'action' =>'listarAnunciosUsuario', 'rol'=>0),      
-    //'verAnuncio' => array('controller' =>'cAnuncios', 'action' =>'verAnuncio', 'rol'=>0),    
-    //'crearAnuncio' => array('controller' =>'cAnuncios', 'action' =>'crearAnuncio', 'rol'=>1),
-    //'modificarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'modificarAnuncio', 'rol'=>1),
     'cambiaImagen' => array('controller' =>'cHistorias', 'action' =>'cambiaImagen', 'rol'=>1),
-    //'eliminarAnuncio' => array('controller' =>'cAnuncios', 'action' =>'eliminarAnuncio', 'rol'=>1),
     'verPerfil' => array('controller' =>'cUsuarios', 'action' =>'verPerfil', 'rol'=>1),
     'modificarPerfil' => array('controller' =>'cUsuarios', 'action' =>'modificarPerfil', 'rol'=>1),
     'eliminarPerfil' => array('controller' =>'cUsuarios', 'action' =>'eliminarPerfil', 'rol'=>2),
@@ -69,9 +65,11 @@ $map = array(
     'enviarPass'=> array('controller' =>'cUsuarios', 'action' =>'enviarPass', 'rol'=>0),
     'responderMensaje' => array('controller' =>'cAjax', 'action' =>'responderMensaje', 'rol'=>1),
     'dameMensajes' => array('controller' =>'cAjax', 'action' =>'dameMensajes', 'rol'=>1),
-    //'eliminarHilo' => array('controller' =>'cAjax', 'action' =>'eliminarHilo', 'rol'=>1),
+    'eliminarHilo' => array('controller' =>'cAjax', 'action' =>'eliminarHilo', 'rol'=>1),
     'existeUsuario' => array('controller' =>'cAjax', 'action' =>'existeUsuario', 'rol'=>0),
     'listarForo' => array('controller' =>'cForo', 'action' =>'listarForo', 'rol'=>0),
+    'verTemaForo' => array('controller' =>'cForo', 'action' =>'verTemaForo', 'rol'=>0),
+    'listarApps' => array('controller' =>'cApps', 'action' =>'listarApps', 'rol'=>1),
 );
 
 // Parseo de la ruta

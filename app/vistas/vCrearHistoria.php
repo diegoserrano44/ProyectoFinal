@@ -21,7 +21,7 @@ if(isset($params['mensaje'])){
     Please select the language in which the class will be held
     </div>
   </div>
-  <div class="col-md-4">
+  <!-- <div class="col-md-4">
     <label for="precio" class="form-label">Hourly rate</label>
     <input type="number" class="form-control" id="precio" name="precio" max=999 required>
     <div class="valid-feedback">
@@ -30,7 +30,7 @@ if(isset($params['mensaje'])){
     <div class="invalid-feedback">
     Please select the language in which the class will be held
     </div>
-  </div>
+  </div> -->
   <div class="col-md-4">
     <label for="idioma" class="form-label">Language</label>
     <input type="text" class="form-control" id="idioma" name="idioma" required>
@@ -41,7 +41,7 @@ if(isset($params['mensaje'])){
     Please select the language in which the class will be held
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <label for="cDescripcionAnuncio" class="form-label">Short Description</label>
     <textarea class="form-control" name="cDescripcionAnuncio" id="cDescripcionAnuncio" rows="4" required></textarea>
     <div class="valid-feedback">

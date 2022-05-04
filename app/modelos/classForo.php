@@ -7,6 +7,13 @@ class Foro extends Model {
         return $result->fetchAll();
     }
 
+
+    public function verTemaForo() {
+        $consulta = "SELECT * FROM `temas_foro`";
+        $result = $this->conexion->query($consulta);
+        return $result->fetchAll();
+    }
+
 }
 
 ?>

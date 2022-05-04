@@ -85,7 +85,7 @@ class cMensajes {
         
         }
 
-            require __DIR__ . './../vistas/vVerAnuncio.php';
+            require __DIR__ . './../vistas/vVerTemaForo.php';
     }      
         
 

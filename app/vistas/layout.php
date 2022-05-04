@@ -43,7 +43,7 @@
                     echo "<a id=\"foro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
                     echo "<a id=\"mensajes\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
                     echo "<a id=\"perfil\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
-                    echo "<a id=\"apps\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarAppsVR\">Apps VR</a>";
+                    echo "<a id=\"apps\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarApps\">Apps VR</a>";
                     echo "<a id=\"salir\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
                     echo "<a id=\"historias\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
@@ -148,8 +148,8 @@ else {
     'arriba del todo': () => {  
         window.scrollTo(0, 0);
     },
-    'escribe *': (hola) => {  
-        document.getElementById("Luser").innerHTML = `${hola}`;
+    'volver al inicio': () => {  
+        location.href='localhost/ProyectoFinal/web';
     }
   };
 
@@ -191,6 +191,27 @@ else {
 </body>
 </html>
 
+<!-- Contact Modal -->
+<div class="modal fade bd-dark" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Send message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form class="" action="index.php?ctl=mandarMensaje&id=<?php echo $historia['id_anuncio']?>" method="POST">
+        <input class="asuntoMensaje" type="text" name="asunto" value="" placeholder="Subject"><br><br>
+        <textarea class="contenidoMensaje" rows="6" placeholder="Message" name="mensaje"></textarea>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" name="enviaContacto" value="Send message" class="btn colorSecundario">
+        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="contactAdmin" tabindex="-1" aria-labelledby="contactAdminLabel" aria-hidden="true">
   <div class="modal-dialog" width="fit-content">
