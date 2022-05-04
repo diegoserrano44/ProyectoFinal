@@ -435,7 +435,6 @@ class cUsuarios
     {
         try {
             if (!isset($_GET['id'])) {
-
                 throw new Exception('Page not found');
             }
             $token = recoge('id');

@@ -1,23 +1,2 @@
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''anuncios'' at line 10.38988500 1649240551
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''anuncios'' at line 10.79026000 1649240555
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.16699000 1649241576
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.40907700 1649241580
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.09201700 1649241586
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.23067000 1649241690
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.87126400 1649241690
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.19395700 1649241694
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.anuncios' doesn't exist0.67508500 1649241821
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.82641400 1649255943
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.45486800 1649255954
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolio' in 'field list'0.57675500 1649256256
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.81706300 1650392717
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.64219000 1650392760
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.50030800 1650392818
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.38427900 1650392855
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.52667000 1650400987
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.16434400 1650401152
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.22505900 1650401164
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.62752800 1650401169
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.78411000 1650401321
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.76496300 1650401324
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.historias' doesn't exist0.99031500 1650401334
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'diegoserrano1644@gmail.com' for key 'email'0.53713900 1651531785
+Page not found0.79899700 1651590585

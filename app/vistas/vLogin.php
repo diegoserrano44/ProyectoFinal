@@ -31,7 +31,7 @@
 					Porfavor introduce una contraseña válida.
 				</div>
 			</div>
-			<button class="btn my-3 w-100 py-2 fw-bold botonAzul" type="submit" name="login">Iniciar Sesión</button>		
+			<button class="btn my-3 w-100 py-2 fw-bold botonAzul" id="iniciar_sesion" type="submit" name="login">Iniciar Sesión</button>		
 			<?php if($login_button != ""){echo $login_button; }?>	
 		</form>
 			<a href="index.php?ctl=enviarPass" >He olvidado mi contraseña</a>

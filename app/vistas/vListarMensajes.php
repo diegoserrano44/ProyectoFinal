@@ -6,9 +6,9 @@ if(isset($_POST['msj'])){
 }
 ?>
 
-<h1 class="text-white">My Messages</h1>
+<h1 class="text-dark m-4">My Messages</h1>
 
-<div class="text-white">
+<div class="text-dark">
 <div class="container-fluid ancho accordion" id="mainMessages"></div>
 <div class="modal fade" id="replyModal" tabindex="-1"
 	aria-labelledby="replyModalLabel" aria-hidden="true">

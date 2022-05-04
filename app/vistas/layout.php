@@ -19,6 +19,7 @@
 <body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
+            <img src="../web/img/logo_100.png" width="100px" height="100px">
             <a class="navbar-brand navTitle" href="index.php">Una Nueva Vida</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,17 +39,17 @@
                 <div class="d-lg-flex align-items-center">
                 <?php 
                 if (isset($_SESSION['id_usuario'])) {
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarAppsVR\">Apps VR</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
+                    echo "<a id=\"historias\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a id=\"foro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a id=\"mensajes\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
+                    echo "<a id=\"perfil\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
+                    echo "<a id=\"apps\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarAppsVR\">Apps VR</a>";
+                    echo "<a id=\"salir\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a class=\"nav-link nav-item bg-success text-white rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\"></i> Login</a>";
-                    echo "<a class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Sign up</a>";
+                    echo "<a id=\"historias\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a id=\"foro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a id=\"login\" class=\"nav-link nav-item bg-success text-white rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\" style=\"padding:4px;\"></i>Iniciar Sesión</a>";
+                    echo "<a id=\"registro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Registro</a>";
                 }
                 ?>
                 </div>
@@ -61,15 +62,15 @@
 
 </div>
 
-<footer class="bg-light text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between">
+<footer id="hola" class="text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between" style="background-color:#dcffab;">
             <div>
                 <ul class="list-group list-group-flush">
                     <h3>UNV Developer</h3>
-                    <li class="list-group-item listaFooter bg-light text-black">Diego Serrano</li>
+                    <li style="background-color:#dcffab;" class="list-group-item text-black">Diego Serrano</li>
                 </ul>
             </div>
             <div class="p-4">
-                <a class="text-white m-3 text-decoration-none" href="">2022 - unanuevavida.com</a>
+                <a class="text-success m-3 text-decoration-none" href="">2022 - unanuevavida.com</a>
             </div>
             <div class="d-flex flex-column justify-content-center">
             <div>
@@ -90,6 +91,103 @@
 </footer>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+<script>
+//Si annyang es soportado
+if (!annyang) {
+    alert("Voz no soportada");
+}
+else {
+  //Definimos los comandos
+  const commands = {
+    'historias': () => {  
+        document.getElementById("historias").click();
+    },
+    'foro': () => {  
+        document.getElementById("foro").click();
+    },
+    'mensajes': () => {  
+        document.getElementById("mensajes").click();
+    },
+    'perfil': () => {  
+        document.getElementById("perfil").click();
+    },
+    'apps': () => {  
+        document.getElementById("apps").click();
+    },
+    'salir': () => {  
+        document.getElementById("salir").click();
+    },
+    'iniciar sesión': () => {  
+        document.getElementById("login").click();
+    },
+    'registro': () => {  
+        document.getElementById("registro").click();
+    },
+    'usuario': () => {  
+        document.getElementById("Luser").focus();
+    },
+    'contraseña': () => {  
+        document.getElementById("Lpass").focus();
+    },
+    'entrar': () => {  
+        document.getElementById("iniciar_sesion").click();
+    },
+    'publica tu historia': () => {  
+        document.getElementById("historia").click();
+    },
+    'bajar': () => {  
+        window.scrollBy(0, 250);
+    },
+    'subir': () => {  
+        window.scrollBy(0, -250);
+    },
+    'abajo del todo': () => {  
+        window.scrollTo(0, 100000);
+    },
+    'arriba del todo': () => {  
+        window.scrollTo(0, 0);
+    },
+    'escribe *': (hola) => {  
+        document.getElementById("Luser").innerHTML = `${hola}`;
+    }
+  };
+
+  //Añadimos a annyang los comandos
+  annyang.addCommands(commands);
+
+  //Idioma
+  annyang.setLanguage('es-ES');
+
+  //Empieza Annyang.
+  annyang.start();
+}
+</script>
+<!---/*<script>
+    var divLogin = document.getElementById('Luser');
+    var divPassword = document.getElementById("Lpass");
+
+    var recognition = new webkitSpeechRecognition();
+    recognition.lang = 'es-ES';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = (event) => {
+        var results = event.results;
+        var frase = results[results.lenght - 1][0].transcript;
+        divLogin.value += frase;
+    }
+
+    divLogin.addEventListener('focus', () => {
+        recognition.start();
+    });
+
+    recognition.onerror = (event) => {
+        console.log(event.error);
+    }
+
+</script>*/ ---->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
 

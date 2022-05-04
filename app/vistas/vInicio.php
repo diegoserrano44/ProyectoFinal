@@ -16,7 +16,7 @@ if (! empty($errores)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="./../app/ajax/tinyinicio.js"></script>
 
-<div class="jumbotrons jumbotron p-5 bg-light text-black" style="width:100%;">
+<div class="jumbotrons jumbotron p-5 text-black" style="width:100%;background-color:#dcffab;">
          <div class="container-fluid py-5">
             <div class="container">
                <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
