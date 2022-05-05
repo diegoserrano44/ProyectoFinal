@@ -1,7 +1,7 @@
 <?php ob_start()
 ?>
 
-<div class="jumbotrons jumbotron p-5 text-black" style="width:100%; background-color:#dcffab;">
+<div class="jumbotrons jumbotron p-5 text-black" style="width:100%; background-color:#c9e265;">
          <div class="container-fluid py-5">
             <div class="container">
                <h1 class="display-5 fw-bold text-center">Bienvenido al Foro de UNV</h1>
@@ -24,13 +24,19 @@
 						data-bs-toggle="pill" data-bs-target="#pills-general" type="button"
 						role="tab" aria-controls="pills-general" aria-selected="true">General</button>
 				</li>
+
+				
+				<?php foreach ($categorias as $a) { ?>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="pills-deportes-tab"
-						data-bs-toggle="pill" data-bs-target="#pills-deportes"
-						type="button" role="tab" aria-controls="pills-deportes"
-						aria-selected="false">Deportes</button>
+					<button class="nav-link" id="pills-<?php echo $a['nombre_categoria'];?>-tab"
+						data-bs-toggle="pill" data-bs-target="#pills-<?php echo $a['nombre_categoria'];?>"
+						type="button" role="tab" aria-controls="pills-<?php echo $a['nombre_categoria'];?>"
+						aria-selected="false"><?php echo $a['nombre_categoria'];?>
+					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<?php }?>
+
+				<!-- <li class="nav-item" role="presentation">
 					<button class="nav-link" id="pills-libre-tab"
 						data-bs-toggle="pill" data-bs-target="#pills-libre"
 						type="button" role="tab" aria-controls="pills-libre"
@@ -53,12 +59,14 @@
 						data-bs-toggle="pill" data-bs-target="#pills-adaptaciones"
 						type="button" role="tab" aria-controls="pills-adaptaciones"
 						aria-selected="false">Adaptaciones</button>
-				</li>
+				</li> -->
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active text-justify" id="pills-general" role="tabpanel" aria-labelledby="pills-general-tab">
-					<?php foreach ($params as $a) {
-						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { ?>
+					<?php foreach ($temas as $a) {
+						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
+							if ($a['categoria_tema']=='4') {	
+						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
 								<?php echo $a['by_tema']." - ".$a['fecha_tema']; ?>
@@ -68,27 +76,47 @@
 								<p class="card-text text-muted fs-6">Categoría: <?php echo $a['categoria_tema']; ?></p>
 							</div>
 						</div>
-					<?php }
+					<?php } }
 						else { 
 							echo "Todavía no has escrito una descripción sobre ti";
 						}
 					}
 					?>
 				</div>
-				<div class="tab-pane fade text-justify " id="pills-deportes"
-					role="tabpanel" aria-labelledby="pills-deportes-tab"><?php echo (isset($params['usuario'])&&!empty($params['usuario']))?$params['usuario']:"Todavía no se ha publicado ningun tema en la categoría Deportes" ?>
+
+				<div class="tab-pane fade text-justify " id="pills-Deportes" role="tabpanel" aria-labelledby="pills-Deportes-tab">
+					<?php foreach ($temas as $a) {
+						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
+							if ($a['categoria_tema']=='3') {	
+						?>
+						<div class="card m-3">
+							<div class="card-header fw-light">
+								<?php echo $a['by_tema']." - ".$a['fecha_tema']; ?>
+							</div>
+							<div class="card-body">
+								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
+								<p class="card-text text-muted fs-6">Categoría: <?php echo $a['categoria_tema']; ?></p>
+							</div>
+						</div>
+					<?php } }
+						else { 
+							echo "Todavía no has escrito una descripción sobre ti";
+						}
+					}
+					?>
 				</div>
+
 				<div class="tab-pane fade show text-justify" id="pills-libre"
 					role="tabpanel" aria-labelledby="pills-libre-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
 				</div>
 				<div class="tab-pane fade show text-justify" id="pills-casa"
 					role="tabpanel" aria-labelledby="pills-casa-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
 				</div>
-				<div class="tab-pane fade show text-justify" id="pills-movilidad"
-					role="tabpanel" aria-labelledby="pills-movilidad-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
+				<div class="tab-pane fade show text-justify" id="pills-Movilidad"
+					role="tabpanel" aria-labelledby="pills-Movilidad-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
 				</div>
-				<div class="tab-pane fade show text-justify" id="pills-adaptaciones"
-					role="tabpanel" aria-labelledby="pills-adaptaciones-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
+				<div class="tab-pane fade show text-justify" id="pills-Adaptaciones"
+					role="tabpanel" aria-labelledby="pills-Adaptaciones-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Adaptaciones" ?>
 				</div>
 
 				<div class="tab-pane fade text-justify " id="pills-adsUser"

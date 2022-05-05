@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<div class="jumbotrons jumbotron p-5 text-black" style="width:100%; background-color:#dcffab;">
+<div class="jumbotrons jumbotron p-5 text-black" style="width:100%; background-color:#c9e265;">
          <div class="container-fluid py-5">
             <div class="container">
                <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
@@ -20,12 +20,12 @@
 <?php foreach ($historias as $historia) :?>
 <div class="accordion" id="accordionExample" style="padding: 15px;">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading<?php echo $historia['id_anuncio'];?>">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_anuncio'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_anuncio'];?>">
+    <h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
+      <button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
         <?php echo $historia['titulo']; ?>
       </button>
     </h2>
-    <div id="collapse<?php echo $historia['id_anuncio'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_anuncio'];?>" data-bs-parent="#accordionExample">
+    <div id="collapse<?php echo $historia['id_historia'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_historia'];?>" data-bs-parent="#accordionExample">
       <div class="accordion-body">
 	  <?php echo $historia['descripcion'];?>
       </div>

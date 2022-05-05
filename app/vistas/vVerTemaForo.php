@@ -1,10 +1,13 @@
 <?php ob_start() ?>
 
-<div class="row" style="--bs-gutter-x: 0;">
-<div class="d-flex justify-content-center">
-      <button type="button" class="btn colorSecundario" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</button>
+      <div class="card m-3">
+	      <div class="card-header fw-light">
+	      </div>
+	      <div class="card-body">
+	          <h5 class="card-title fs-5"><?php echo $tema['asunto_tema'];?></h5>
+		      <p class="card-text text-muted fs-6">Categoría: <?php echo $respuesta['contenido_respuesta'];?></p>
+	      </div>
       </div>
-</div>
 
 
 

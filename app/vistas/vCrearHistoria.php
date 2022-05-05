@@ -1,6 +1,7 @@
 <?php 
 ob_start(); 
 ?>
+<body style="background:#c9e265">
 <div class="container text-black">
 <h1 class="m-5 text-center">UNV HISTORIAS</h1>
 <h2>Publica tu historia y transmite a los demás!</h2><br>
@@ -10,7 +11,7 @@ if(isset($params['mensaje'])){
 }
 
 ?>
-<form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearAnuncio" enctype="multipart/form-data" novalidate>
+<form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearHistoria" enctype="multipart/form-data" novalidate>
   <div class="col-md-4">
     <label for="cTituloAnuncio" class="form-label">Title</label>
     <input type="text" class="form-control" name="cTituloAnuncio" id="cTituloAnuncio" max=100 required>
@@ -51,21 +52,21 @@ if(isset($params['mensaje'])){
       Explain briefly in what language you will teach the class, what you know how to do or what programming languages you master the most.
     </div>
   </div>
-  <div class="col-md-6">
+  <!-- <div class="col-md-6">
   <div class="container">
   <ul class="ks-cboxtags">
-  <?php 
-  $num=1;
+ <?php 
+   /*$num=1;
   foreach (Config::$listCategories as $categoria) {
     if ($categoria != "") {
       echo "<li><input type=\"checkbox\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$categoria\"><label for=\"checkbox$num\">$categoria</label></li>";     
       $num++;
     }
-  }
+  }*/
   ?>
   </ul>
   </div>
-  </div>
+  </div> -->
   <div class="col-md-12">
     <label for="cContenidoAnuncio" class="form-label">Advertisement content</label>
     <textarea class="form-control text-black parrafo" name="cContenidoAnuncio" id="cContenidoAnuncio" rows="6"></textarea>
@@ -125,3 +126,4 @@ if(isset($params['mensaje'])){
     })
 })()
  </script>
+ </body>

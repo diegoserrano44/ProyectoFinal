@@ -1,8 +1,8 @@
 <?php ob_start() ?>
 
 <main class="container-fluid">
-    <div class="container bg-light border-2 border-dark rounded-3 pt-4 pb-5 px-5 shadow registroContainer">
-        <h1 class="text-center fw-bold mt-3 mb-4">Registro</h1>
+    <div class="container border-2 border-dark rounded-3 pt-4 pb-5 px-5 shadow registroContainer">
+        <h1 class="text-center mt-3 mb-4">Registro</h1>
         <?php
         if (!empty($params['mensaje'])) {
             echo "<h4 class='errorMsg'>" . $params['mensaje'] . "</h4>";

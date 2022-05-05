@@ -1,2 +1,0 @@
-Call to undefined method Foro::verTemaForo()0.63588800 1651677245
-Call to undefined method Foro::verTemaForo()0.03754200 1651677271

@@ -22,7 +22,7 @@ class cHistorias {
         try {
             if (isset($_POST['buscar'])){
                 $buscador=recoge('buscador');
-                $ConjuntoAnuncios = new Anuncio();
+                $ConjuntoAnuncios = new Historia();
                 $anuncios=$ConjuntoAnuncios->listarAnunciosBuscar($buscador);
             } else{
                 throw new Exception('An error has occurred while searching');
@@ -94,16 +94,9 @@ class cHistorias {
     if (isset($_POST['cAnuncio'])) {
         $titulo = recoge('cTituloAnuncio');
         $descripcion = recoge('cDescripcionAnuncio');
-        $contenido = recogeEnriquecido('cContenidoAnuncio');
-        $precio = recoge('precio');
+        $contenido = recoge('cContenidoAnuncio');
         $idioma = recoge('idioma');
 
-        if (isset($_POST['form-select'])) {
-            $categoriaCheck = $_POST['form-select'];
-            $categoria_img = $categoriaCheck[0];
-            $categoria = implode(";",$categoriaCheck);
-            $datos['categoria'] = $categoria;
-        }
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
         }
@@ -112,7 +105,6 @@ class cHistorias {
         $datos['cTituloAnuncio'] = $titulo;
         $datos['cDescripcionAnuncio'] = $descripcion;
         $datos['cContenidoAnuncio'] = $contenido;
-        $datos['precio'] = $precio;
         $datos['idioma'] = $idioma;
         
 
@@ -130,24 +122,16 @@ class cHistorias {
                 'regla' => 'noEmpty'
             ),
             array(
-                'name'=> 'precio',
-                'regla' => 'noEmpty, numeric'
-            ),
-            array(
                 'name'=> 'idioma',
                 'regla' => 'noEmpty, texto'
-            ),
-            array(
-                'name'=> 'categoria',
-                'regla' => 'noEmpty'
             )
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
-                $a = new Anuncio();
-                if ($a->crearHistoria($id_usuario, $titulo, $descripcion, $contenido, $categoria, $idioma, $precio, $categoria_img)) {
+                $a = new Historia();
+                if ($a->crearHistoria($id_usuario, $titulo, $descripcion, $contenido, $idioma)) {
                     //$_SESSION['mensaje']="El anuncio ha sido creado";
-                    header('Location: index.php?ctl=listarAnuncios');
+                    header('Location: index.php?ctl=listarHistorias');
                 }
                 else{
                     $params['mensaje']="Hubo un error al crear la historia. Vuelve a intentarlo";
@@ -178,7 +162,7 @@ public function modificarHistoria() {
         }
         $id_usuario = $_SESSION['id_usuario'];
         $id_anuncio = recoge('id');
-        $m = new Anuncio();
+        $m = new Historia();
         $anuncio = $m->getAnuncio($id_anuncio);
         $autor = $anuncio['id_usuario'];
 
@@ -193,14 +177,7 @@ public function modificarHistoria() {
             $titulo = recoge('cTituloAnuncio');
             $descripcion = recoge('cDescripcionAnuncio');
             $contenido = recogeEnriquecido('cContenidoAnuncio');
-            $precio = recoge('precio');
             $idioma = recoge('idioma');
-            if (isset($_POST['form-select'])) {
-                $categoriaCheck = $_POST['form-select'];
-                $categoria_img = $categoriaCheck[0];
-                $categoria = implode(";",$categoriaCheck);
-                $datos['categoria'] = $categoria;
-            }
             
             if (isset($_SESSION['id_usuario'])) {
                 $id_usuario = $_SESSION['id_usuario'];
@@ -210,7 +187,6 @@ public function modificarHistoria() {
         $datos['cTituloAnuncio'] = $titulo;
         $datos['cDescripcionAnuncio'] = $descripcion;
         $datos['cContenidoAnuncio'] = $contenido;
-        $datos['precio'] = $precio;
         $datos['idioma'] = $idioma;
 
         $regla = array(
@@ -227,10 +203,6 @@ public function modificarHistoria() {
                 'regla' => 'noEmpty'
             ),
             array(
-                'name'=> 'precio',
-                'regla' => 'noEmpty, numeric'
-            ),
-            array(
                 'name'=> 'idioma',
                 'regla' => 'noEmpty, texto'
             ),
@@ -243,7 +215,7 @@ public function modificarHistoria() {
             try {
             /*Hace un update en la base de datos de el título, la descripción, contenido y la categoria
             del anuncio*/
-            if ($m->modificarHistoria($id_anuncio, $titulo, $descripcion, $contenido, $categoria, $idioma, $precio)) {
+            if ($m->modificarHistoria($id_anuncio, $titulo, $descripcion, $contenido, $categoria, $idioma)) {
                     header('Location: index.php?ctl=verAnuncio&id='.$id_anuncio);
             }
             else {
@@ -276,7 +248,7 @@ public function cambiaImagen() {
         }
         $id_usuario = $_SESSION['id_usuario'];
         $id_historia = recoge('id');
-        $m = new Anuncio();
+        $m = new Historia();
         $historia = $m->getAnuncio($id_anuncio);
         $autor = $anuncio['id_usuario'];
 
@@ -319,7 +291,7 @@ public function eliminarHistoria() {
         }
         $id_usuario = $_SESSION['id_usuario'];
         $id_anuncio = recoge('id');
-        $m = new Anuncio();
+        $m = new Historia();
         $anuncio = $m->getAnuncio($id_anuncio);
         $autor = $anuncio['id_usuario'];
         

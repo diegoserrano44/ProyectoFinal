@@ -4,7 +4,8 @@ class cForo {
     public function listarForo() {
         try {
             $foros = new Foro();
-            $params = $foros->listarForo();
+            $temas = $foros->listarTemas();
+            $categorias = $foros->listarCategorias();
         // Recogemos los dos tipos de excepciones que se pueden producir
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
@@ -19,8 +20,14 @@ class cForo {
 
     public function verTemaForo() {
         try {
-            $foros = new Foro();
-            $params = $foros->verTemaForo();
+            if (!isset($_GET['id'])) {
+                throw new Exception('Page not found');
+            }
+            $id_tema = recoge('id');
+            $id_respuesta = recoge('id');
+            $foro = new Foro();
+            $tema = $foro->getTema($id_tema);
+            $respuesta = $foro->getRespuesta($id_respuesta);
         // Recogemos los dos tipos de excepciones que se pueden producir
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

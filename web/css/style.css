@@ -55,6 +55,14 @@ footer {
 	font-size: 1.5em;
 }
 
+.historias:not(.collapsed) {
+	background-color: #fff;
+}
+
+.historias:focus {
+	background-color: #e3f1d0;
+}
+
 /* .colorSecundario{
     background-color: #7738a7;
 	color:white;
@@ -100,6 +108,7 @@ footer {
 	margin-top: 100px;
     max-width: 600px;
 	color: black;
+	background-color: #c9e265;
 }
 
 /* #buscador {
@@ -355,7 +364,7 @@ th, td {
 }
 
 .infoContainer {
-	width: 70%;
+	width: 100%;
 	min-width: 300px;
 	color: black;
 }
@@ -409,6 +418,7 @@ input#foto_perfil {
 	margin-top: 100px;
     max-width: 1000px;
 	color: black;
+	background-color: #c9e265;
 }
 .imgContainerP {
 	width: 70%;
@@ -483,12 +493,12 @@ input#foto_perfil {
 }
 
 .nav-pills .nav-link.active {
-	background-color: #7738a7;
+	background-color: #1a7e05;
 	color:white;
 }
 
 .nav-pills .nav-link{
-	color: #7738a7;
+	color: #1a7e05;
 }
 
 .navSearch:focus{
