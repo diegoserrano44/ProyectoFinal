@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2022 a las 18:26:23
+-- Tiempo de generación: 10-05-2022 a las 18:28:23
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -86,10 +86,7 @@ CREATE TABLE `historias_deleted` (
   `descripcion` text NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
   `contenido` text NOT NULL,
-  `categoria` varchar(200) NOT NULL,
-  `idioma` varchar(20) NOT NULL,
-  `precio` int(3) NOT NULL,
-  `categoria_img` varchar(20) NOT NULL
+  `idioma` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -155,8 +152,10 @@ CREATE TABLE `respuestas_foro` (
 --
 
 INSERT INTO `respuestas_foro` (`id_respuesta`, `contenido_respuesta`, `fecha_respuesta`, `tema_respuesta`, `by_respuesta`) VALUES
-(1, 'Hola esto es una pregunta de prueba?', '2022-05-05 18:08:44', 11, 70),
-(2, 'Hola esto es otra de prueba?', '2022-05-05 18:08:44', 12, 70);
+(1, 'Hola esto es una pregunta de deportes?', '2022-05-05 18:08:44', 11, 70),
+(2, 'Hola esto es una pregunta de adaptaciones', '2022-05-05 18:08:44', 12, 70),
+(3, 'Si y esto es una respuesta de adaptaciones', '2022-05-05 18:08:44', 12, 70),
+(4, 'Si y esto es una respuesta de deportes', '2022-05-05 18:08:44', 11, 70);
 
 -- --------------------------------------------------------
 
@@ -209,7 +208,6 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellidos`, `email`, `telefono`, `fecha_nac`, `descripcion`, `vr_apps`, `foto_perfil`, `fecha_creacion`, `rol`, `activo`, `google`) VALUES
-(1, 'help', '$2a$07$usesomesillystringforeoWLQPJM.Xxom.c1imWp1e1BmwhDkOHy', 'Help', 'Programing', 'helprogramming@gmail.com', '', '2022-02-15', NULL, NULL, 'img/default_user.png', '2022-02-15 20:06:29', 2, 1, 0),
 (67, 'irenenebot', '$2a$07$usesomesillystringforeWVToD0pxxo0Lsm2e352uMsZfajDx.2C', 'Irene', 'Nebot', 'i10485470@gmail.com', '', '2002-10-08', '<p>Esta es<em><span style=\"font-size: 14pt;\"><strong> mi descripci&oacute;n.</strong></span></em></p>', '<p>Mi nuevo <span style=\"text-decoration: underline; font-size: 18pt; background-color: #f1c40f;\">portfolio</span></p>', 'img/irenenebot.jpg', '2022-02-15 20:09:24', 1, 1, 0),
 (68, 'marsur', '$2a$07$usesomesillystringforeZr7Xxveqb9KJlCHOb9Dye7s1ZwC/.Tq', 'María', 'Surname', 'mariasantanaruizweb@gmail.com', '612345678', '2000-04-15', '', '', 'img/marsur.png', '2022-02-15 20:09:48', 1, 1, 0),
 (69, 'Eromeu', '$2a$07$usesomesillystringforeXkIIuNLbZxRiVOI4VXJbbu.0DTsSx.O', 'Eduard', 'Romeu', 'eduromeu1@gmail.com', NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14GgGpu0YzX09HShLwXR0RN5fJKjp-aJjmw2Dw_Ci=s96-c', '2022-02-15 20:11:40', 1, 1, 1),
@@ -260,7 +258,8 @@ ALTER TABLE `historias`
 -- Indices de la tabla `historias_deleted`
 --
 ALTER TABLE `historias_deleted`
-  ADD PRIMARY KEY (`id_deleted`);
+  ADD PRIMARY KEY (`id_deleted`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `mensajes`
@@ -334,7 +333,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `respuestas_foro`
 --
 ALTER TABLE `respuestas_foro`
-  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `temas_foro`
@@ -357,6 +356,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `historias`
   ADD CONSTRAINT `historias_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `historias_deleted`
+--
+ALTER TABLE `historias_deleted`
+  ADD CONSTRAINT `historias_deleted_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mensajes`
