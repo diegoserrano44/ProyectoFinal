@@ -33,12 +33,28 @@ class Foro extends Model {
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':tema_respuesta', $id_respuesta);
         if ($result->execute()) {
-            $resultado = $result->fetch();
+            $resultado = $result->fetchAll();
             return $resultado;
         } else {
             false;
         }
     }
+
+    public function enviarRespuesta($contenido_respuesta, $fecha_respuesta, $tema_respuesta, $by_respuesta) {
+        $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values (?, ?, ?, ?)";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(1, $contenido_respuesta);
+        $result->bindParam(2, $fecha_respuesta);
+        $result->bindParam(3, $tema_respuesta);
+        $result->bindParam(4, $by_respuesta);
+
+        if ($result->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 
 }
 

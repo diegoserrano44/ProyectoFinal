@@ -62,11 +62,11 @@
 
 </div>
 
-<footer id="hola" class="text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between" style="background-color:#e3f1d0;">
+<footer id="hola" class="text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between" style="background-color:#c9e265;">
             <div>
                 <ul class="list-group list-group-flush">
                     <h3>UNV Developer</h3>
-                    <li style="background-color:#dcffab;" class="list-group-item text-black">Diego Serrano</li>
+                    <li style="background-color:#c9e265;" class="list-group-item text-black">Diego Serrano</li>
                 </ul>
             </div>
             <div class="p-4">

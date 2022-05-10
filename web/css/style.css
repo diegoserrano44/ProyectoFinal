@@ -57,6 +57,8 @@ footer {
 
 .historias:not(.collapsed) {
 	background-color: #fff;
+	color: #000000;
+	font-weight: bold;
 }
 
 .historias:focus {

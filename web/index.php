@@ -69,6 +69,7 @@ $map = array(
     'existeUsuario' => array('controller' =>'cAjax', 'action' =>'existeUsuario', 'rol'=>0),
     'listarForo' => array('controller' =>'cForo', 'action' =>'listarForo', 'rol'=>0),
     'verTemaForo' => array('controller' =>'cForo', 'action' =>'verTemaForo', 'rol'=>0),
+    'enviarRespuesta' => array('controller' =>'cForo', 'action' =>'enviarRespuesta', 'rol'=>0),
     'listarApps' => array('controller' =>'cApps', 'action' =>'listarApps', 'rol'=>1),
 );
 
