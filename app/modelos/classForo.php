@@ -29,7 +29,7 @@ class Foro extends Model {
     }
 
     public function getRespuesta($id_respuesta) {
-        $consulta = "SELECT * FROM respuestas_foro WHERE tema_respuesta=:tema_respuesta";
+        $consulta = "SELECT * FROM respuestas_foro, usuarios WHERE by_respuesta=id_usuario AND tema_respuesta=:tema_respuesta";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':tema_respuesta', $id_respuesta);
         if ($result->execute()) {

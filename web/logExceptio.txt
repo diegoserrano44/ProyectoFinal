@@ -1,1 +1,2 @@
-SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`respuestas_foro`, CONSTRAINT `respuestas_foro_ibfk_1` FOREIGN KEY (`tema_respuesta`) REFERENCES `temas_foro` (`id_tema`) ON DELETE CASCADE ON UPDATE CASCADE)0.27903300 1652200035
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'tema_respuesta' cannot be null0.42748500 1652267993
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'by_respuesta' cannot be null0.18391200 1652273997

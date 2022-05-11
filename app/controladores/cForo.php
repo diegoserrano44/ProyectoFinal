@@ -46,35 +46,19 @@ class cForo {
             'mensaje'=>''           
     );
 
-    if (isset($_POST['respuesta'])) {
-        $contenido_respuesta = recoge('respuesta');
-        //$fecha_respuesta = recoge('cDescripcionAnuncio');
-        //$tema_respuesta = recoge('cContenidoAnuncio');
-        //$by_respuesta = recoge('idioma');
-
-        if (isset($_SESSION['id_usuario'])) {
-            $id_usuario = $_SESSION['id_usuario'];
+    if (isset($_POST['enviarRespuesta'])) {
+            $contenido_respuesta = recoge('respuesta');
+            $by_respuesta = $_SESSION['id_usuario'];
+            $fecha_respuesta = date("d/m/y");
+            $tema_respuesta = $_REQUEST['id'];
         }
 
-        $validacion = new Validacion();
-        $datos['respuesta'] = $contenido_respuesta;
-        //$datos['cDescripcionAnuncio'] = $descripcion;
-        //$datos['cContenidoAnuncio'] = $contenido;
-        //$datos['idioma'] = $idioma;
-        
 
-        $regla = array(
-            array(
-                'name' => 'respuesta',
-                'regla' => 'noEmpty'
-            )
-        );
-        if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Foro();
                 if ($a->enviarRespuesta($contenido_respuesta, $fecha_respuesta, $tema_respuesta, $by_respuesta)) {
                     //$_SESSION['mensaje']="El anuncio ha sido creado";
-                    header('Location: index.php?ctl=vVerTemaForo');
+                    header('Location: index.php?ctl=verTemaForo&id='.$tema_respuesta);
                 }
                 else{
                     $params['mensaje']="Hubo un error al crear la historia. Vuelve a intentarlo";
@@ -87,12 +71,17 @@ class cForo {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         }
-    }/*else{
-        echo "no entra";
-    }*/
-}
+
 require __DIR__ . './../vistas/vVerTemaForo.php';
 }
+
+
+
+
+
+
+
+
 
 }
 
