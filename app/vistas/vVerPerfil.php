@@ -34,6 +34,14 @@ $historias=$params['anuncios'];
 		</div>
 	</div>
 
+	<?php
+        if ($_SESSION['id_usuario'] == $params['id_usuario']) {
+                    ?>    
+                <a class="text-center mb-3"
+				href=<?php echo "index.php?ctl=modificarPerfil&id=" . $params['id_usuario'] ?>><button
+					class="btn colorSecundario w-75">Modify profile</button></a>
+					<?php } ?>
+
 	<div class="row justify-content-center">
 		<div
 			class="col-12 col-md-12 bg-light border-2 border-dark rounded-3 shadow pt-3 pb-4 px-4 extraContainer">
