@@ -16,12 +16,27 @@ class Foro extends Model {
     /**
     *Función para seleccionar una historia a partir de la id
     */
+    public function crearTema($asunto_tema, $categoria_tema, $by_tema) {
+        $consulta = "INSERT INTO respuestas_foro (asunto_tema, fecha_tema, categoria_tema, by_tema) values (?, NOW(), ?, ?)";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(1, $asunto_tema);
+        $result->bindParam(2, $categoria_tema);
+        $result->bindParam(3, $by_tema);
+
+        if ($result->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function getTema($id_tema) {
-        $consulta = "SELECT * FROM temas_foro WHERE id_tema=:id_tema";
+        $consulta = "SELECT * FROM temas_foro, usuarios WHERE by_tema=id_usuario AND id_tema=:id_tema";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_tema', $id_tema);
         if ($result->execute()) {
-            $resultado = $result->fetch();
+            $resultado = $result->fetchAll();
             return $resultado;
         } else {
             false;
@@ -40,13 +55,12 @@ class Foro extends Model {
         }
     }
 
-    public function enviarRespuesta($contenido_respuesta, $fecha_respuesta, $tema_respuesta, $by_respuesta) {
-        $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values (?, ?, ?, ?)";
+    public function enviarRespuesta($contenido_respuesta, $tema_respuesta, $by_respuesta) {
+        $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values (?, NOW(), ?, ?)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(1, $contenido_respuesta);
-        $result->bindParam(2, $fecha_respuesta);
-        $result->bindParam(3, $tema_respuesta);
-        $result->bindParam(4, $by_respuesta);
+        $result->bindParam(2, $tema_respuesta);
+        $result->bindParam(3, $by_respuesta);
 
         if ($result->execute()) {
             return true;

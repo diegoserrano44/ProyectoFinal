@@ -1,6 +1,5 @@
 <?php ob_start() ?>
 
-<div class="row" style="--bs-gutter-x: 0; margin:5px;">
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -40,7 +39,25 @@
   </button>
 </div>
 
+<div class="container">
+<div class="row p-3">
+
+<div class="card col-md-3" style="">
+  <img src="../web/img/default_user.png" class="card-img-top" alt="..." width="" height="">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
+
+</div>
+</div>
+
+
+
+</div>
+
 
 
 

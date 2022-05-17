@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2022 a las 18:28:23
+-- Tiempo de generación: 12-05-2022 a las 18:10:48
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -38,9 +38,12 @@ CREATE TABLE `categorias_foro` (
 --
 
 INSERT INTO `categorias_foro` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`) VALUES
-(3, 'Deportes', 'Categoría de deportes'),
-(4, 'Adaptaciones', 'Categoría de deportes'),
-(5, 'Movilidad\r\n', 'Categoría de deportes');
+(1, 'General', 'Categoria General'),
+(2, 'Deportes', 'Categoria de Deportes'),
+(3, 'Adaptaciones', 'Categoria de Adaptaciones'),
+(4, 'Movilidad', 'Categoria de Movilidad'),
+(5, 'Libre', 'Categoria de Libertad'),
+(6, 'Casa', 'Categoria de Casa');
 
 -- --------------------------------------------------------
 
@@ -142,7 +145,7 @@ INSERT INTO `mensajes` (`id_mensaje`, `id_hilo`, `envia`, `id_profesor`, `id_alu
 CREATE TABLE `respuestas_foro` (
   `id_respuesta` int(8) NOT NULL,
   `contenido_respuesta` text NOT NULL,
-  `fecha_respuesta` datetime NOT NULL DEFAULT current_timestamp(),
+  `fecha_respuesta` timestamp NULL DEFAULT current_timestamp(),
   `tema_respuesta` int(8) NOT NULL,
   `by_respuesta` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -152,10 +155,12 @@ CREATE TABLE `respuestas_foro` (
 --
 
 INSERT INTO `respuestas_foro` (`id_respuesta`, `contenido_respuesta`, `fecha_respuesta`, `tema_respuesta`, `by_respuesta`) VALUES
-(1, 'Hola esto es una pregunta de deportes?', '2022-05-05 18:08:44', 11, 70),
-(2, 'Hola esto es una pregunta de adaptaciones', '2022-05-05 18:08:44', 12, 70),
-(3, 'Si y esto es una respuesta de adaptaciones', '2022-05-05 18:08:44', 12, 70),
-(4, 'Si y esto es una respuesta de deportes', '2022-05-05 18:08:44', 11, 70);
+(1, 'Hola esto es una pregunta de deportes?', '2022-05-10 22:00:00', 11, 70),
+(4, 'Si y esto es una respuesta de deportes', '2022-05-10 22:00:00', 11, 70),
+(56, '<p>hola pregunto en el tema 1</p>\r\n<p>&nbsp;</p>', '2022-05-12 14:52:38', 14, 70),
+(57, '<p>Hola pregunto en el tema 2 de adaptaciones</p>', '2022-05-12 14:53:01', 15, 70),
+(58, '<p>Hola pregunto en el tema 3 de adaptaciones</p>', '2022-05-12 14:53:12', 16, 70),
+(59, '\r\nhola respondo en el tema 1\r\n', '2022-05-12 15:26:14', 14, 70);
 
 -- --------------------------------------------------------
 
@@ -176,8 +181,10 @@ CREATE TABLE `temas_foro` (
 --
 
 INSERT INTO `temas_foro` (`id_tema`, `asunto_tema`, `fecha_tema`, `categoria_tema`, `by_tema`) VALUES
-(11, 'Prueba tema deportes', '2022-05-05 13:41:53', 3, 70),
-(12, 'Prueba tema adaptaciones', '2022-05-05 13:41:53', 4, 70);
+(13, 'Prueba tema deportes', '2022-05-05 13:41:53', 2, 70),
+(14, 'tema 1 en adaptaciones', '2022-05-05 13:41:53', 3, 70),
+(15, 'tema 2 en adaptaciones', '2022-05-05 13:41:53', 3, 70),
+(16, 'tema 3 en adaptaciones', '2022-05-05 13:41:53', 3, 70);
 
 -- --------------------------------------------------------
 
@@ -211,7 +218,7 @@ INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellido
 (67, 'irenenebot', '$2a$07$usesomesillystringforeWVToD0pxxo0Lsm2e352uMsZfajDx.2C', 'Irene', 'Nebot', 'i10485470@gmail.com', '', '2002-10-08', '<p>Esta es<em><span style=\"font-size: 14pt;\"><strong> mi descripci&oacute;n.</strong></span></em></p>', '<p>Mi nuevo <span style=\"text-decoration: underline; font-size: 18pt; background-color: #f1c40f;\">portfolio</span></p>', 'img/irenenebot.jpg', '2022-02-15 20:09:24', 1, 1, 0),
 (68, 'marsur', '$2a$07$usesomesillystringforeZr7Xxveqb9KJlCHOb9Dye7s1ZwC/.Tq', 'María', 'Surname', 'mariasantanaruizweb@gmail.com', '612345678', '2000-04-15', '', '', 'img/marsur.png', '2022-02-15 20:09:48', 1, 1, 0),
 (69, 'Eromeu', '$2a$07$usesomesillystringforeXkIIuNLbZxRiVOI4VXJbbu.0DTsSx.O', 'Eduard', 'Romeu', 'eduromeu1@gmail.com', NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14GgGpu0YzX09HShLwXR0RN5fJKjp-aJjmw2Dw_Ci=s96-c', '2022-02-15 20:11:40', 1, 1, 1),
-(70, 'diego', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Diego', 'Serrano', 'diegoserrano1644@gmail.com', '600619959', '2001-11-16', '<p>Hola mi nombre es Diego Serrano</p>', 'VR APPS Prueba', 'img/diego.jpeg', '2022-02-15 20:11:49', 1, 1, 0),
+(70, 'diego', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Diego', 'Serano', 'diegoserrano1644@gmail.com', '600619959', '2001-11-16', '<p>Hola mi nombre es Diego Serrano Mañes</p>', 'VR APPS Prueba', 'img/diego.jpeg', '2022-02-15 20:11:49', 1, 1, 0),
 (71, 'enanito', '$2a$07$usesomesillystringforegBG44vzkvCfNjlZIF.O11TVclaznc.W', 'Elena', 'Nito', 'mighzpjgujcsisezir@nthrl.com', '616222344', '1984-12-03', NULL, NULL, 'img/default_user.png', '2022-02-16 13:16:43', 1, 1, 0),
 (72, 'jorgesan', '$2a$07$usesomesillystringforeoWLQPJM.Xxom.c1imWp1e1BmwhDkOHy', 'jorge', 'sandoval', 'yjmvhqgitlwptpjhsg@nthrw.com', '613456789', '1998-10-30', '<p>Esta es mi descripci&oacute;n</p>', '', 'img/default_user.png', '2022-02-16 16:18:35', 1, 1, 0),
 (73, 'Fernandoco', '$2a$07$usesomesillystringforeTRe.EyhHzlzd1EnijTdTg0IN.5.XLhy', 'Fernando', 'Tejero', 'upzfcmzkzlvvgylkwl@nthrl.com', '777777777', '1996-02-16', NULL, NULL, 'img/default_user.png', '2022-02-16 16:23:35', 1, 1, 0),
@@ -275,8 +282,8 @@ ALTER TABLE `mensajes`
 --
 ALTER TABLE `respuestas_foro`
   ADD PRIMARY KEY (`id_respuesta`),
-  ADD KEY `tema_respuesta` (`tema_respuesta`),
-  ADD KEY `by_respuesta` (`by_respuesta`);
+  ADD KEY `by_respuesta` (`by_respuesta`),
+  ADD KEY `tema_respuesta` (`tema_respuesta`);
 
 --
 -- Indices de la tabla `temas_foro`
@@ -309,7 +316,7 @@ ALTER TABLE `usuario_tokens`
 -- AUTO_INCREMENT de la tabla `categorias_foro`
 --
 ALTER TABLE `categorias_foro`
-  MODIFY `id_categoria` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `historias`
@@ -333,13 +340,13 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `respuestas_foro`
 --
 ALTER TABLE `respuestas_foro`
-  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `temas_foro`
 --
 ALTER TABLE `temas_foro`
-  MODIFY `id_tema` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_tema` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -374,8 +381,8 @@ ALTER TABLE `mensajes`
 -- Filtros para la tabla `respuestas_foro`
 --
 ALTER TABLE `respuestas_foro`
-  ADD CONSTRAINT `respuestas_foro_ibfk_1` FOREIGN KEY (`tema_respuesta`) REFERENCES `temas_foro` (`id_tema`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `respuestas_foro_ibfk_2` FOREIGN KEY (`by_respuesta`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `respuestas_foro_ibfk_2` FOREIGN KEY (`by_respuesta`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `respuestas_foro_ibfk_3` FOREIGN KEY (`tema_respuesta`) REFERENCES `temas_foro` (`id_tema`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `temas_foro`
