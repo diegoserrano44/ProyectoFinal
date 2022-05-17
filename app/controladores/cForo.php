@@ -47,12 +47,11 @@ class cForo {
     );
 
     if (isset($_POST['crearTema'])) {
-            $asunto_tema = recoge('');
+            $asunto_tema = recoge('titulo');
             $fecha_tema = '';
             $categoria_tema = '';
             $by_tema = $_SESSION['id_usuario'];
-        }
-
+        
 
             try {
                 $a = new Foro();
@@ -71,8 +70,9 @@ class cForo {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         }
+    }
 
-require __DIR__ . './../vistas/vListaForo.php';
+require __DIR__ . './../vistas/vCrearTema.php';
 }
 
 

@@ -6,7 +6,7 @@ if(isset($_POST['msj'])){
 }
 ?>
 
-<h1 class="text-dark m-4">My Messages</h1>
+<h1 class="text-dark m-4">Mis mensajes</h1>
 
 <div class="text-dark">
 <div class="container-fluid ancho accordion" id="mainMessages"></div>
@@ -15,7 +15,7 @@ if(isset($_POST['msj'])){
 	<div class="modal-dialog text-dark">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="replyModalLabel">Reply</h5>
+				<h5 class="modal-title" id="replyModalLabel">Responder</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"></button>
 			</div>
@@ -23,11 +23,11 @@ if(isset($_POST['msj'])){
 				<div class="form-floating">
 					<textarea class="form-control" placeholder=""
 						id="replymessage" style="height: 100px"></textarea>
-					<label for="replymessage">Message</label>
+					<label for="replymessage">Mensaje</label>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn colorSecundario reply">Reply</button>
+				<button type="button" class="btn colorSecundario reply">Enviar</button>
 			</div>
 		</div>
 	</div>
@@ -37,17 +37,17 @@ if(isset($_POST['msj'])){
 	<div class="modal-dialog text-dark">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="deleteModalLabel">Delete conversation</h5>
+				<h5 class="modal-title" id="deleteModalLabel">Eliminar conversacion</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"></button>
 			</div>
 			<div class="modal-body delModal">
-				<p>Are you sure?</p>
+				<p>Estas seguro?</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary"
 					data-bs-dismiss="modal">No</button>
-				<button type="button" class="btn colorSecundario delete">Delete</button>
+				<button type="button" class="btn colorSecundario delete">Eliminar</button>
 			</div>
 		</div>
 	</div>

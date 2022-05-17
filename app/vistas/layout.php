@@ -62,10 +62,10 @@
 
 </div>
 
-<footer id="hola" class="text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between" style="background-color:#c9e265;">
+<footer class="text-black d-flex flex-column-reverse flex-md-row p-4 w-100 align-items-center justify-content-between" style="background-color:#c9e265;">
             <div>
                 <ul class="list-group list-group-flush">
-                    <h3>UNV Developer</h3>
+                    <h3>Desarrollador UNV</h3>
                     <li style="background-color:#c9e265;" class="list-group-item text-black">Diego Serrano</li>
                 </ul>
             </div>
@@ -82,7 +82,7 @@
         <?php        
         if (isset($_SESSION['rol'])) {
             if ($_SESSION['rol']==1) {
-                echo "<button type=\"button\" class=\"btn secundarioDark m-3\" data-bs-toggle=\"modal\" data-bs-target=\"#contactAdmin\">Message to admin</button>";
+                echo "<button type=\"button\" class=\"btn secundarioDark m-3\" data-bs-toggle=\"modal\" data-bs-target=\"#contactAdmin\">Enviar mensaje al Admninistrador</button>";
             };
         }?>
                
@@ -95,7 +95,7 @@
 <script>
 //Si annyang es soportado
 if (!annyang) {
-    alert("Voz no soportada");
+    alert("Comandos de voz no soportados por el navegador");
 }
 else {
   //Definimos los comandos
@@ -163,13 +163,13 @@ else {
   annyang.start();
 }
 </script>
-<!---/*<script>
+<script>
     var divLogin = document.getElementById('Luser');
     var divPassword = document.getElementById("Lpass");
 
     var recognition = new webkitSpeechRecognition();
     recognition.lang = 'es-ES';
-    recognition.continuous = false;
+    recognition.continuous = true;
     recognition.interimResults = false;
 
     recognition.onresult = (event) => {
@@ -182,11 +182,15 @@ else {
         recognition.start();
     });
 
+    divPassword.addEventListener('focus', () => {
+        recognition.start();
+    });
+
     recognition.onerror = (event) => {
         console.log(event.error);
     }
 
-</script>*/ ---->
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
@@ -217,13 +221,13 @@ else {
   <div class="modal-dialog" width="fit-content">
     <div class="modal-content text-dark">
       <div class="modal-header">
-        <h5 class="modal-title" id="contactAdminLabel">Enviar Mensaje</h5>
+        <h5 class="modal-title" id="contactAdminLabel">Enviar Mensaje al Admninistrador</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       <form class="" action="index.php?ctl=mandarMensaje&id=1" method="POST">
-        <input class="asuntoMensaje" type="text" name="asunto" placeholder="Subject"><br><br>
-        <textarea class="contenidoMensaje" rows="6" placeholder="Message" name="mensaje"></textarea>
+        <input class="asuntoMensaje" type="text" name="asunto" placeholder="Asunto"><br><br>
+        <textarea class="contenidoMensaje" rows="6" placeholder="Mensaje" name="mensaje"></textarea>
       </div>
       <div class="modal-footer">
         <input type="submit" name="enviaContacto" value="Enviar Mensaje" class="btn colorSecundario">

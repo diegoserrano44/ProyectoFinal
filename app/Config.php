@@ -14,7 +14,7 @@ static public $size = 3000000;
 static public $errores = [];
 static public $default_foto = "default_user.png";
 static public $ruta_imagenes = "img/";
-static public $listCategories = ["","java","javascript","php","jquery","python","angular","c++"];
+static public $listCategories = ["","java","javascript","php","jquery","python","angular"];
 
 static public $controlEtiquetas = array('<h1>','<h2>','<h3>','<h4>','<h5>','<h6>','<p>','<pre>','<b>','<em>','<strong>','<span>','<ul>','<ol>','<li>');
 

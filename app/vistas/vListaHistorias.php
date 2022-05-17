@@ -29,11 +29,45 @@
       <div class="accordion-body">
 	  <?php echo $historia['descripcion'];?>
       </div>
+      
+      <?php
+        if (isset($_SESSION['rol'])) {
+          if ($_SESSION['rol']>0) {
+      ?>
+      <div class="d-flex">
+      <button type="button" class="btn colorSecundario" data-bs-toggle="modal" data-bs-target="#contactModal">Enviar mensaje privado</button>
+      </div>
+      <?php
+      }
+    }
+    ?>
     </div>
   </div>
 </div>
 		<?php endforeach; ?>
-	</div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal fade bd-dark" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Enviar mensaje</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form class="" action="index.php?ctl=mandarMensaje&id=<?php echo $historia['id_historia']?>" method="POST">
+        <input class="asuntoMensaje" type="text" name="asunto" value="" placeholder="Asunto"><br><br>
+        <textarea class="contenidoMensaje" rows="6" placeholder="Mensaje" name="mensaje"></textarea>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" name="enviaContacto" value="Enviar mensaje" class="btn colorSecundario">
+        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

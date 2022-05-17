@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: 'textarea#publicarRespuesta',
+    selector: 'textarea#publicarRespuesta textarea#crearTema',
     height: 200,
     menubar: false,
     plugins: [

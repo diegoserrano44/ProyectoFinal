@@ -47,12 +47,12 @@ class cMensajes {
         
         if(isset($_POST['enviaContacto'])){
             $asunto= recoge('asunto');
-            $id_anuncio= $_GET['id'];
+            $id_historia= $_GET['id'];
             $contenido= recoge('mensaje');
         
             try{            
-                $anuncio = new Anuncio();
-                $id=$anuncio->devolverCreadorAnuncio($id_anuncio);
+                $historia = new Historia();
+                $id=$historia->devolverCreadorHistoria($id_historia);
                 $mensaje = new Mensaje();       
                 
                 $datos= array($_SESSION['id_usuario'], $id['id_usuario'], $asunto, $contenido);
@@ -61,7 +61,7 @@ class cMensajes {
               
                if($mensaje->crearMensaje($datos)){
                     $_SESSION['mensajes']='Message sent';
-                    header('location:index.php?ctl=verAnuncio&id='.$id_anuncio);
+                    header('location:index.php?ctl=listarHistorias');
                 }else{
                     $params['mensajes']=array('asunto'=>'You don\'t have any messages yet.');
                 }
@@ -85,7 +85,7 @@ class cMensajes {
         
         }
 
-            require __DIR__ . './../vistas/vVerTemaForo.php';
+            require __DIR__ . './../vistas/vListarMensajes.php';
     }      
         
 

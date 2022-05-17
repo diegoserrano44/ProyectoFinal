@@ -11,11 +11,15 @@ $historias=$params['anuncios'];
 <style>
 </style>
 <main class="container-fluid perfilContainer">
-	<div class="row">
-		<div class="col-2 col-md-2 border-2 border-dark rounded-3 pt-2 pb-3 px-4 mb-3">
-		<img class="rounded-circle text-center mt-4 mx-auto imgPfp"
-				src="<?php echo $params['foto_perfil'] ?>"
-				title="<?php echo $params['usuario'] ?>'s profile pic" alt="Picture">
+	<div class="row align-items-center">
+		<div class="col-md-2 border-2 border-dark rounded-3 pt-2 pb-3 px-4 mb-3">
+			<img class="rounded-circle text-center mt-4 mx-auto imgPfp" src="<?php echo $params['foto_perfil'] ?>" title="<?php echo $params['usuario'] ?>'s profile pic" alt="Picture">
+			<?php
+			if ($_SESSION['id_usuario'] == $params['id_usuario']) {
+						?>    
+                <a class="text-center mb-3" href=<?php echo "index.php?ctl=modificarPerfil&id=" . $params['id_usuario'] ?>>
+				<button class="col-md-9 col-xs-12 btn colorSecundario">Modify profile</button></a>
+					<?php } ?>
 		</div>
 		<div class="col-md-10">
 			<p><span class="d-inline-block fw-bold me-4 align-middle">Nombre</span> <?php echo (isset($params['apellidos']))? $params['nombre'] . " " . $params['apellidos']: $params['nombre'] ?></p>
@@ -34,13 +38,6 @@ $historias=$params['anuncios'];
 		</div>
 	</div>
 
-	<?php
-        if ($_SESSION['id_usuario'] == $params['id_usuario']) {
-                    ?>    
-                <a class="text-center mb-3"
-				href=<?php echo "index.php?ctl=modificarPerfil&id=" . $params['id_usuario'] ?>><button
-					class="btn colorSecundario w-75">Modify profile</button></a>
-					<?php } ?>
 
 	<div class="row justify-content-center">
 		<div
@@ -71,22 +68,30 @@ $historias=$params['anuncios'];
 					role="tabpanel" aria-labelledby="pills-portfolio-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no te has descargado ninguna app de VR, si tienes unas gafas oculus quest Anímate!!" ?></div>
 				<div class="tab-pane fade text-justify " id="pills-adsUser"
 					role="tabpanel" aria-labelledby="pills-adsUser-tab"><?php
-    if (count($historias) > 0) {
+    if (count($historias) > 0 && isset($_SESSION['usuario'])) {
         echo "<div class=\"row\">";
         ?>
        <?php foreach ($historias as $historia) :?>
-						<div class="col-md-6">
-						<div class="card-group">
-							<div class="card m-3 p-3 mb-5 rounded sombra">
-								<div class="card-body">
-									<h5 class="card-title text-dark text-truncate"> <?php echo $historia['titulo'] ?></h5>
-									<p class="card-text text-dark text-truncate"> <?php echo $historia['descripcion'] ?></p>
-									<div class="d-flex justify-content-between align-items-center bSee">										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="accordion" id="accordionExample" style="padding: 15px;">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
+					<button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
+						<?php echo $historia['titulo']; ?>
+					</button>
+					</h2>
+				<div id="collapse<?php echo $historia['id_historia'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_historia'];?>" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					<?php echo $historia['descripcion'];?>
+				</div>
+
+				<div class="row">
+					<a href="">Editar Historia</a><br>
+					<a href="">Eliminar Historia</a>
+	   			</div>
+				
+				</div>
+				</div>
+			</div>
 		<?php endforeach; ?>
                             
                             <?php

@@ -7,11 +7,11 @@
 	?>
       <div class="card m-3">
 	      <div class="card-header fw-light">
-		  	<?php echo $respuesta['usuario']." - ".$newDate?> <br><?php echo $tema['asunto_tema'];?><br>
+		  	<?php echo $respuesta['usuario']." - ".$newDate?> <!--- <br><?php echo $respuesta['asunto_tema'];?><br><---->
 	      </div>
 	      <div class="card-body">
-	          <h5 class="card-title fs-5"></h5>
-		      <p class=""><?php echo $respuesta['contenido_respuesta'];?></p>
+	          <h5 class="card-title fs-5">ffff</h5>
+		      <?php echo $respuesta['contenido_respuesta'];?>
 	      </div>
       </div>
 <?php } ?>

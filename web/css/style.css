@@ -22,25 +22,25 @@ footer {
 }
 
 .asuntoMensaje {
-	border: 2px solid purple;
+	border: 2px solid rgb(94, 185, 82);
 	border-radius: 15px;
 	padding-left: 5px;
 	width: 100%;
 }
 
 .asuntoMensaje:focus {
-	box-shadow: 5px 10px 15px purple;
+	
 }
 
 .contenidoMensaje {
-	border: 2px solid purple;
+	border: 2px solid rgb(94, 185, 82);
 	border-radius: 5px;
 	padding: 5px;
 	width: 100%;
 }
 
 .contenidoMensaje:focus {
-	box-shadow: 5px 10px 15px purple;
+	
 }
 
 .listaFooter {
@@ -53,6 +53,12 @@ footer {
 	font-family: 'Press Start 2P', cursive;
 	color:#7738a7;
 	font-size: 1.5em;
+}
+
+.historias {
+	background-color: #fff;
+	color: #000000;
+	font-weight: bold;
 }
 
 .historias:not(.collapsed) {
@@ -170,7 +176,7 @@ footer {
 	}
 }
 
-/* ul.ks-cboxtags {
+ul.ks-cboxtags {
     list-style: none;
     padding: 20px;
 }
@@ -236,7 +242,7 @@ ul.ks-cboxtags li input[type="checkbox"] {
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
-} */
+}
 
 th, td {
     padding: 15px;
