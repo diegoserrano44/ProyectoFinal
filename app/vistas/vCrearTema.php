@@ -29,7 +29,7 @@ if(isset($params['mensaje'])){
    $num=1;
   foreach (Config::$listCategories as $categoria) {
     if ($categoria != "") {
-      echo "<li><input type=\"checkbox\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$categoria\"><label for=\"checkbox$num\">$categoria</label></li>";     
+      echo "<li><input type=\"radio\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$categoria\"><label for=\"checkbox$num\">$categoria</label></li>";     
       $num++;
     }
   }
@@ -40,7 +40,7 @@ if(isset($params['mensaje'])){
   
   <div class="col-md-12">
     <label for="cContenidoAnuncio" class="form-label">Contenido del tema</label>
-    <textarea class="form-control text-black parrafo" name="cContenidoAnuncio" id="cContenidoAnuncio" rows="6"></textarea>
+    <textarea id="crearTema" name="crearTema" rows="6" cols="50"></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -75,6 +75,7 @@ if(isset($params['mensaje'])){
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . './layout.php' ?>
 
+ <script src="./../web/js/textoenriquecido.js"></script>
  <script>
    // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {

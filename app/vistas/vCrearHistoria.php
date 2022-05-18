@@ -13,8 +13,8 @@ if(isset($params['mensaje'])){
 ?>
 <form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearHistoria" enctype="multipart/form-data" novalidate>
   <div class="col-md-4">
-    <label for="cTituloAnuncio" class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="cTituloAnuncio" id="cTituloAnuncio" max=100 required>
+    <label for="titulo" class="form-label">Titulo</label>
+    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" max=100 required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -49,8 +49,8 @@ if(isset($params['mensaje'])){
   </div>
   </div> -->
   <div class="col-md-12">
-    <label for="cContenidoAnuncio" class="form-label">Contenido de la historia</label>
-    <textarea class="form-control text-black parrafo" name="cContenidoAnuncio" id="cContenidoAnuncio" rows="6"></textarea>
+    <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
+    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="cContenidoAnuncio" rows="6"></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -75,7 +75,7 @@ if(isset($params['mensaje'])){
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="cAnuncio">Publicar la historia</button>
+    <button class="btn colorSecundario" type="submit" name="crearHistoria">Publicar la historia</button>
   </div>
   </div>
 </form>

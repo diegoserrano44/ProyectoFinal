@@ -85,51 +85,46 @@ class cHistorias {
         require __DIR__ . './../vistas/vVerHistoria.php';
     }
 
+
     public function crearHistoria() {
         $errores= array();
         $params= array(
             'mensaje'=>''           
     );
 
-    if (isset($_POST['cAnuncio'])) {
-        $titulo = recoge('cTituloAnuncio');
-        $descripcion = recoge('cDescripcionAnuncio');
-        $contenido = recoge('cContenidoAnuncio');
+    if (isset($_POST['crearHistoria'])) {
+        $titulo = recoge('titulo');
         $idioma = recoge('idioma');
+        $contenido = recoge('contenidoHistoria');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
         }
 
         $validacion = new Validacion();
-        $datos['cTituloAnuncio'] = $titulo;
-        $datos['cDescripcionAnuncio'] = $descripcion;
-        $datos['cContenidoAnuncio'] = $contenido;
+        $datos['titulo'] = $titulo;
         $datos['idioma'] = $idioma;
+        $datos['contenidoHistoria'] = $contenido;
         
 
         $regla = array(
             array(
-                'name' => 'cTituloAnuncio',
-                'regla' => 'noEmpty'
-            ),
-            array(
-                'name'=> 'cDescripcionAnuncio',
-                'regla' => 'noEmpty'
-            ),
-            array(
-                'name'=> 'cContenidoAnuncio',
+                'name' => 'titulo',
                 'regla' => 'noEmpty'
             ),
             array(
                 'name'=> 'idioma',
                 'regla' => 'noEmpty, texto'
+            ),
+            array(
+                'name'=> 'contenidoHistoria',
+                'regla' => 'noEmpty'
             )
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Historia();
-                if ($a->crearHistoria($id_usuario, $titulo, $descripcion, $contenido, $idioma)) {
+                if ($a->crearHistoria($id_usuario, $titulo, $idioma, $contenido)) {
                     //$_SESSION['mensaje']="El anuncio ha sido creado";
                     header('Location: index.php?ctl=listarHistorias');
                 }
@@ -144,9 +139,7 @@ class cHistorias {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         }
-    }/*else{
-        echo "no entra";
-    }*/
+    }
 }
 require __DIR__ . './../vistas/vCrearHistoria.php';
 }
@@ -239,6 +232,40 @@ else{
 }
 }
 
+
+
+public function eliminarHistoria() {
+    try {
+        //print_r($_SESSION);
+        if (! isset($_GET['id'])) {
+            throw new Exception('Page not found');
+        }
+        $id_usuario = $_SESSION['id_usuario'];
+        $id_anuncio = recoge('id');
+        $m = new Historia();
+        $anuncio = $m->getAnuncio($id_anuncio);
+        $autor = $anuncio['id_usuario'];
+        
+        //Si el usuario no es el autor no permite eliminar
+        if ($id_usuario != $autor) {
+            header('Location: index.php?ctl=error');
+        }
+        else {
+        $anuncio = $m->eliminarHistoria($anuncio['id_anuncio'], $id_usuario, $anuncio['titulo'], $anuncio['descripcion'], $anuncio['contenido'], $anuncio['categoria'], $anuncio['idioma'], $anuncio['precio'], $anuncio['categoria_img']);
+        }
+    } catch (Exception $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+        header('Location: index.php?ctl=error');
+    } catch (Error $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+        header('Location: index.php?ctl=error');
+    }
+    
+    require __DIR__ . './../vistas/vEliminarHistoria.php';
+}
+
+
+
 public function cambiaImagen() {
     try {
         //print_r($_SESSION);
@@ -282,36 +309,6 @@ public function cambiaImagen() {
 }
 
 
-
-public function eliminarHistoria() {
-    try {
-        //print_r($_SESSION);
-        if (! isset($_GET['id'])) {
-            throw new Exception('Page not found');
-        }
-        $id_usuario = $_SESSION['id_usuario'];
-        $id_anuncio = recoge('id');
-        $m = new Historia();
-        $anuncio = $m->getAnuncio($id_anuncio);
-        $autor = $anuncio['id_usuario'];
-        
-        //Si el usuario no es el autor no permite eliminar
-        if ($id_usuario != $autor) {
-            header('Location: index.php?ctl=error');
-        }
-        else {
-        $anuncio = $m->eliminarHistoria($anuncio['id_anuncio'], $id_usuario, $anuncio['titulo'], $anuncio['descripcion'], $anuncio['contenido'], $anuncio['categoria'], $anuncio['idioma'], $anuncio['precio'], $anuncio['categoria_img']);
-        }
-    } catch (Exception $e) {
-        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-        header('Location: index.php?ctl=error');
-    } catch (Error $e) {
-        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-        header('Location: index.php?ctl=error');
-    }
-    
-    require __DIR__ . './../vistas/vEliminarHistoria.php';
-}
 
 }
 ?>

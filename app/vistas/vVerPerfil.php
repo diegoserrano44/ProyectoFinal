@@ -74,6 +74,10 @@ $historias=$params['anuncios'];
        <?php foreach ($historias as $historia) :?>
 			<div class="accordion" id="accordionExample" style="padding: 15px;">
 				<div class="accordion-item">
+					<div class="p-2">
+						<a href="index.php?ctl=modificarHistoria">Editar Historia</a><br>
+						<a href="index.php?ctl=eliminarHistoria">Eliminar Historia</a>
+	   				</div>
 					<h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
 					<button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
 						<?php echo $historia['titulo']; ?>
@@ -83,11 +87,6 @@ $historias=$params['anuncios'];
 					<div class="accordion-body">
 					<?php echo $historia['descripcion'];?>
 				</div>
-
-				<div class="row">
-					<a href="">Editar Historia</a><br>
-					<a href="">Eliminar Historia</a>
-	   			</div>
 				
 				</div>
 				</div>
