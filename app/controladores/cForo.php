@@ -17,6 +17,28 @@ class cForo {
         require __DIR__ . './../vistas/vListaForo.php';
     }
 
+    public function listarTemasUsuario() {    
+        try {
+            //print_r($_SESSION);
+            if (!isset($_GET['id'])) {
+                throw new Exception('Page not found');
+            }
+            $id_usuario = recoge('id');
+            $ConjuntoTemas = new Foro();
+            $temas = $ConjuntoTemas->listarTemasUsuario($id_usuario);
+        
+        // Recogemos los dos tipos de excepciones que se pueden producir
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+        require __DIR__ . './../vistas/vListaHistorias.php';
+    
+    }
+
 
     public function verTemaForo() {
         try {

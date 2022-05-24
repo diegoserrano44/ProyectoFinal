@@ -70,7 +70,9 @@ $map = array(
     'listarForo' => array('controller' =>'cForo', 'action' =>'listarForo', 'rol'=>0),
     'verTemaForo' => array('controller' =>'cForo', 'action' =>'verTemaForo', 'rol'=>0),
     'crearTema' => array('controller' =>'cForo', 'action' =>'crearTema', 'rol'=>0),
-    'enviarRespuesta' => array('controller' =>'cForo', 'action' =>'enviarRespuesta', 'rol'=>0),
+    'enviarRespuesta' => array('controller' =>'cForo', 'action' =>'enviarRespuesta', 'rol'=>1),
+    'modificarTema' => array('controller' =>'cForo', 'action' =>'modificarTema', 'rol'=>1),
+    'eliminarTema' => array('controller' =>'cForo', 'action' =>'eliminarTema', 'rol'=>1),
     'listarApps' => array('controller' =>'cApps', 'action' =>'listarApps', 'rol'=>1),
 );
 

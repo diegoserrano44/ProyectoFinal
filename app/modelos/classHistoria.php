@@ -7,14 +7,13 @@ class Historia extends Model {
     *Función para crear historias. Pasa los valores a los campos de la tabla historias y hace la insercción devolviendo
     * como resultado true o false  
     */
-    public function crearHistoria ($id_usuario, $titulo, $descripcion, $contenido, $idioma) {
-        $consulta = "INSERT INTO historias (id_usuario, titulo, descripcion, contenido, idioma) values (?, ?, ?, ?, ?)";
+    public function crearHistoria ($id_usuario, $titulo, $descripcion, $idioma) {
+        $consulta = "INSERT INTO historias (id_usuario, titulo, descripcion, idioma) values (?, ?, ?, ?)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(1, $id_usuario);
         $result->bindParam(2, $titulo);
         $result->bindParam(3, $descripcion);
-        $result->bindParam(4, $contenido);
-        $result->bindParam(5, $idioma);
+        $result->bindParam(4, $idioma);
 
         if ($result->execute()) {
             return true;
@@ -90,12 +89,11 @@ class Historia extends Model {
     *Función para modificar los historias a partir de el id de anuncio
     */
     public function modificarHistoria($id_historia, $titulo, $descripcion, $contenido, $idioma) {
-        $consulta = "UPDATE historias set titulo=:titulo, descripcion=:descripcion, contenido=:contenido, idioma=:idioma WHERE id_historia=:id_historia";
+        $consulta = "UPDATE historias set titulo=:titulo, descripcion=:descripcion, idioma=:idioma WHERE id_historia=:id_historia";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_historia', $id_historia);
         $result->bindParam(':titulo', $titulo);
         $result->bindParam(':descripcion', $descripcion);
-        $result->bindParam(':contenido', $contenido);
         $result->bindParam(':idioma', $idioma);
         $result->execute();
         if ($result->execute()) {

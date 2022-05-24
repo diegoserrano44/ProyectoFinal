@@ -40,6 +40,9 @@ function crearCaja(asunto, id) {
     boton.setAttribute('aria-expanded', 'true');
     boton.setAttribute('aria-controls', 'id' + id);
     boton.setAttribute('onclick', 'muestraMsj(' + id + ')');
+
+    setInterval('muestraMsj(' + id + ')', 10000);
+
     boton.innerText = "#" + id + " - " + asunto;
 
     let para= document.createElement('div');
@@ -104,7 +107,7 @@ function muestraMsj(id) {
     }
     xhr.open(method, url, true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send(params);    
+    xhr.send(params);
 }
 
 
@@ -119,7 +122,7 @@ function manejaMsj(cuerpo) {
         
         if (JSON.stringify(msjs[0].id_alumno) === nuser) {
             alumno = nuser;           
-            profesor = JSON.stringify(msjs[0].usuario); 
+            profesor = JSON.stringify(msjs[0].usuario);
         } else if(JSON.stringify(msjs[0].id_profesor) === user) {
             profesor = nuser;
             alumno = JSON.stringify(msjs[0].usuario);
@@ -159,6 +162,7 @@ function manejaMsj(cuerpo) {
     	responder.setAttribute('data-bs-target','#replyModal');
         responder.setAttribute('onclick','responderMsj('+ cuerpo.parentElement.getAttribute('id').replace(/['id']+/g,'') + ')');
         cuerpo.appendChild(responder);
+        
 }
 
 

@@ -3,3 +3,11 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'asunto_tema' in 'field l
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'asunto_tema' cannot be null0.48031100 1652800163
 Page not found0.25567100 1652862734
 Page not found0.11063500 1652862754
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'descripcion' cannot be null0.38953400 1653390657
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'descripcion' cannot be null0.75798800 1653390719
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`temas_foro`, CONSTRAINT `temas_foro_ibfk_1` FOREIGN KEY (`by_tema`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE)0.07940100 1653401910
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`temas_foro`, CONSTRAINT `temas_foro_ibfk_1` FOREIGN KEY (`by_tema`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE)0.05892100 1653402174
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`temas_foro`, CONSTRAINT `temas_foro_ibfk_1` FOREIGN KEY (`by_tema`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE)0.82756900 1653402272
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`temas_foro`, CONSTRAINT `temas_foro_ibfk_1` FOREIGN KEY (`by_tema`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE)0.56479500 1653402337
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '75' for key 'PRIMARY'0.09815200 1653405840
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '70' for key 'PRIMARY'0.46343400 1653405856

@@ -92,12 +92,12 @@ class cUsuarios
                     $row = $m->login($usuario, $password);
                     if ($row != false) {
                         // Si el resultado es la fila de datos del usuario, se inicia sesión
-                        if ($row['rol'] >= 1) {
+                        if ($row['rol'] == 1) {
                             Sesion::loginSesion(settype($row['rol'], "integer"), $row);
                             header('Location: index.php?ctl=inicio');
                         } else {
                             $params = array(
-                                'mensaje' => 'The user ' . $usuario . ' can\'t access through here.',
+                                'mensaje' => 'El usuario ' . $usuario . ' no tiene acceso todavia',
                                 'usuario' => $usuario,
                                 'password' => ''
                             );
@@ -105,7 +105,7 @@ class cUsuarios
                         }
                     } else { // Guarda los valores introducidos en el formulario para mostrarlos junto con el error
                         $params = array(
-                            'mensaje' => 'The user ' . $usuario . ' doesn\'t exist or the password is incorrect.',
+                            'mensaje' => 'El usuario ' . $usuario . ' no existe o la contraseña es incorrecta',
                             'usuario' => $usuario,
                             'password' => ''
                         );
@@ -113,7 +113,7 @@ class cUsuarios
                     }
                 } else {
                     $params = array(
-                        'mensaje' => 'The data is incorrect, please check your fields.',
+                        'mensaje' => 'La información dada es incorrecta',
                         'usuario' => $usuario,
                         'password' => ''
                     );
@@ -444,7 +444,7 @@ class cUsuarios
                 if ($fecha_act < strtotime($datos['fecha'])) {
                     if ($user->activarUsuario($datos['id_user'])) {
                         $user->deleteToken($datos['id_user']);
-                        $params['mensaje'] = "User activated";
+                        $params['mensaje'] = "Usuario activado";
                     }
                 } else {
                     $params['mensaje'] = "The link has expired. Request a new one.";
@@ -509,7 +509,7 @@ class cUsuarios
         require __DIR__ . '/../vistas/vEnviaActivacion.php';
     }
 
-    public function recordarPassword()
+    /*public function recordarPassword()
     {
         try {
             if (!isset($_GET['id'])) {
@@ -560,7 +560,7 @@ class cUsuarios
         }
 
         require __DIR__ . './../vistas/vRecordarPassword.php';
-    }
+    }*/
 
     public function listarUsuarios()
     {
@@ -601,7 +601,7 @@ class cUsuarios
                     $params['email']="*********";
                 }
                 $a = new Historia();
-                $params['anuncios'] = $a->listarHistoriasUsuario($id);
+                $params['historias'] = $a->listarHistoriasUsuario($id);
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

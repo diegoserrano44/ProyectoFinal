@@ -18,31 +18,10 @@ class cHistorias {
     
     }
 
-    /*public function buscar() {    
-        try {
-            if (isset($_POST['buscar'])){
-                $buscador=recoge('buscador');
-                $ConjuntoAnuncios = new Historia();
-                $anuncios=$ConjuntoAnuncios->listarAnunciosBuscar($buscador);
-            } else{
-                throw new Exception('An error has occurred while searching');
-            }
-        // Recogemos los dos tipos de excepciones que se pueden producir
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-        require __DIR__ . './../vistas/vListaAnuncios.php';
-    }*/
-
     public function listarHistoriasUsuario() {    
         try {
             //print_r($_SESSION);
             if (!isset($_GET['id'])) {
-                
                 throw new Exception('Page not found');
             }
             $id_usuario = recoge('id');
@@ -61,30 +40,6 @@ class cHistorias {
     
     }
 
-    public function verHistoria() {
-        try{
-            //print_r($_SESSION);
-            if (!isset($_GET['id'])) {
-                
-                throw new Exception('Page not found');
-            }
-            $idhistoria = recoge('id');
-            $a = new Historia();
-            $historiaIndividual = $a->getAnuncio($idhistoria);
-            $u = new Usuario();
-            $profesor = $u->getUsuario($historiaIndividual['id_usuario']);
-            $historia = array_merge($profesor, $historiaIndividual);
-            // Recogemos los dos tipos de excepciones que se pueden producir
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-        require __DIR__ . './../vistas/vVerHistoria.php';
-    }
-
 
     public function crearHistoria() {
         $errores= array();
@@ -95,7 +50,7 @@ class cHistorias {
     if (isset($_POST['crearHistoria'])) {
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
-        $contenido = recoge('contenidoHistoria');
+        $descripcion = recoge('contenidoHistoria');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -104,7 +59,7 @@ class cHistorias {
         $validacion = new Validacion();
         $datos['titulo'] = $titulo;
         $datos['idioma'] = $idioma;
-        $datos['contenidoHistoria'] = $contenido;
+        $datos['contenidoHistoria'] = $descripcion;
         
 
         $regla = array(
@@ -124,7 +79,7 @@ class cHistorias {
         if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Historia();
-                if ($a->crearHistoria($id_usuario, $titulo, $idioma, $contenido)) {
+                if ($a->crearHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
                     //$_SESSION['mensaje']="El anuncio ha sido creado";
                     header('Location: index.php?ctl=listarHistorias');
                 }
@@ -150,49 +105,25 @@ public function modificarHistoria() {
         $params= array(
             'mensaje'=>''           
     );
-        if (!isset($_GET['id'])) {
-            throw new Exception('Page not found');
-        }
-        $id_usuario = $_SESSION['id_usuario'];
-        $id_anuncio = recoge('id');
-        $m = new Historia();
-        $anuncio = $m->getAnuncio($id_anuncio);
-        $autor = $anuncio['id_usuario'];
 
-        //Si el usuario no es el autor no permite editar
-        if ($id_usuario != $autor) {                
-            header('Location: index.php?ctl=error');
+    if (isset($_POST['crearHistoria'])) {
+        $titulo = recoge('titulo');
+        $idioma = recoge('idioma');
+        $descripcion = recoge('contenidoHistoria');
+
+        if (isset($_SESSION['id_usuario'])) {
+            $id_usuario = $_SESSION['id_usuario'];
         }
-        else {
-        $nomUsuario = $_SESSION['usuario'];
-        $id_anuncio = $anuncio['id_anuncio'];
-        if (isset($_POST['mAnuncio'])) {
-            $titulo = recoge('cTituloAnuncio');
-            $descripcion = recoge('cDescripcionAnuncio');
-            $contenido = recogeEnriquecido('cContenidoAnuncio');
-            $idioma = recoge('idioma');
-            
-            if (isset($_SESSION['id_usuario'])) {
-                $id_usuario = $_SESSION['id_usuario'];
-            }
 
         $validacion = new Validacion();
-        $datos['cTituloAnuncio'] = $titulo;
-        $datos['cDescripcionAnuncio'] = $descripcion;
-        $datos['cContenidoAnuncio'] = $contenido;
+        $datos['titulo'] = $titulo;
         $datos['idioma'] = $idioma;
+        $datos['contenidoHistoria'] = $descripcion;
+        
 
         $regla = array(
             array(
-                'name' => 'cTituloAnuncio',
-                'regla' => 'noEmpty'
-            ),
-            array(
-                'name'=> 'cDescripcionAnuncio',
-                'regla' => 'noEmpty'
-            ),
-            array(
-                'name'=> 'cContenidoAnuncio',
+                'name' => 'titulo',
                 'regla' => 'noEmpty'
             ),
             array(
@@ -200,36 +131,32 @@ public function modificarHistoria() {
                 'regla' => 'noEmpty, texto'
             ),
             array(
-                'name'=> 'categoria',
+                'name'=> 'contenidoHistoria',
                 'regla' => 'noEmpty'
             )
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
-            /*Hace un update en la base de datos de el título, la descripción, contenido y la categoria
-            del anuncio*/
-            if ($m->modificarHistoria($id_anuncio, $titulo, $descripcion, $contenido, $categoria, $idioma)) {
-                    header('Location: index.php?ctl=verAnuncio&id='.$id_anuncio);
+                $a = new Historia();
+                $params = getHistoria();
+                if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
+                    //$_SESSION['mensaje']="El anuncio ha sido creado";
+                    header('Location: index.php?ctl=listarHistorias');
+                }
+                else{
+                    $params['mensaje']="Hubo un error al crear la historia. Vuelve a intentarlo";
+                }
             }
-            else {
-
-            }
+          catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
         }
-     catch (Exception $e) {
-        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-        header('Location: index.php?ctl=error');
-    } catch (Error $e) {
-        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-        header('Location: index.php?ctl=error');
     }
 }
-else{
-    echo "no entra";
-
-}
-}  
-    require __DIR__ . './../vistas/vModificarAnuncio.php';
-}
+require __DIR__ . './../vistas/vModificarHistoria.php';
 }
 
 
@@ -241,9 +168,9 @@ public function eliminarHistoria() {
             throw new Exception('Page not found');
         }
         $id_usuario = $_SESSION['id_usuario'];
-        $id_anuncio = recoge('id');
+        $id_historia = recoge('id');
         $m = new Historia();
-        $anuncio = $m->getAnuncio($id_anuncio);
+        $historia = $m->getAnuncio($id_historia);
         $autor = $anuncio['id_usuario'];
         
         //Si el usuario no es el autor no permite eliminar
@@ -307,6 +234,53 @@ public function cambiaImagen() {
     
     require __DIR__ . './../vistas/vVerHistoria.php';
 }
+
+/*public function buscar() {    
+        try {
+            if (isset($_POST['buscar'])){
+                $buscador=recoge('buscador');
+                $ConjuntoAnuncios = new Historia();
+                $anuncios=$ConjuntoAnuncios->listarAnunciosBuscar($buscador);
+            } else{
+                throw new Exception('An error has occurred while searching');
+            }
+        // Recogemos los dos tipos de excepciones que se pueden producir
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+        require __DIR__ . './../vistas/vListaAnuncios.php';
+    }*/
+
+
+    
+    /*public function verHistoria() {
+        try{
+            //print_r($_SESSION);
+            if (!isset($_GET['id'])) {
+                
+                throw new Exception('Page not found');
+            }
+            $idhistoria = recoge('id');
+            $a = new Historia();
+            $historiaIndividual = $a->getAnuncio($idhistoria);
+            $u = new Usuario();
+            $profesor = $u->getUsuario($historiaIndividual['id_usuario']);
+            $historia = array_merge($profesor, $historiaIndividual);
+            // Recogemos los dos tipos de excepciones que se pueden producir
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+        require __DIR__ . './../vistas/vVerHistoria.php';
+    }*/
+
 
 
 

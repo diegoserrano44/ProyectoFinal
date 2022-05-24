@@ -220,27 +220,27 @@ ul.ks-cboxtags li label::before {
 	color: black;
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+ul.ks-cboxtags li input[type="radio"]:checked + label::before {
     content: "\f00c";
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+ul.ks-cboxtags li input[type="radio"]:checked + label {
     border: 2px solid #1bdbf8;
     background-color: #12bbd4;
     color: #fff;
     transition: all .2s;
 }
 
-ul.ks-cboxtags li input[type="checkbox"] {
+ul.ks-cboxtags li input[type="radio"] {
   display: absolute;
 }
-ul.ks-cboxtags li input[type="checkbox"] {
+ul.ks-cboxtags li input[type="radio"] {
   position: absolute;
   opacity: 0;
 }
-ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+ul.ks-cboxtags li input[type="radio"]:focus + label {
   border: 2px solid #e9a1ff;
 }
 

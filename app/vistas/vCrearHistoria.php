@@ -33,21 +33,6 @@ if(isset($params['mensaje'])){
     </div>
   </div>
   
-  <!-- <div class="col-md-6">
-  <div class="container">
-  <ul class="ks-cboxtags">
- <?php 
-   /*$num=1;
-  foreach (Config::$listCategories as $categoria) {
-    if ($categoria != "") {
-      echo "<li><input type=\"checkbox\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$categoria\"><label for=\"checkbox$num\">$categoria</label></li>";     
-      $num++;
-    }
-  }*/
-  ?>
-  </ul>
-  </div>
-  </div> -->
   <div class="col-md-12">
     <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
     <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="cContenidoAnuncio" rows="6"></textarea>

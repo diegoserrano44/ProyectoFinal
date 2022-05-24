@@ -29,7 +29,7 @@ if(isset($params['mensaje'])){
    $num=1;
   foreach (Config::$listCategories as $categoria) {
     if ($categoria != "") {
-      echo "<li><input type=\"radio\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$num\"><label for=\"checkbox$num\">$categoria</label></li>";     
+      echo "<li><input type=\"radio\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$categoria\"><label for=\"checkbox$num\">$categoria</label></li>";     
       $num++;
     }
   }

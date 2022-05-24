@@ -3,18 +3,18 @@ ob_start();
 ?>
 <body style="background:#c9e265">
 <div class="container text-black">
-<h1 class="m-5 text-center">UNV FORO</h1>
-<h2>Crea un tema de debate en una de las categorías y empezar a hablar!</h2><br>
+<h1 class="m-5 text-center">UNV HISTORIAS</h1>
+<h2>Publica tu historia y transmite a los demás!</h2><br>
 <?php 
 if(isset($params['mensaje'])){ 
   echo "<div>".$params['mensaje']." <br> </div>";
 }
 
 ?>
-<form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearTema" enctype="multipart/form-data" novalidate>
-  <div class="col-md-6">
-    <label for="cTituloAnuncio" class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" max=100 required>
+<form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearHistoria" enctype="multipart/form-data" novalidate>
+  <div class="col-md-4">
+    <label for="titulo" class="form-label">Titulo</label>
+    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $historia['titulo']; ?>" max=100 required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -22,25 +22,20 @@ if(isset($params['mensaje'])){
     Please select the language in which the class will be held
     </div>
   </div>
-  <div class="col-md-6">
-  <div class="container">
-  <ul class="ks-cboxtags">
- <?php 
-   $num=1;
-  foreach (Config::$listCategories as $categoria) {
-    if ($categoria != "") {
-      echo "<li><input type=\"radio\" name=\"form-select[]\" id=\"checkbox$num\" value=\"$num\"><label for=\"checkbox$num\">$categoria</label></li>";     
-      $num++;
-    }
-  }
-  ?>
-  </ul>
-  </div>
+  <div class="col-md-4">
+    <label for="idioma" class="form-label">Idioma</label>
+    <input type="text" class="form-control" id="idioma" name="idioma" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+    <div class="invalid-feedback">
+    Please select the language in which the class will be held
+    </div>
   </div>
   
   <div class="col-md-12">
-    <label for="cContenidoAnuncio" class="form-label">Contenido del tema</label>
-    <textarea id="crearTema" name="crearTema" rows="6" cols="50"></textarea>
+    <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
+    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="cContenidoAnuncio" rows="6"></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -65,7 +60,7 @@ if(isset($params['mensaje'])){
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="crearTema">Publicar el tema en el foro</button>
+    <button class="btn colorSecundario" type="submit" name="crearHistoria">Modificar la historia</button>
   </div>
   </div>
 </form>
@@ -75,7 +70,6 @@ if(isset($params['mensaje'])){
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . './layout.php' ?>
 
- <script src="./../web/js/textoenriquecido.js"></script>
  <script>
    // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
