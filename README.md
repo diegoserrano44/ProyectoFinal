@@ -2,8 +2,11 @@
 Estructura de la aplicación:
 
 app -> controladores -> "Ficheros de conexión entre los modelos y las vistas"
+
 app -> modelos -> "Ficheros con los modelos de consultas a la BBDD"
+
 app -> vistas -> "Ficheros con las vistas html que cargan por cada acción"
+
 app -> Config.php -> "Fichero de configuración con las credenciales de acceso a la BBDD entre otras"
 
 vendor ->  "Directorio para el registro e inicio de sesión con google"
