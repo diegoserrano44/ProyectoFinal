@@ -36,16 +36,16 @@
 
 
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active text-justify" id="pills-general" role="tabpanel" aria-labelledby="pills-general-tab">
+				<div class="tab-pane fade show active text-justify" id="pills-General" role="tabpanel" aria-labelledby="pills-general-tab">
 					<?php foreach ($temas as $a) {
 						$fechaOriginal = $a['fecha_tema'];
 						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
-							if ($a['categoria_tema']=='4') {	
+							if ($a['categoria_tema']=='1') {	
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
-								<?php echo $a['usuario'];?><?php " - ".$newDate; ?>
+							Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
 							</div>
 							<div class="card-body">
 								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
@@ -93,7 +93,7 @@
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
-								<?php echo $a['usuario']." - ".$newDate; ?>
+							Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
 							</div>
 							<div class="card-body">
 								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
@@ -124,7 +124,7 @@
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
-								<?php echo $a['usuario']." - ".$newDate; ?>
+							Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
 							</div>
 							<div class="card-body">
 								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>

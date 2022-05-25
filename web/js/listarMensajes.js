@@ -41,12 +41,10 @@ function crearCaja(asunto, id) {
     boton.setAttribute('aria-controls', 'id' + id);
     boton.setAttribute('onclick', 'muestraMsj(' + id + ')');
 
-    setInterval('muestraMsj(' + id + ')', 10000);
-
-    boton.innerText = "#" + id + " - " + asunto;
+    boton.innerText = "#" + id + " - Asunto: " + asunto;
 
     let para= document.createElement('div');
-    para.innerText=" Conversación con "+remite;
+    para.innerText=" - Conversación con "+remite;
     para.className="rmte";
 
     let eye = document.createElement('button');

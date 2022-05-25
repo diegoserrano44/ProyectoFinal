@@ -103,13 +103,15 @@ require __DIR__ . './../vistas/vCrearHistoria.php';
 public function modificarHistoria() {
     $errores= array();
         $params= array(
-            'mensaje'=>''           
+            'mensaje'=>'',
+            'titulo' => recoge('titulo')        
     );
 
-    if (isset($_POST['crearHistoria'])) {
+    if (isset($_POST['modificarHistoria'])) {
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
         $descripcion = recoge('contenidoHistoria');
+        $id_historia = recoge('id');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -138,9 +140,8 @@ public function modificarHistoria() {
         if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Historia();
-                $params = getHistoria();
+                
                 if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
-                    //$_SESSION['mensaje']="El anuncio ha sido creado";
                     header('Location: index.php?ctl=listarHistorias');
                 }
                 else{
@@ -170,15 +171,15 @@ public function eliminarHistoria() {
         $id_usuario = $_SESSION['id_usuario'];
         $id_historia = recoge('id');
         $m = new Historia();
-        $historia = $m->getAnuncio($id_historia);
-        $autor = $anuncio['id_usuario'];
+        $historia = $m->getHistoria($id_historia);
+        $autor = $historia['id_usuario'];
         
         //Si el usuario no es el autor no permite eliminar
         if ($id_usuario != $autor) {
             header('Location: index.php?ctl=error');
         }
         else {
-        $anuncio = $m->eliminarHistoria($anuncio['id_anuncio'], $id_usuario, $anuncio['titulo'], $anuncio['descripcion'], $anuncio['contenido'], $anuncio['categoria'], $anuncio['idioma'], $anuncio['precio'], $anuncio['categoria_img']);
+        $historia = $m->eliminarHistoria($historia['id_historia'], $id_usuario, $historia['titulo'], $historia['descripcion'], $historia['idioma']);
         }
     } catch (Exception $e) {
         error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

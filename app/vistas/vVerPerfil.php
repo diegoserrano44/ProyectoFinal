@@ -62,29 +62,34 @@ $temas=$params['temas'];
 				</li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active text-justify" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab"><?php echo (isset($params['descripcion'])&&!empty($params['descripcion']))?$params['descripcion']:"Todavía no has escrito una descripción sobre ti" ?></div>
+				<div class="tab-pane fade show active text-justify" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab"><?php echo (isset($params['descripcion'])&&!empty($params['descripcion']))?$params['descripcion']:"Todavía no has escrito una descripción sobre ti" ?>
+			</div>
 			
 				<div class="tab-pane fade text-justify " id="pills-portfolio" role="tabpanel" aria-labelledby="pills-portfolio-tab">
 					<?php if (count($temas) > 0 && isset($_SESSION['usuario'])) { 
 						foreach ($temas as $tema) :?>
+						<?php $fechaOriginal = $tema['fecha_tema'];
+						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal)); ?>
 							<div class="card m-3">
 								<div class="card-header fw-light">
-									<?php echo $tema['usuario'];?><?php " - ".$newDate; ?>
+									<div class="d-flex">
+										<?php echo "Tema publicado por ti el ".$newDate; ?>
+										<a href="index.php?ctl=modificarTema&id=<?php echo $tema['id_tema'];?>">Editar Tema</a><br>
+										<a data-bs-toggle="modal" data-bs-target="#eliminarTema">Eliminar Tema</a>
+									</div>
 								</div>
 								<div class="card-body">
 									<a href="index.php?ctl=verTemaForo&id=<?php echo $tema['id_tema']?>"><h5 class="card-title fs-5"><?php echo $tema['asunto_tema']; ?></h5></a>
 									<p class="card-text text-muted fs-6"></p>
 								</div>
 							</div>
-						</div>
 					<?php endforeach; ?>
+				</div>
 
 					<?php } else {
         echo "Aún no has escrito ni publicado ningun tema, anímate y pregunta!";
     	}
-    	?>
-		</div>
-		
+    	?>		
 
 <div class="tab-pane fade text-justify " id="pills-adsUser" role="tabpanel" aria-labelledby="pills-adsUser-tab">
 	<?php
@@ -94,34 +99,71 @@ $temas=$params['temas'];
        <?php foreach ($historias as $historia) :?>
 			<div class="accordion" id="accordionExample" style="padding: 15px;">
 				<div class="accordion-item">
-					<div class="p-2">
-						<a href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>">Editar Historia</a><br>
-						<a href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>">Eliminar Historia</a>
-	   				</div>
 					<h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
 					<button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
 						<?php echo $historia['titulo']; ?>
+						<div class="d-flex justify-content-center">
+							<a href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>">Editar Historia</a><br>
+							<a style="color: blue; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#eliminarHistoria">Eliminar Historia</a>
+	   					</div>
 					</button>
 					</h2>
 				<div id="collapse<?php echo $historia['id_historia'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_historia'];?>" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
 					<?php echo $historia['descripcion'];?>
 				</div>
-				
+				<?php endforeach; ?>
 					</div>
 				</div>
 			</div>
-		<?php endforeach; ?>
-                            
                             <?php
 							echo "</div>";
 						} else {
 							echo "Aún no has escrito ni publicado ninguna historia, anímate y que todos conozcan tu historia";
 						}
-
     		?>
         </div>
 	</div>
+</div>
+
+<!-- Eliminar Historia Modal -->
+<div class="modal fade bd-dark" id="eliminarHistoria" tabindex="-1" aria-labelledby="eliminarHistoriaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarHistoriaLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <p>Realmente deseas eliminar la historia?</p>
+      </div>
+      <div class="modal-footer">
+	  	<a type="button" class="btn btn-success" href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>">Eliminar</a>
+        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Eliminar Tema Modal -->
+<div class="modal fade bd-dark" id="eliminarTema" tabindex="-1" aria-labelledby="eliminarTemaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarTemaLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <p>Realmente deseas eliminar este Tema?</p>
+      </div>
+      <div class="modal-footer">
+	  	<a type="button" class="btn btn-success" href="index.php?ctl=eliminarTema&id=<?php echo $tema['id_tema'];?>">Eliminar</a>
+        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
+      </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 </main>

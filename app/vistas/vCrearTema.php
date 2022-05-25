@@ -40,7 +40,7 @@ if(isset($params['mensaje'])){
   
   <div class="col-md-12">
     <label for="cContenidoAnuncio" class="form-label">Contenido del tema</label>
-    <textarea id="crearTema" name="crearTema" rows="6" cols="50"></textarea>
+    <textarea id="crearTema" name="contenidoTema" rows="6" cols="50"></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>

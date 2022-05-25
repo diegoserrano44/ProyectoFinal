@@ -65,6 +65,20 @@ class Historia extends Model {
         }
     }
 
+    public function listarTemasUsuario($id_usuario) {
+        $consulta = "SELECT id_tema, asunto_tema, a.fecha_tema, categoria_tema, by_tema FROM `temas_foro` a
+        LEFT JOIN usuarios u on u.id_usuario=a.by_tema
+        WHERE u.id_usuario = :usuario";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':usuario', $id_usuario);
+        if ($result->execute()) {
+            $resultado = $result->fetchAll();
+            return $resultado;
+        } else {
+            false;
+        }
+    }
+
     /**
     * Función para listar todos los historias que coincidan con el buscador
     * @param string buscador
@@ -88,10 +102,11 @@ class Historia extends Model {
     /**
     *Función para modificar los historias a partir de el id de anuncio
     */
-    public function modificarHistoria($id_historia, $titulo, $descripcion, $contenido, $idioma) {
-        $consulta = "UPDATE historias set titulo=:titulo, descripcion=:descripcion, idioma=:idioma WHERE id_historia=:id_historia";
+    public function modificarHistoria($id_usuario, $titulo, $descripcion, $idioma) {
+        $consulta = "UPDATE historias SET id_usuario=:id_usuario, titulo=:titulo, descripcion=:descripcion, idioma=:idioma WHERE id_historia=:id_historia";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_historia', $id_historia);
+        $result->bindParam(':id_usuario', $id_usuario);
         $result->bindParam(':titulo', $titulo);
         $result->bindParam(':descripcion', $descripcion);
         $result->bindParam(':idioma', $idioma);
@@ -107,14 +122,13 @@ class Historia extends Model {
     * Función para eliminar historias a partir del id del anuncio, primero ejecutamos una consulta que inserte todos los campos 
     * del anuncio en una nueva tabla historiasEliminados y luego haga la consulta de eliminar de la tabla principal historias
     */
-    public function eliminarHistoria($id_historia, $id_usuario, $titulo, $descripcion, $contenido, $idioma) {
-        $consulta = "INSERT INTO historias_deleted (id_usuario, titulo, descripcion, contenido, idioma ) values (?, ?, ?, ?, ?)";
+    public function eliminarHistoria($id_historia, $id_usuario, $titulo, $descripcion, $idioma) {
+        $consulta = "INSERT INTO historias_deleted (id_usuario, titulo, descripcion, idioma ) values (?, ?, ?, ?)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(1, $id_usuario);
         $result->bindParam(2, $titulo);
         $result->bindParam(3, $descripcion);
-        $result->bindParam(4, $contenido);
-        $result->bindParam(5, $idioma);
+        $result->bindParam(4, $idioma);
         if ($result->execute()) {
             $consulta = "DELETE FROM historias WHERE id_historia=:id_historia";
             $result = $this->conexion->prepare($consulta);

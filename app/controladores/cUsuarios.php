@@ -602,6 +602,7 @@ class cUsuarios
                 }
                 $a = new Historia();
                 $params['historias'] = $a->listarHistoriasUsuario($id);
+                $params['temas'] = $a->listarTemasUsuario($id);
             }
         } catch (Exception $e) {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");

@@ -71,14 +71,16 @@ class cForo {
     if (isset($_POST['crearTema'])) {
             $asunto_tema = recoge('titulo');
             $fecha_tema = '';
-            $categoria_tema = '';
+            $categoria_tema = recogeCheckArray('form-select');
             $by_tema = $_SESSION['id_usuario'];
+            $contenido_respuesta = recoge('contenidoTema');
+            $tema_respuesta = $_GET['id'];
         
 
             try {
                 $a = new Foro();
-                if ($a->crearTema($asunto_tema, $fecha_tema, $categoria_tema, $by_tema)) {
-                    //$_SESSION['mensaje']="El anuncio ha sido creado";
+                if ($a->crearTema($asunto_tema, $categoria_tema, $by_tema)) {
+                    //$a->enviarRespuesta($contenido_respuesta, $tema_respuesta, $by_tema);
                     header('Location: index.php?ctl=verTemaForo&id=');
                 }
                 else{
@@ -97,6 +99,97 @@ class cForo {
 require __DIR__ . './../vistas/vCrearTema.php';
 }
 
+public function modificarTema() {
+    $errores= array();
+        $params= array(
+            'mensaje'=>'',
+            'titulo' => recoge('titulo')        
+    );
+
+    if (isset($_POST['modificarHistoria'])) {
+        $titulo = recoge('titulo');
+        $idioma = recoge('idioma');
+        $descripcion = recoge('contenidoHistoria');
+        $id_historia = recoge('id');
+
+        if (isset($_SESSION['id_usuario'])) {
+            $id_usuario = $_SESSION['id_usuario'];
+        }
+
+        $validacion = new Validacion();
+        $datos['titulo'] = $titulo;
+        $datos['idioma'] = $idioma;
+        $datos['contenidoHistoria'] = $descripcion;
+        
+
+        $regla = array(
+            array(
+                'name' => 'titulo',
+                'regla' => 'noEmpty'
+            ),
+            array(
+                'name'=> 'idioma',
+                'regla' => 'noEmpty, texto'
+            ),
+            array(
+                'name'=> 'contenidoHistoria',
+                'regla' => 'noEmpty'
+            )
+        );
+        if ($validacion->rules($regla,$datos) === true){
+            try {
+                $a = new Historia();
+                
+                if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
+                    header('Location: index.php?ctl=listarHistorias');
+                }
+                else{
+                    $params['mensaje']="Hubo un error al crear la historia. Vuelve a intentarlo";
+                }
+            }
+          catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+    }
+}
+require __DIR__ . './../vistas/vModificarHistoria.php';
+}
+
+
+
+public function eliminarTema() {
+    try {
+        //print_r($_SESSION);
+        if (! isset($_GET['id'])) {
+            throw new Exception('Page not found');
+        }
+        $id_usuario = $_SESSION['id_usuario'];
+        $id_tema = recoge('id');
+        $m = new Foro();
+        $tema = $m->getTema($id_tema);
+        $autor = $tema['by_tema'];
+        
+        //Si el usuario no es el autor no permite eliminar
+        if ($id_usuario != $autor) {
+            header('Location: index.php?ctl=error');
+        }
+        else {
+        $tema = $m->eliminarTema($tema['id_tema'], $id_usuario, $tema['asunto_tema'], $tema['categoria_tema'], $tema['by_tema']);
+        }
+    } catch (Exception $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+        header('Location: index.php?ctl=error');
+    } catch (Error $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+        header('Location: index.php?ctl=error');
+    }
+    
+    require __DIR__ . './../vistas/vEliminarTema.php';
+}
 
 
     public function enviarRespuesta() {

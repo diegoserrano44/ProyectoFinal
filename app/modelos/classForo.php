@@ -22,7 +22,6 @@ class Foro extends Model {
         $result->bindParam(1, $asunto_tema);
         $result->bindParam(2, $categoria_tema);
         $result->bindParam(3, $by_tema);
-
         if ($result->execute()) {
             return true;
         } else {
@@ -41,6 +40,24 @@ class Foro extends Model {
         } else {
             false;
         }
+    }
+
+    public function eliminarTema($id_historia, $id_usuario, $titulo, $descripcion, $idioma) {
+        $consulta = "INSERT INTO historias_deleted (id_usuario, titulo, descripcion, idioma ) values (?, ?, ?, ?)";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(1, $id_usuario);
+        $result->bindParam(2, $titulo);
+        $result->bindParam(3, $descripcion);
+        $result->bindParam(4, $idioma);
+        if ($result->execute()) {
+            $consulta = "DELETE FROM historias WHERE id_historia=:id_historia";
+            $result = $this->conexion->prepare($consulta);
+            $result->bindParam(':id_historia', $id_historia);
+            $result->execute();
+            return true;
+        } else {
+            return false;
+        }   
     }
 
     public function getRespuesta($id_respuesta) {
