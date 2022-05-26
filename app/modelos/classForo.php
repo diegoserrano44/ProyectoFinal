@@ -27,7 +27,7 @@ class Foro extends Model {
             $result2 = $this->conexion->prepare($consulta_ultimo);
         }
         if ($result2->execute()) {
-            $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values (?, NOW(), ?, ?)";
+            $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values ('hola', NOW(), '3', $by_tema)";
             return true;
         } else {
             return false;
