@@ -32,11 +32,9 @@ function recogeCheckArray(string $text)
 {
     if (isset($_REQUEST[$text])) {
         if (! empty($_REQUEST[$text])) {
-            $array = array();
             foreach ($_REQUEST[$text] as $key => $value) {
-                array_push($array, strip_tags(sinEspacios($value)));
+                return intval($value);
             }
-            return $array;
         } else
             return false;
     } else

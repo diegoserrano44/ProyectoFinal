@@ -371,6 +371,13 @@ th, td {
 	filter: brightness(70%);
 }
 
+.imgForo {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	object-fit: cover;
+}
+
 .infoContainer {
 	width: 100%;
 	min-width: 300px;

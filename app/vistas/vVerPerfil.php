@@ -112,10 +112,13 @@ $temas=$params['temas'];
 					<div class="accordion-body">
 					<?php echo $historia['descripcion'];?>
 				</div>
-				<?php endforeach; ?>
-					</div>
 				</div>
-			</div>
+				</div>
+				</div>
+				<?php endforeach; ?>
+					
+				
+			
                             <?php
 							echo "</div>";
 						} else {

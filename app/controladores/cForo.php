@@ -74,14 +74,15 @@ class cForo {
             $categoria_tema = recogeCheckArray('form-select');
             $by_tema = $_SESSION['id_usuario'];
             $contenido_respuesta = recoge('contenidoTema');
-            $tema_respuesta = $_GET['id'];
-        
+            $id = recoge('id');
+            //$tema_respuesta = getIdTema($by_tema);
+            //$tema = $tema['id_tema'];        
 
             try {
                 $a = new Foro();
-                if ($a->crearTema($asunto_tema, $categoria_tema, $by_tema)) {
-                    //$a->enviarRespuesta($contenido_respuesta, $tema_respuesta, $by_tema);
-                    header('Location: index.php?ctl=verTemaForo&id=');
+                if ($a->crearTema($asunto_tema, $categoria_tema, $by_tema, $contenido_respuesta)) {
+                   //$a->enviarRespuesta($contenido_respuesta, '79', $by_tema);
+                    //header("Location: index.php?ctl=verTemaForo&id=$id");
                 }
                 else{
                     $params['mensaje']="Hubo un error al crear el tema. Vuelve a intentarlo";
@@ -98,6 +99,7 @@ class cForo {
 
 require __DIR__ . './../vistas/vCrearTema.php';
 }
+
 
 public function modificarTema() {
     $errores= array();
@@ -168,18 +170,13 @@ public function eliminarTema() {
             throw new Exception('Page not found');
         }
         $id_usuario = $_SESSION['id_usuario'];
-        $id_tema = recoge('id');
         $m = new Foro();
         $tema = $m->getTema($id_tema);
         $autor = $tema['by_tema'];
         
         //Si el usuario no es el autor no permite eliminar
-        if ($id_usuario != $autor) {
-            header('Location: index.php?ctl=error');
-        }
-        else {
         $tema = $m->eliminarTema($tema['id_tema'], $id_usuario, $tema['asunto_tema'], $tema['categoria_tema'], $tema['by_tema']);
-        }
+        
     } catch (Exception $e) {
         error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
         header('Location: index.php?ctl=error');

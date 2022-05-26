@@ -40,11 +40,10 @@ function crearCaja(asunto, id) {
     boton.setAttribute('aria-expanded', 'true');
     boton.setAttribute('aria-controls', 'id' + id);
     boton.setAttribute('onclick', 'muestraMsj(' + id + ')');
-
-    boton.innerText = "#" + id + " - Asunto: " + asunto;
+    boton.innerText = "#" + id + " - " + asunto;
 
     let para= document.createElement('div');
-    para.innerText=" - Conversación con "+remite;
+    para.innerText=" - De: "+remite;
     para.className="rmte";
 
     let eye = document.createElement('button');
@@ -105,7 +104,7 @@ function muestraMsj(id) {
     }
     xhr.open(method, url, true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send(params);
+    xhr.send(params);    
 }
 
 
@@ -120,7 +119,7 @@ function manejaMsj(cuerpo) {
         
         if (JSON.stringify(msjs[0].id_alumno) === nuser) {
             alumno = nuser;           
-            profesor = JSON.stringify(msjs[0].usuario);
+            profesor = JSON.stringify(msjs[0].usuario); 
         } else if(JSON.stringify(msjs[0].id_profesor) === user) {
             profesor = nuser;
             alumno = JSON.stringify(msjs[0].usuario);
@@ -160,7 +159,6 @@ function manejaMsj(cuerpo) {
     	responder.setAttribute('data-bs-target','#replyModal');
         responder.setAttribute('onclick','responderMsj('+ cuerpo.parentElement.getAttribute('id').replace(/['id']+/g,'') + ')');
         cuerpo.appendChild(responder);
-        
 }
 
 
@@ -200,7 +198,7 @@ function ejecutaRep(id){
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText); 
- 			location.reload();
+ 			location.reload()
         }
     }
     xhr.open(method, url, true);
