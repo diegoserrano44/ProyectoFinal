@@ -1,1 +1,3 @@
-Object of class PDOStatement could not be converted to string0.25133600 1653582439
+Object of class PDOStatement could not be converted to string0.24728100 1653982073
+Object of class PDOStatement could not be converted to string0.61200900 1653999949
+Call to a member function fetch() on null0.11213800 1654000175

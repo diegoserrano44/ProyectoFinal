@@ -1,3 +1,1 @@
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbs5310872.temas_deleted' doesn't exist0.69469600 1653571855
-SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'tema_respuesta' cannot be null0.31803100 1653580356
-SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`respuestas_foro`, CONSTRAINT `respuestas_foro_ibfk_2` FOREIGN KEY (`tema_respuesta`) REFERENCES `temas_foro` (`id_tema`) ON DELETE CASCADE ON UPDATE CASCADE)0.90470900 1653580600
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '* FROM temas_foro WHERE id_historia=NULL' at line 10.32380500 1653982423

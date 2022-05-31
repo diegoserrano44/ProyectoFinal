@@ -1,6 +1,6 @@
 
 if ((hilos === undefined)) {
-    let texto = "No tienes ningún mensaje.";
+    let texto = "No tienes ningún mensajeeee.";
     container.innerText = texto;
 
 } else {

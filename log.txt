@@ -1,0 +1,1 @@
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_profesor' cannot be null##Código: 23000  0.97988500 1654002351

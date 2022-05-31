@@ -84,12 +84,11 @@ $temas=$params['temas'];
 								</div>
 							</div>
 					<?php endforeach; ?>
-				</div>
-
 					<?php } else {
         echo "Aún no has escrito ni publicado ningun tema, anímate y pregunta!";
     	}
-    	?>		
+    	?>
+</div>
 
 <div class="tab-pane fade text-justify " id="pills-adsUser" role="tabpanel" aria-labelledby="pills-adsUser-tab">
 	<?php
@@ -116,9 +115,6 @@ $temas=$params['temas'];
 				</div>
 				</div>
 				<?php endforeach; ?>
-					
-				
-			
                             <?php
 							echo "</div>";
 						} else {

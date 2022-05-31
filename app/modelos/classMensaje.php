@@ -24,7 +24,7 @@ class Mensaje extends Model {
             $id_hilo=1;
         }        
         
-         $stmt = $this->conexion->prepare("INSERT INTO mensajes (id_hilo, envia, id_profesor, id_alumno, asunto, mensaje, profesorV, alumnoV) values ( ?, ?, ?, ?, ?, ?, 1 ,1)");
+        $stmt = $this->conexion->prepare("INSERT INTO mensajes (id_hilo, envia, id_profesor, id_alumno, asunto, mensaje, profesorV, alumnoV) values (?, ?, ?, ?, ?, ?, 1 ,1)");
         
         $stmt->bindParam(1, $id_hilo);
         $stmt->bindParam(2, $envia);

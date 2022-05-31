@@ -23,11 +23,12 @@ class Foro extends Model {
         $result->bindParam(2, $categoria_tema);
         $result->bindParam(3, $by_tema);
         if ($result->execute()) {
-            $consulta_ultimo = "SELECT * FROM temas_foro ORDER BY id_tema DESC LIMIT 1";
+            $consulta_ultimo = "SELECT id_tema FROM temas_foro ORDER BY id_tema DESC LIMIT 1";
             $result2 = $this->conexion->prepare($consulta_ultimo);
+            $result_final = $result2->fetch();
         }
         if ($result2->execute()) {
-            $consulta = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values ('hola', NOW(), '3', $by_tema)";
+            $consulta3 = "INSERT INTO respuestas_foro (contenido_respuesta, fecha_respuesta, tema_respuesta, by_respuesta) values ('hola', NOW(), $result_final, $by_tema)";
             return true;
         } else {
             return false;
@@ -48,22 +49,15 @@ class Foro extends Model {
     }
 
     public function eliminarTema($id_historia, $id_usuario, $titulo, $descripcion, $idioma) {
-        $consulta = "INSERT INTO temas_deleted (id_usuario, titulo, descripcion, idioma ) values (?, ?, ?, ?)";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(1, $id_usuario);
-        $result->bindParam(2, $titulo);
-        $result->bindParam(3, $descripcion);
-        $result->bindParam(4, $idioma);
-        if ($result->execute()) {
-            $consulta = "DELETE FROM temas_foro WHERE id_historia=:id_historia";
+            $consulta = "DELETE * FROM temas_foro WHERE id_historia=:id_historia";
             $result = $this->conexion->prepare($consulta);
             $result->bindParam(':id_historia', $id_historia);
-            $result->execute();
+            if ($result->execute()) {
             return true;
         } else {
             return false;
-        }   
-    }
+        }
+    }   
 
     public function getRespuesta($id_respuesta) {
         $consulta = "SELECT * FROM respuestas_foro, usuarios WHERE by_respuesta=id_usuario AND tema_respuesta=:tema_respuesta";

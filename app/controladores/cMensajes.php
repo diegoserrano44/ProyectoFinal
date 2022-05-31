@@ -61,7 +61,7 @@ class cMensajes {
               
                if($mensaje->crearMensaje($datos)){
                     $_SESSION['mensajes']='Message sent';
-                    header('location:index.php?ctl=listarHistorias');
+                    header('location:index.php?ctl=listarMensaje');
                 }else{
                     $params['mensajes']=array('asunto'=>'You don\'t have any messages yet.');
                 }

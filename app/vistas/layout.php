@@ -195,27 +195,6 @@ else {
 </body>
 </html>
 
-<!-- Contact Modal -->
-<div class="modal fade bd-dark" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content text-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Send message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form class="" action="index.php?ctl=mandarMensaje&id=<?php echo $historia['id_anuncio']?>" method="POST">
-        <input class="asuntoMensaje" type="text" name="asunto" value="" placeholder="Subject"><br><br>
-        <textarea class="contenidoMensaje" rows="6" placeholder="Message" name="mensaje"></textarea>
-      </div>
-      <div class="modal-footer">
-        <input type="submit" name="enviaContacto" value="Send message" class="btn colorSecundario">
-        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="modal fade" id="contactAdmin" tabindex="-1" aria-labelledby="contactAdminLabel" aria-hidden="true">
   <div class="modal-dialog" width="fit-content">
