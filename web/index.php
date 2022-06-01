@@ -44,8 +44,6 @@ $map = array(
     'inicioAdmin' => array('controller' =>'cController', 'action' =>'inicioAdmin', 'rol'=>2),
     'listarUsuarios' => array('controller' =>'cUsuarios', 'action' =>'listarUsuarios', 'rol'=>1),
     'listarHistorias' => array('controller' =>'cHistorias', 'action' =>'listarHistorias','rol'=>0),
-    //'listarHistoriasUsuario' => array('controller' =>'cHistorias', 'action' =>'listarHistoriasUsuario','rol'=>0),
-    //'verHistoria' => array('controller' =>'cHistorias', 'action' =>'verHistoria','rol'=>0),
     'crearHistoria' => array('controller' =>'cHistorias', 'action' =>'crearHistoria','rol'=>1),
     'modificarHistoria' => array('controller' =>'cHistorias', 'action' =>'modificarHistoria','rol'=>1),
     'eliminarHistoria' => array('controller' =>'cHistorias', 'action' =>'eliminarHistoria','rol'=>1),

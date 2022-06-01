@@ -66,9 +66,7 @@ class Historia extends Model {
     }
 
     public function listarTemasUsuario($id_usuario) {
-        $consulta = "SELECT id_tema, asunto_tema, a.fecha_tema, categoria_tema, by_tema FROM `temas_foro` a
-        LEFT JOIN usuarios u on u.id_usuario=a.by_tema
-        WHERE u.id_usuario = :usuario";
+        $consulta = "SELECT * FROM temas_foro, categorias_foro WHERE categoria_tema=id_categoria AND by_tema=:usuario";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':usuario', $id_usuario);
         if ($result->execute()) {
@@ -78,6 +76,7 @@ class Historia extends Model {
             false;
         }
     }
+
 
     /**
     * Función para listar todos los historias que coincidan con el buscador

@@ -6,7 +6,7 @@ $Dia = substr($params['fecha_nac'], 8, 2);
 $fecha = $Dia . "-" . $Mes . "-" . $A;
 
 $historias=$params['historias'];
-$temas=$params['temas'];  
+$temas=$params['temas'];
 ?>
 
 <style>
@@ -72,10 +72,11 @@ $temas=$params['temas'];
 						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal)); ?>
 							<div class="card m-3">
 								<div class="card-header fw-light">
+								<?php echo "Tema publicado por ti el ".$newDate ?><br>
+								<?php echo "Categoria: ".$tema['nombre_categoria']; ?> 
 									<div class="d-flex">
-										<?php echo "Tema publicado por ti el ".$newDate; ?>
 										<a href="index.php?ctl=modificarTema&id=<?php echo $tema['id_tema'];?>">Editar Tema</a><br>
-										<a data-bs-toggle="modal" data-bs-target="#eliminarTema">Eliminar Tema</a>
+										<a href="index.php?ctl=eliminarTema&id=<?php echo $tema['id_tema'];?>">Eliminar Tema</a><br>
 									</div>
 								</div>
 								<div class="card-body">
@@ -99,12 +100,12 @@ $temas=$params['temas'];
 			<div class="accordion" id="accordionExample" style="padding: 15px;">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
+						<div class="d-flex justify-content-start" style="font-size: 17px; margin-left:10px; margin-top:10px; padding:8px;">
+							<a href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>">Editar Historia</a><br>
+							<a href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>">Eliminar Historia</a><br>
+	   					</div>
 					<button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
 						<?php echo $historia['titulo']; ?>
-						<div class="d-flex justify-content-center">
-							<a href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>">Editar Historia</a><br>
-							<a style="color: blue; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#eliminarHistoria">Eliminar Historia</a>
-	   					</div>
 					</button>
 					</h2>
 				<div id="collapse<?php echo $historia['id_historia'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_historia'];?>" data-bs-parent="#accordionExample">
@@ -124,47 +125,6 @@ $temas=$params['temas'];
         </div>
 	</div>
 </div>
-
-<!-- Eliminar Historia Modal -->
-<div class="modal fade bd-dark" id="eliminarHistoria" tabindex="-1" aria-labelledby="eliminarHistoriaLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content text-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eliminarHistoriaLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-	  <p>Realmente deseas eliminar la historia?</p>
-      </div>
-      <div class="modal-footer">
-	  	<a type="button" class="btn btn-success" href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>">Eliminar</a>
-        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Eliminar Tema Modal -->
-<div class="modal fade bd-dark" id="eliminarTema" tabindex="-1" aria-labelledby="eliminarTemaLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content text-dark">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eliminarTemaLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-	  <p>Realmente deseas eliminar este Tema?</p>
-      </div>
-      <div class="modal-footer">
-	  	<a type="button" class="btn btn-success" href="index.php?ctl=eliminarTema&id=<?php echo $tema['id_tema'];?>">Eliminar</a>
-        <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</a>
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 </main>
 <?php $contenido = ob_get_clean() ?>
 

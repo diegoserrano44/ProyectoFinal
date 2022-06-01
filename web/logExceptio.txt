@@ -1,1 +1,1 @@
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '* FROM temas_foro WHERE id_historia=NULL' at line 10.32380500 1653982423
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`dbs5310872`.`temas_foro`, CONSTRAINT `temas_foro_ibfk_2` FOREIGN KEY (`categoria_tema`) REFERENCES `categorias_foro` (`id_categoria`) ON DELETE CASCADE ON UPDATE CASCADE)0.30597300 1654086931

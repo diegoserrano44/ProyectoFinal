@@ -9,12 +9,11 @@ ob_start();
 if(isset($params['mensaje'])){ 
   echo "<div>".$params['mensaje']." <br> </div>";
 }
-var_dump($params);
 ?>
 <form class="row g-3 needs-validation" method="POST" action="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>" enctype="multipart/form-data" novalidate>
   <div class="col-md-4">
     <label for="titulo" class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $param['titulo']; ?>" max=100 required>
+    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $historia['id_historia'];?>" max=100 required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -24,7 +23,7 @@ var_dump($params);
   </div>
   <div class="col-md-4">
     <label for="idioma" class="form-label">Idioma</label>
-    <input type="text" class="form-control" id="idioma" name="idioma" value="<?php echo $ab['idioma']; ?>" required>
+    <input type="text" class="form-control" id="idioma" name="idioma" value="<?php echo $params['idioma']; ?>" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -60,7 +59,7 @@ var_dump($params);
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="modificarHistoria&id=<?php echo $historia['id_historia'];?>">Modificar la historia</button>
+    <button class="btn colorSecundario" type="submit" name="modificarHistoria">Modificar la historia</button>
   </div>
   </div>
 </form>

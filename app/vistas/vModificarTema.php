@@ -9,12 +9,11 @@ ob_start();
 if(isset($params['mensaje'])){ 
   echo "<div>".$params['mensaje']." <br> </div>";
 }
-
 ?>
 <form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearTema" enctype="multipart/form-data" novalidate>
   <div class="col-md-6">
     <label for="cTituloAnuncio" class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" max=100 required>
+    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $params['asunto_tema']; ?>" max=100 required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -65,7 +64,7 @@ if(isset($params['mensaje'])){
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="crearTema">Publicar el tema en el foro</button>
+    <button class="btn colorSecundario" type="submit" name="crearTema">Modificar el tema</button>
   </div>
   </div>
 </form>

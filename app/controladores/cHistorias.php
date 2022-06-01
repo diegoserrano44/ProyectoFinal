@@ -40,6 +40,29 @@ class cHistorias {
     
     }
 
+    public function listarTemasUsuario() {
+        try {
+            //print_r($_SESSION);
+            if (!isset($_GET['id'])) {
+                throw new Exception('Page not found');
+            }
+            $id_usuario = $_SESSION['id_usuario'];
+            $Conjuntotemas = new Foro();
+            $temas = $Conjuntotemas->listarTemasUsuario($id_usuario);
+        
+        // Recogemos los dos tipos de excepciones que se pueden producir
+        } catch (Exception $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+            header('Location: index.php?ctl=error');
+        } catch (Error $e) {
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+            header('Location: index.php?ctl=error');
+        }
+        require __DIR__ . './../vistas/vListaHistorias.php';
+    
+    }
+    
+
 
     public function crearHistoria() {
         $errores= array();
@@ -103,15 +126,14 @@ require __DIR__ . './../vistas/vCrearHistoria.php';
 public function modificarHistoria() {
     $errores= array();
         $params= array(
-            'mensaje'=>'',
-            'titulo' => recoge('titulo')        
+            'mensaje'=>''
     );
 
-    if (isset($_POST['modificarHistoria'])) {
+    if (isset($_POST['modificarHistoria'])) { 
+        $id_historia = recoge('id');
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
         $descripcion = recoge('contenidoHistoria');
-        $id_historia = recoge('id');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -140,7 +162,6 @@ public function modificarHistoria() {
         if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Historia();
-                
                 if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
                     header('Location: index.php?ctl=listarHistorias');
                 }
@@ -255,34 +276,6 @@ public function cambiaImagen() {
         }
         require __DIR__ . './../vistas/vListaAnuncios.php';
     }*/
-
-
-    
-    /*public function verHistoria() {
-        try{
-            //print_r($_SESSION);
-            if (!isset($_GET['id'])) {
-                
-                throw new Exception('Page not found');
-            }
-            $idhistoria = recoge('id');
-            $a = new Historia();
-            $historiaIndividual = $a->getAnuncio($idhistoria);
-            $u = new Usuario();
-            $profesor = $u->getUsuario($historiaIndividual['id_usuario']);
-            $historia = array_merge($profesor, $historiaIndividual);
-            // Recogemos los dos tipos de excepciones que se pueden producir
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-        require __DIR__ . './../vistas/vVerHistoria.php';
-    }*/
-
-
 
 
 }

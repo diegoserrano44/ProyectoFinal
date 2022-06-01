@@ -17,28 +17,6 @@ class cForo {
         require __DIR__ . './../vistas/vListaForo.php';
     }
 
-    public function listarTemasUsuario() {    
-        try {
-            //print_r($_SESSION);
-            if (!isset($_GET['id'])) {
-                throw new Exception('Page not found');
-            }
-            $id_usuario = recoge('id');
-            $ConjuntoTemas = new Foro();
-            $temas = $ConjuntoTemas->listarTemasUsuario($id_usuario);
-        
-        // Recogemos los dos tipos de excepciones que se pueden producir
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-        require __DIR__ . './../vistas/vListaHistorias.php';
-    
-    }
-
 
     public function verTemaForo() {
         try {
@@ -104,11 +82,10 @@ require __DIR__ . './../vistas/vCrearTema.php';
 public function modificarTema() {
     $errores= array();
         $params= array(
-            'mensaje'=>'',
-            'titulo' => recoge('titulo')        
+            'mensaje'=>''
     );
 
-    if (isset($_POST['modificarHistoria'])) {
+    if (isset($_POST['modificarTema'])) {
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
         $descripcion = recoge('contenidoHistoria');
@@ -140,9 +117,9 @@ public function modificarTema() {
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
-                $a = new Historia();
-                
-                if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
+                $a = new Foro();
+                $params = $a->getTema($id_tema);
+                if ($a->modificarTema($id_usuario, $titulo, $descripcion, $idioma)) {
                     header('Location: index.php?ctl=listarHistorias');
                 }
                 else{
@@ -158,7 +135,7 @@ public function modificarTema() {
         }
     }
 }
-require __DIR__ . './../vistas/vModificarHistoria.php';
+require __DIR__ . './../vistas/vModificarTema.php';
 }
 
 
@@ -170,6 +147,7 @@ public function eliminarTema() {
             throw new Exception('Page not found');
         }
         $id_usuario = $_SESSION['id_usuario'];
+        $id_tema = $_GET['id'];
         $m = new Foro();
         $tema = $m->getTema($id_tema);
         $autor = $tema['by_tema'];

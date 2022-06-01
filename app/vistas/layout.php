@@ -73,11 +73,7 @@
                 <a class="text-success m-3 text-decoration-none" href="">2022 - unanuevavida.com</a>
             </div>
             <div class="d-flex flex-column justify-content-center">
-            <div>
-                <!-- <a href="#"><i class="fa-3x fa-brands fa-instagram m-3 textSecundario"></i></a>
-                <a href="#"><i class="fa-3x fa-brands fa-linkedin m-3 textSecundario"></i></a>
-                <a href="#"><i class="fa-3x fa-brands fa-youtube m-3 textSecundario"></i></a> -->
-            </div>
+            
 
         <?php        
         if (isset($_SESSION['rol'])) {

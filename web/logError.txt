@@ -1,3 +1,3 @@
-Object of class PDOStatement could not be converted to string0.24728100 1653982073
-Object of class PDOStatement could not be converted to string0.61200900 1653999949
-Call to a member function fetch() on null0.11213800 1654000175
+Call to undefined method Historia::listarTemasUsuario()0.17440200 1654084887
+Call to undefined method Historia::listarTemasUsuario()0.44595900 1654085009
+Call to undefined method Historia::listarTemasUsuario()0.77609500 1654085009

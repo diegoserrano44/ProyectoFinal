@@ -13,6 +13,7 @@ class Foro extends Model {
         return $result->fetchAll();
     }
 
+
     /**
     *Función para seleccionar una historia a partir de la id
     */
@@ -41,17 +42,17 @@ class Foro extends Model {
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_tema', $id_tema);
         if ($result->execute()) {
-            $resultado = $result->fetchAll();
+            $resultado = $result->fetch();
             return $resultado;
         } else {
             false;
         }
     }
 
-    public function eliminarTema($id_historia, $id_usuario, $titulo, $descripcion, $idioma) {
-            $consulta = "DELETE * FROM temas_foro WHERE id_historia=:id_historia";
+    public function eliminarTema($id_tema, $id_usuario, $asunto_tema, $categoria_tema, $by_tema) {
+            $consulta = "DELETE FROM temas_foro WHERE id_tema=:id_tema";
             $result = $this->conexion->prepare($consulta);
-            $result->bindParam(':id_historia', $id_historia);
+            $result->bindParam(':id_tema', $id_tema);
             if ($result->execute()) {
             return true;
         } else {
