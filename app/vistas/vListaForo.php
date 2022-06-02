@@ -7,7 +7,7 @@
                <h1 class="display-5 fw-bold text-center">Bienvenido al Foro de UNV</h1>
                <p class="col-md-12 fs-5 text-center">Por que todos tenemos que tener oportunidades y consejos dentro de nuestra comunidad</p>
 			   <div class="d-flex justify-content-center">
-			   		<a href="index.php?ctl=crearTema" id="">Publica un tema</a>
+			   		<a href="index.php?ctl=crearTema" class="botonPublicar">Publica un tema</a>
 			   </div>
                <!-- <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-2">
                     <label for="buscador"></label>
@@ -32,6 +32,12 @@
 				</li>
 				<?php }?>
 			</ul>
+			
+			<script>
+				window.onload = function PonColor() {
+					document.getElementById('pills-General-tab').click();
+				}
+			</script>
 
 
 

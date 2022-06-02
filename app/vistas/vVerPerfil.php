@@ -75,8 +75,8 @@ $temas=$params['temas'];
 								<?php echo "Tema publicado por ti el ".$newDate ?><br>
 								<?php echo "Categoria: ".$tema['nombre_categoria']; ?> 
 									<div class="d-flex">
-										<a href="index.php?ctl=modificarTema&id=<?php echo $tema['id_tema'];?>">Editar Tema</a><br>
-										<a href="index.php?ctl=eliminarTema&id=<?php echo $tema['id_tema'];?>">Eliminar Tema</a><br>
+										<a class="iconos" href="index.php?ctl=modificarTema&id=<?php echo $tema['id_tema'];?>"><i class="fa-solid fa-edit"></i></a><br>
+										<a class="iconos" href="index.php?ctl=eliminarTema&id=<?php echo $tema['id_tema'];?>"><i class="fa-solid fa-trash"></i></a><br>
 									</div>
 								</div>
 								<div class="card-body">
@@ -100,12 +100,12 @@ $temas=$params['temas'];
 			<div class="accordion" id="accordionExample" style="padding: 15px;">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="heading<?php echo $historia['id_historia'];?>">
-						<div class="d-flex justify-content-start" style="font-size: 17px; margin-left:10px; margin-top:10px; padding:8px;">
-							<a href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>">Editar Historia</a><br>
-							<a href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>">Eliminar Historia</a><br>
-	   					</div>
 					<button class="accordion-button historias" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $historia['id_historia'];?>" aria-expanded="true" aria-controls="collapse<?php echo $historia['id_historia'];?>">
 						<?php echo $historia['titulo']; ?>
+						<div class="d-flex justify-content-start iconosHistorias">
+							<a class="iconosH" href="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>"><i class="fa-solid fa-edit"></i></a><br>
+							<a class="iconosH" href="index.php?ctl=eliminarHistoria&id=<?php echo $historia['id_historia'];?>"><i class="fa-solid fa-trash"></i></a><br>
+	   					</div>
 					</button>
 					</h2>
 				<div id="collapse<?php echo $historia['id_historia'];?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $historia['id_historia'];?>" data-bs-parent="#accordionExample">

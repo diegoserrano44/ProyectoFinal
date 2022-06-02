@@ -35,7 +35,7 @@ $map = array(
     'inicio' => array('controller' =>'Controller', 'action' =>'inicio', 'nivel_usuario'=>0)
     */
     'inicio' => array('controller' =>'cController', 'action' =>'inicio', 'rol'=>0),    
-    //'buscar' => array('controller' =>'cAnuncios', 'action' =>'buscar', 'rol'=>0),
+    'buscar' => array('controller' =>'cHistorias', 'action' =>'buscar', 'rol'=>0),
     'registrarUsuario' => array('controller' =>'cUsuarios', 'action' =>'registrarUsuario', 'rol'=>0),
     'registroGoogle' => array('controller' =>'cUsuarios', 'action' =>'registroGoogle', 'rol'=>0),
     'entrarUsuario' => array('controller' =>'cUsuarios', 'action' =>'entrarUsuario', 'rol'=>0),
@@ -69,6 +69,7 @@ $map = array(
     'verTemaForo' => array('controller' =>'cForo', 'action' =>'verTemaForo', 'rol'=>0),
     'crearTema' => array('controller' =>'cForo', 'action' =>'crearTema', 'rol'=>1),
     'enviarRespuesta' => array('controller' =>'cForo', 'action' =>'enviarRespuesta', 'rol'=>1),
+    'eliminarRespuesta' => array('controller' =>'cForo', 'action' =>'eliminarRespuesta', 'rol'=>1),
     'modificarTema' => array('controller' =>'cForo', 'action' =>'modificarTema', 'rol'=>1),
     'eliminarTema' => array('controller' =>'cForo', 'action' =>'eliminarTema', 'rol'=>1),
     'listarApps' => array('controller' =>'cApps', 'action' =>'listarApps', 'rol'=>1),

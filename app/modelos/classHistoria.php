@@ -84,9 +84,7 @@ class Historia extends Model {
     * @return historias_por_filtro_de_buscador
     */
     public function listarhistoriasBuscar($buscar) {
-        $consulta = "SELECT id_historia,titulo,a.descripcion,a.fecha_creacion,nombre,apellidos,idioma FROM `historias` a
-        LEFT JOIN usuarios u on u.id_usuario=a.id_usuario
-        WHERE concat(upper(titulo),', ',upper()) like upper(:buscar)";
+        $consulta = "SELECT * FROM `historias` WHERE concat(upper(titulo),', ',upper(idioma)) like upper(:buscar)";
         $result = $this->conexion->prepare($consulta);
         $buscar='%'.$buscar.'%';
         $result->bindParam(':buscar', $buscar);

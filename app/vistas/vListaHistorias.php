@@ -5,13 +5,13 @@
                <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
                <p class="col-md-12 fs-5 text-center">Que sigas haciendo todo aquello que te gusta es nuestra misión</p>
 			   <div class="d-flex justify-content-center">
-			   <a href="index.php?ctl=crearHistoria" id="historia">Publica tu historia</a>
+			   <a href="index.php?ctl=crearHistoria" class="botonPublicar">Publica tu historia</a>
 			   </div>
-               <!-- <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-2">
+               <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-4">
                     <label for="buscador"></label>
-                    <input type="text" id="buscador" name="buscador" placeholder="Search your class" required>
+                    <input type="text" id="buscador" name="buscador" placeholder="Busca una historia" required>
                     <button type="submit" class="boton-buscador" name="buscar" value="Search"><i class="fa fa-search"></i></button>
-               </form> -->
+               </form>
             </div>
          </div>
       </div>

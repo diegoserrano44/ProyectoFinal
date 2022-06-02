@@ -35,7 +35,7 @@ if(isset($params['mensaje'])){
   
   <div class="col-md-12">
     <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
-    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="cContenidoAnuncio" rows="6"></textarea>
+    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="contenidoHistoria" rows="6"></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -65,7 +65,7 @@ if(isset($params['mensaje'])){
   </div>
 </form>
 </div>
-<!-- <script src="./../web/js/textoenriquecido.js"></script> -->
+<script src="./../web/js/textoenriquecido.js"></script>
 
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . './layout.php' ?>

@@ -71,39 +71,46 @@ footer {
 	background-color: #e3f1d0;
 }
 
-/* .colorSecundario{
-    background-color: #7738a7;
-	color:white;
-	
+.accordion-button:focus {
+	border: none;
+	box-shadow: none;
 }
-
-.textSecundario{
-	color:#7738a7;
-}
-
-.textSecundario:hover{
-	color:#7738a7;
-}
-
-.colorSecundario:hover{
-	background-color:#7738a7;
-	color:white;
-
-}
-
-.secundarioDark{
-	color:#7738a7;
-	border-color:#7738a7;
-}
-
-.secundarioDark:hover{
-	background-color:#7738a7;
-	color:white;
-
-} */
 
 #contenido{
     min-height: 80vh;
+}
+
+.botonPublicar {
+	border: 2px solid green;
+	border-radius: 22px;
+	background-color: green;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 10px;
+	color: white;
+}
+.botonPublicar:hover {
+	color: white;
+}
+
+.iconosHistorias {
+	margin-left: 22px; 
+	margin-top: 1px;
+	font-size: 22px; 
+}
+
+.iconos {
+	padding-right: 14px;
+	padding-top: 5px;
+	padding-left: 1px;
+	font-size: 22px;
+	color: green;
+}
+
+.iconosH {
+	padding-right: 14px;
+	color: green;
 }
 
 .perfilContainer {
@@ -119,26 +126,25 @@ footer {
 	background-color: #c9e265;
 }
 
-/* #buscador {
+#buscador {
 	width: 350px;
 	height: 40px;
 	font-size: 22px;
-	border: 1px solid white;
+	border: 1px solid green;
 	border-radius: 15px;
-	background-color: #212429;
-	color: white;
+	color: black;
 	text-align: center;
+	
 }
 
 .boton-buscador {
 	width: 45px;
 	height: 41px;
 	border: 1px solid green;
-	background-color: #212429;
 	border-radius: 35px;
 	margin-left: 5px;
 	color: green;
-} */
+}
 
 .errorMsg {
     font-size: 16px;

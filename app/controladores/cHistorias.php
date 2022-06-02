@@ -73,7 +73,7 @@ class cHistorias {
     if (isset($_POST['crearHistoria'])) {
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
-        $descripcion = recoge('contenidoHistoria');
+        $descripcion = recogeEnriquecido('contenidoHistoria');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -162,8 +162,10 @@ public function modificarHistoria() {
         if ($validacion->rules($regla,$datos) === true){
             try {
                 $a = new Historia();
+                $id = $_GET['id'];
+                $historia = $a->getHistoria($id);
                 if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
-                    header('Location: index.php?ctl=listarHistorias');
+                    header('Location:index.php?ctl=listarHistorias');
                 }
                 else{
                     $params['mensaje']="Hubo un error al crear la historia. Vuelve a intentarlo";
@@ -257,12 +259,13 @@ public function cambiaImagen() {
     require __DIR__ . './../vistas/vVerHistoria.php';
 }
 
-/*public function buscar() {    
+
+public function buscar() {    
         try {
             if (isset($_POST['buscar'])){
                 $buscador=recoge('buscador');
-                $ConjuntoAnuncios = new Historia();
-                $anuncios=$ConjuntoAnuncios->listarAnunciosBuscar($buscador);
+                $ConjuntoHistorias = new Historia();
+                $historias=$ConjuntoHistorias->listarhistoriasBuscar($buscador);
             } else{
                 throw new Exception('An error has occurred while searching');
             }
@@ -274,8 +277,8 @@ public function cambiaImagen() {
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
             header('Location: index.php?ctl=error');
         }
-        require __DIR__ . './../vistas/vListaAnuncios.php';
-    }*/
+        require __DIR__ . './../vistas/vListaHistorias.php';
+    }
 
 
 }

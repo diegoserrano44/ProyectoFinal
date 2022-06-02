@@ -7,6 +7,13 @@
 	?>
       <div class="card m-3">
 	      <div class="card-header">
+
+			<?php  
+				if ($_SESSION['id_usuario'] == $respuesta['id_usuario']) {
+			?>
+		  	<a href="index.php?ctl=eliminarRespuesta&id=<?php echo $respuesta['id_respuesta']; ?>"><i class="fa fa-x" style="position: absolute; top: 5px; right: 5px;"></i></a>
+			<?php } ?>
+
 		  	<img class="rounded-circle p-2 imgForo" src="<?php echo $respuesta['foto_perfil'] ?>" title="<?php echo $respuesta['usuario'] ?>'s profile pic" alt="Picture">
 		  	<b><?php echo $respuesta['usuario']; ?></b><?php echo " - ".$newDate ?>
 	      </div>

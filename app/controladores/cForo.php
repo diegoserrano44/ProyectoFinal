@@ -163,7 +163,34 @@ public function eliminarTema() {
         header('Location: index.php?ctl=error');
     }
     
-    require __DIR__ . './../vistas/vEliminarTema.php';
+}
+
+
+
+public function eliminarRespuesta() {
+    try {
+        //print_r($_SESSION);
+        if (! isset($_GET['id'])) {
+            throw new Exception('Page not found');
+        }
+        $id_usuario = $_SESSION['id_usuario'];
+        $id_respuesta = $_GET['id'];
+        $m = new Foro();
+        $respuesta = $m->getRespuestaUsuario($id_respuesta);
+        $autor = $respuesta['by_respuesta'];
+        
+        //Si el usuario no es el autor no permite eliminar
+        $respuesta = $m->eliminarRespuesta($respuesta['id_respuesta'], $id_usuario, $respuesta['contenido_respuesta'], $respuesta['tema_respuesta'], $respuesta['by_respuesta']);
+        
+    } catch (Exception $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
+        header('Location: index.php?ctl=error');
+    } catch (Error $e) {
+        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
+        header('Location: index.php?ctl=error');
+    }
+    
+    require __DIR__ . './../vistas/vEliminarRespuesta.php';
 }
 
 
