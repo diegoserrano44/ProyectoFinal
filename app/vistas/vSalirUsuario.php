@@ -41,4 +41,4 @@ unset($_SESSION['id_usuario']);
 </main>
 <?php $contenido = ob_get_clean() ?>
 
-<?php include __DIR__ . './layout.php' ?>
+<?php include __DIR__ . '/layout.php' ?>
