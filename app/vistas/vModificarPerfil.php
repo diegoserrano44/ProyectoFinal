@@ -124,4 +124,4 @@ window.onload = document.getElementById('foto_perfil').addEventListener("change"
 
 <?php $contenido = ob_get_clean() ?>
 
-<?php include __DIR__ . './layout.php' ?>
+<?php include __DIR__ . '/layout.php' ?>
