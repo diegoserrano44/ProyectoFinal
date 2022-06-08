@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: 'textarea#publicarRespuesta, textarea#crearTema, textarea#contenidoHistoria',
+    selector: 'textarea#publicarRespuesta, textarea#crearTema, textarea#contenidoCrearHistoria, textarea#contenidoModificarHistoria',
     height: 200,
     menubar: false,
     plugins: [

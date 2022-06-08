@@ -16,7 +16,7 @@ static public $default_foto = "default_user.png";
 static public $ruta_imagenes = "img/";
 static public $listCategories = ["","General","Deportes","Adaptaciones","Movilidad","Libre","Casa"];
 
-static public $controlEtiquetas = array('<h1>','<h2>','<h3>','<h4>','<h5>','<h6>','<p>','<pre>','<b>','<em>','<strong>','<span>','<ul>','<ol>','<li>');
+static public $controlEtiquetas = array('<h1>','<h2>','<h3>','<h4>','<h5>','<h6>','<p>','<pre>','<b>','<em>','<strong>','<span>','<ul>','<ol>','<li>','<br>');
 
 static public $clientID = '871344324220-1srfarquv5kgh41fo4ufqud3i89e4eoj.apps.googleusercontent.com';
 static public $clientSecret = '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';

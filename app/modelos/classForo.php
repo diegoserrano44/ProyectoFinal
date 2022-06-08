@@ -42,7 +42,18 @@ class Foro extends Model {
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_tema', $id_tema);
         if ($result->execute()) {
-            $resultado = $result->fetch();
+            $resultado = $result->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } else {
+            false;
+        }
+    }
+    public function getTemaEliminar($id_tema) {
+        $consulta = "SELECT * FROM temas_foro WHERE id_tema=:id_tema";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':id_tema', $id_tema);
+        if ($result->execute()) {
+            $resultado = $result->fetch(PDO::FETCH_ASSOC);
             return $resultado;
         } else {
             false;

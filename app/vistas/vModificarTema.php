@@ -10,10 +10,13 @@ if(isset($params['mensaje'])){
   echo "<div>".$params['mensaje']." <br> </div>";
 }
 ?>
+<?php foreach ($temas as $tema) {
+}
+?>
 <form class="row g-3 needs-validation" method="POST" action="index.php?ctl=crearTema" enctype="multipart/form-data" novalidate>
   <div class="col-md-6">
     <label for="cTituloAnuncio" class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $params['asunto_tema']; ?>" max=100 required>
+    <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $tema['asunto_tema']; ?>" max=100 required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -39,7 +42,7 @@ if(isset($params['mensaje'])){
   
   <div class="col-md-12">
     <label for="cContenidoAnuncio" class="form-label">Contenido del tema</label>
-    <textarea id="crearTema" name="crearTema" rows="6" cols="50"></textarea>
+    <textarea id="crearTema" name="contenidoTema" rows="6" cols="50"><?php echo $tema['contenido_respuesta']; ?></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>

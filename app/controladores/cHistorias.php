@@ -103,7 +103,6 @@ class cHistorias {
             try {
                 $a = new Historia();
                 if ($a->crearHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
-                    //$_SESSION['mensaje']="El anuncio ha sido creado";
                     header('Location: index.php?ctl=listarHistorias');
                 }
                 else{
@@ -124,16 +123,15 @@ require __DIR__ . './../vistas/vCrearHistoria.php';
 
 
 public function modificarHistoria() {
-    $errores= array();
-        $params= array(
-            'mensaje'=>''
-    );
+    $a = new Historia();
+    $id = $_GET['id'];
+    $historias = $a->getHistoria($id);
 
     if (isset($_POST['modificarHistoria'])) { 
         $id_historia = recoge('id');
         $titulo = recoge('titulo');
         $idioma = recoge('idioma');
-        $descripcion = recoge('contenidoHistoria');
+        $descripcion = recogeEnriquecido('contenidoHistoria');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -161,10 +159,7 @@ public function modificarHistoria() {
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
-                $a = new Historia();
-                $id = $_GET['id'];
-                $historia = $a->getHistoria($id);
-                if ($a->modificarHistoria($id_usuario, $titulo, $descripcion, $idioma)) {
+                if ($a->modificarHistoria($id_historia, $id_usuario, $titulo, $descripcion, $idioma)) {
                     header('Location:index.php?ctl=listarHistorias');
                 }
                 else{
@@ -194,7 +189,7 @@ public function eliminarHistoria() {
         $id_usuario = $_SESSION['id_usuario'];
         $id_historia = recoge('id');
         $m = new Historia();
-        $historia = $m->getHistoria($id_historia);
+        $historia = $m->getHistoriaEliminar($id_historia);
         $autor = $historia['id_usuario'];
         
         //Si el usuario no es el autor no permite eliminar
