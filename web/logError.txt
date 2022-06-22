@@ -1,0 +1,1 @@
+Too few arguments to function Historia::modificarHistoria(), 4 passed in C:\xampp\htdocs\ProyectoFinal\ProyectoFinal\app\controladores\cHistorias.php on line 163 and exactly 5 expected0.39444000 1654687338

@@ -30,10 +30,19 @@ class Historia extends Model {
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_historia', $id_historia);
         if ($result->execute()) {
-            $resultado = $result->fetch();
-            return $resultado;
+            return $result->fetchAll(PDO::FETCH_ASSOC);
         } else {
-            false;
+            return false;
+        }
+    }
+    public function getHistoriaEliminar($id_historia) {
+        $consulta = "SELECT * FROM historias WHERE id_historia=:id_historia";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':id_historia', $id_historia);
+        if ($result->execute()) {
+            return $result->fetch(PDO::FETCH_ASSOC);
+        } else {
+            return false;
         }
     }
 
@@ -99,7 +108,7 @@ class Historia extends Model {
     /**
     *Función para modificar los historias a partir de el id de anuncio
     */
-    public function modificarHistoria($id_usuario, $titulo, $descripcion, $idioma) {
+    public function modificarHistoria($id_historia, $id_usuario, $titulo, $descripcion, $idioma) {
         $consulta = "UPDATE historias SET id_usuario=:id_usuario, titulo=:titulo, descripcion=:descripcion, idioma=:idioma WHERE id_historia=:id_historia";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':id_historia', $id_historia);
