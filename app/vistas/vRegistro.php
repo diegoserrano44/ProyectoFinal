@@ -22,15 +22,15 @@
                         <span class="d-inline-block fw-bold mb-3">Nombre</span>
                     </div>
                     <div class="col-lg-4">
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="First name" required>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
                         <div class="invalid-feedback">
-                            Please provide a name.
+                            Introduce un Nombre
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Last name">
+                        <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos">
                         <div class="valid-feedback">
-                            Looks good!
+                            Genial!
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="col-lg-9">
                         <input type="date" class="form-control" name="fnacimiento" id="fnacimiento" required>
                         <div class="invalid-feedback">
-                            Please provide your date of birth.
+                            Introduce una fecha de nacimiento válida
                         </div>
                     </div>
                 </div>
@@ -52,13 +52,13 @@
                     <div class="col-lg-4">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                         <div class="invalid-feedback">
-                            Please provide a valid email.
+                            Introduce un email válido
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <input type="tel" class="form-control" name="tel" id="tel" placeholder="Phone number">
+                        <input type="tel" class="form-control" name="tel" id="tel" placeholder="Teléfono">
                         <div class="valid-feedback">
-                            Looks good!
+                            Genial!
                         </div>
                     </div>
                 </div>
@@ -67,9 +67,9 @@
                         <span class="d-inline-block form-label fw-bold mb-3">Usuario</span>
                     </div>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" name="usuario" id="usuario" required  onkeyup="filtra(this.value)">
+                        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Nombre de Usuario" required  onkeyup="filtra(this.value)">
                         <div class="invalid-feedback">
-                            Please provide a username.
+                            Introduce un nomre de usaurio válido
                         </div>
                         
                     </div>
@@ -80,20 +80,20 @@
                         <span class="d-inline-block form-label fw-bold mb-3">Contraseña</span>
                     </div>
                     <div class="col-lg-4">
-                        <input type="password" class="form-control" name="password" id="password" required>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
                         <div class="invalid-feedback">
-                            Please provide a password.
+                        Introduce una contraseña
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <input type="password" class="form-control" name="repite_password" id="repite_password" placeholder="Retype password" required>
+                        <input type="password" class="form-control" name="repite_password" id="repite_password" placeholder="Repetir contraseña" required>
                         <div class="invalid-feedback">
-                            Please provide a password.
+                            Introduce una contraseña que coincida con la anterior
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="btn my-3 w-100 py-2 fw-bold botonAzul" type="submit" name="sign_up">Sign up</button>
+            <button class="btn my-3 w-100 py-2 fw-bold boton" type="submit" name="sign_up">Registrate</button>
         </form>
     </div>
 </main>

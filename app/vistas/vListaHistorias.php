@@ -34,8 +34,8 @@
         if (isset($_SESSION['rol'])) {
           if ($_SESSION['rol']>0) {
       ?>
-      <div class="d-flex">
-      <button type="button" class="btn colorSecundario" data-bs-toggle="modal" data-bs-target="#contactModal">Enviar mensaje privado</button>
+      <div class="d-flex justify-content-end">
+      <button type="button" class="btn colorSecundario" data-bs-toggle="modal" data-bs-target="#contactModal">Enviar mensaje</button>
       </div>
       <?php
       }
@@ -72,5 +72,4 @@
 
 
 <?php $contenido = ob_get_clean() ?>
-
 <?php include __DIR__ . '/layout.php' ?>

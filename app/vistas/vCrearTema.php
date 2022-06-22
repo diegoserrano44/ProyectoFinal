@@ -16,7 +16,7 @@ if(isset($params['mensaje'])){
     <label for="cTituloAnuncio" class="form-label">Titulo</label>
     <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" max=100 required>
     <div class="valid-feedback">
-      Looks good!
+    Genial!
     </div>
     <div class="invalid-feedback">
     Please select the language in which the class will be held
@@ -42,7 +42,7 @@ if(isset($params['mensaje'])){
     <label for="cContenidoAnuncio" class="form-label">Contenido del tema</label>
     <textarea id="crearTema" name="contenidoTema" rows="6" cols="50"></textarea>
     <div class="valid-feedback">
-      Looks good!
+    Genial!
     </div>
     <div class="invalid-feedback">
       Explain in detail what you are going to offer.
@@ -55,7 +55,7 @@ if(isset($params['mensaje'])){
         Accept terms and conditions
       </label>
       <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
       <div class="invalid-feedback">
         You must agree to the terms before proceeding
@@ -75,7 +75,7 @@ if(isset($params['mensaje'])){
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . '/layout.php' ?>
 
- <script src="./../web/js/textoenriquecido.js"></script>
+ <script src="../web/js/textoenriquecido.js"></script>
  <script>
    // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {

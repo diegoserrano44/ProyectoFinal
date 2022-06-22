@@ -9,7 +9,12 @@ ob_start();
 if(isset($params['mensaje'])){ 
   echo "<div>".$params['mensaje']." <br> </div>";
 }
-print_r($historia);
+//print_r($historias);
+?>
+
+<?php foreach ($historias as $historia) {
+}
+
 ?>
 <form class="row g-3 needs-validation" method="POST" action="index.php?ctl=modificarHistoria&id=<?php echo $historia['id_historia'];?>" enctype="multipart/form-data" novalidate>
   <div class="col-md-4">
@@ -24,7 +29,7 @@ print_r($historia);
   </div>
   <div class="col-md-4">
     <label for="idioma" class="form-label">Idioma</label>
-    <input type="text" class="form-control" id="idioma" name="idioma" value="<?php echo $params['idioma']; ?>" required>
+    <input type="text" class="form-control" id="idioma" name="idioma" value="<?php echo $historia['idioma']; ?>" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -32,10 +37,9 @@ print_r($historia);
     Please select the language in which the class will be held
     </div>
   </div>
-  
   <div class="col-md-12">
     <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
-    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="contenidoHistoria" rows="6"></textarea>
+    <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="contenidoModificarHistoria" rows="6"><?php echo $historia['descripcion'] ?></textarea>
     <div class="valid-feedback">
       Looks good!
     </div>

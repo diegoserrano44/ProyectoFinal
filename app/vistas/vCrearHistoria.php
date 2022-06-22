@@ -16,7 +16,7 @@ if(isset($params['mensaje'])){
     <label for="titulo" class="form-label">Titulo</label>
     <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" max=100 required>
     <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
     <div class="invalid-feedback">
     Please select the language in which the class will be held
@@ -26,7 +26,7 @@ if(isset($params['mensaje'])){
     <label for="idioma" class="form-label">Idioma</label>
     <input type="text" class="form-control" id="idioma" name="idioma" required>
     <div class="valid-feedback">
-      Looks good!
+    Genial!
     </div>
     <div class="invalid-feedback">
     Please select the language in which the class will be held
@@ -37,7 +37,7 @@ if(isset($params['mensaje'])){
     <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
     <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="contenidoHistoria" rows="6"></textarea>
     <div class="valid-feedback">
-      Looks good!
+    Genial!
     </div>
     <div class="invalid-feedback">
       Explain in detail what you are going to offer.
@@ -50,7 +50,7 @@ if(isset($params['mensaje'])){
         Accept terms and conditions
       </label>
       <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
       <div class="invalid-feedback">
         You must agree to the terms before proceeding
@@ -65,7 +65,7 @@ if(isset($params['mensaje'])){
   </div>
 </form>
 </div>
-<script src="./../web/js/textoenriquecido.js"></script>
+<script src="../web/js/textoenriquecido.js"></script>
 
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . '/layout.php' ?>

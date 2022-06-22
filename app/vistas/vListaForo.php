@@ -60,7 +60,7 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no has escrito una descripción sobre ti";
+							echo "Todavía no hay nada publicado en la categoría General";
 						}
 					}
 					?>
@@ -84,7 +84,7 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no has escrito una descripción sobre ti";
+							echo "Todavía no hay nada publicado en la categoría Deportes";
 						}
 					}
 					?>
@@ -108,19 +108,21 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no has escrito una descripción sobre ti";
+							echo "Todavía no hay nada publicado en la categoría libre";
 						}
 					}
 					?>
 				</div>
 
 
-				<div class="tab-pane fade show text-justify" id="pills-casa"
-					role="tabpanel" aria-labelledby="pills-casa-tab"><?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Movilidad" ?>
+				<div class="tab-pane fade show text-justify" id="pills-casa" role="tabpanel" aria-labelledby="pills-casa-tab">
+					<?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Casa" ?>
 				</div>
-				<div class="tab-pane fade show text-justify" id="pills-Movilidad"
-					role="tabpanel" aria-labelledby="pills-Movilidad-tab"><?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
+
+				<div class="tab-pane fade show text-justify" id="pills-Movilidad" role="tabpanel" aria-labelledby="pills-Movilidad-tab">
+					<?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
 				</div>
+
 				<div class="tab-pane fade show text-justify" id="pills-Adaptaciones" role="tabpanel" aria-labelledby="pills-Adaptaciones-tab">
 				<?php foreach ($temas as $a) {
 					$fechaOriginal = $a['fecha_tema'];
@@ -139,7 +141,7 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no has escrito una descripción sobre ti";
+							echo "Todavía no hay nada publicado en la categoría Movilidad";
 						}
 					}
 					?>

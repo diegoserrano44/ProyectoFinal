@@ -12,10 +12,10 @@ ob_start();
 				<label for="email" class="form-label fw-bold mb-3">Email</label>
 				<input type="email" class="form-control" name="email" id="email" required>  
 				<div class="invalid-feedback">
-					Please provide an email.
+					Introduce un email válido
 				</div>
 			</div>
-			<button class="btn my-3 w-100 py-2 fw-bold botonAzul" type="submit" name="manda">Send</button>
+			<button class="btn my-3 w-100 py-2 fw-bold boton" type="submit" name="manda">Enviar</button>
 		</form>
 	</div>
 </main>

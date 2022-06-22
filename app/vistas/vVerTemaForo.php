@@ -9,9 +9,10 @@
 	      <div class="card-header">
 
 			<?php  
-				if ($_SESSION['id_usuario'] == $respuesta['id_usuario']) {
+				if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $respuesta['id_usuario']) {
 			?>
-		  	<a href="index.php?ctl=eliminarRespuesta&id=<?php echo $respuesta['id_respuesta']; ?>"><i class="fa fa-x" style="position: absolute; top: 5px; right: 5px;"></i></a>
+		  	<a href="index.php?ctl=eliminarRespuesta&id=<?php echo $respuesta['id_respuesta']; ?>"><i class="fa fa-x" style="color: black;
+    font-size: 20px; position: absolute; top: 5px; right: 5px;"></i></a>
 			<?php } ?>
 
 		  	<img class="rounded-circle p-2 imgForo" src="<?php echo $respuesta['foto_perfil'] ?>" title="<?php echo $respuesta['usuario'] ?>'s profile pic" alt="Picture">
@@ -37,12 +38,11 @@
 <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=listarForo">Volver atrás</a>
-    <a class="btn botonAzul" name="inicio" href="index.php?ctl=entrarUsuario">Iniciar Sesión</a>
 </div>
 </div>
 
 
-<script src="./../web/js/textoenriquecido.js"></script>
+<script src="../web/js/textoenriquecido.js"></script>
 <?php $contenido = ob_get_clean() ?>
 
 <?php include __DIR__ . '/layout.php' ?>

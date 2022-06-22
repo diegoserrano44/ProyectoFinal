@@ -119,7 +119,7 @@ function enviarMail($para, $asunto, $mensaje)
 {
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: HELProgramming <diegoserrano1644@gmail.com>" . "\r\n";
+    $headers .= "From: UNV <diegoserrano1644@gmail.com>" . "\r\n";
     if (mail($para, $asunto, $mensaje, $headers)) {
         return true;
     } else {
@@ -132,11 +132,11 @@ function emailToken($token)
     $mensaje = "
         <html>
         <head>
-        <title>Activación cuenta HELProgramming</title>
+        <title>Activación cuenta Una Nueva Vida</title>
         </head>
         <body>
             <p>Debes activar tu cuenta para poder hacer login, sigue el siguiente enlace:</p>
-            <a href='http://www.mariasantanaruiz.com/web/index.php?ctl=activarUsuario&id=" . $token . "' >Activa tu cuenta</a>
+            <a href='http://www.unanuevavida.net/web/index.php?ctl=activarUsuario&id=" . $token . "' >Activa tu cuenta</a>
         </body>
         </html>
         ";
@@ -152,7 +152,7 @@ function emailPassword($token)
         </head>
         <body>
             <p>Pulsa en el siguiente enlace para establecer una contraseña nueva:</p>
-            <a href='http://www.mariasantanaruiz.com/web/index.php?ctl=recordarPassword&id=" . $token . "' >Establece una contraseña nueva</a>
+            <a href='http://www.unanuevavida.net/web/index.php?ctl=recordarPassword&id=" . $token . "' >Establece una contraseña nueva</a>
         </body>
         </html>
         ";

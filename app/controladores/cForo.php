@@ -80,16 +80,15 @@ require __DIR__ . './../vistas/vCrearTema.php';
 
 
 public function modificarTema() {
-    $errores= array();
-        $params= array(
-            'mensaje'=>''
-    );
+    $a = new Foro();
+    $id = $_GET['id'];
+    $temas = $a->getTema($id);
 
     if (isset($_POST['modificarTema'])) {
         $titulo = recoge('titulo');
-        $idioma = recoge('idioma');
-        $descripcion = recoge('contenidoHistoria');
+        $descripcion = recoge('contenidoTema');
         $id_historia = recoge('id');
+        $categoria = recogeCheck('form-select');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -97,8 +96,9 @@ public function modificarTema() {
 
         $validacion = new Validacion();
         $datos['titulo'] = $titulo;
-        $datos['idioma'] = $idioma;
-        $datos['contenidoHistoria'] = $descripcion;
+        $datos['contenidoTema'] = $descripcion;
+        $datos['form-select'] = $categoria;
+
         
 
         $regla = array(
@@ -107,19 +107,17 @@ public function modificarTema() {
                 'regla' => 'noEmpty'
             ),
             array(
-                'name'=> 'idioma',
+                'name'=> 'contenidoTema',
                 'regla' => 'noEmpty, texto'
             ),
             array(
-                'name'=> 'contenidoHistoria',
+                'name'=> 'form-select',
                 'regla' => 'noEmpty'
             )
         );
         if ($validacion->rules($regla,$datos) === true){
             try {
-                $a = new Foro();
-                $params = $a->getTema($id_tema);
-                if ($a->modificarTema($id_usuario, $titulo, $descripcion, $idioma)) {
+                if ($a->modificarTema($id_usuario, $titulo, $descripcion, $categoria)) {
                     header('Location: index.php?ctl=listarHistorias');
                 }
                 else{
@@ -149,7 +147,7 @@ public function eliminarTema() {
         $id_usuario = $_SESSION['id_usuario'];
         $id_tema = $_GET['id'];
         $m = new Foro();
-        $tema = $m->getTema($id_tema);
+        $tema = $m->getTemaEliminar($id_tema);
         $autor = $tema['by_tema'];
         
         //Si el usuario no es el autor no permite eliminar

@@ -21,11 +21,7 @@ if (! empty($errores)) {
             <div class="container">
                <h1 class="display-5 fw-bold text-center">Bienvenido a Una Nueva Vida</h1>
                <p class="col-md-12 fs-5 text-center">Que sigas haciendo todo aquello que te gusta es nuestra misión</p>
-               <!-- <form method="POST" action="index.php?ctl=buscar" class="form-buscador d-flex justify-content-center p-2">
-                    <label for="buscador"></label>
-                    <input type="text" id="buscador" name="buscador" placeholder="Search your class" required>
-                    <button type="submit" class="boton-buscador" name="buscar" value="Search"><i class="fa fa-search"></i></button>
-               </form> -->
+               
             </div>
          </div>
       </div>

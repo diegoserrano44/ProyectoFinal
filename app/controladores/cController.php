@@ -5,7 +5,7 @@ class cController{
     public function inicio()
     {
 
-        require __DIR__ . '/../vistas/vInicio.php';
+        header('location:http://localhost/ProyectoFinal/web/index.php?ctl=listarHistorias');
     }
 
     public function inicioAdmin()

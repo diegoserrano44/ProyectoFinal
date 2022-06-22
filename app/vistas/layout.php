@@ -9,9 +9,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">       
 <script src="https://cdn.tiny.cloud/1/vocxbael83ynt7vuj9xksifglo6tuwy1ik1zunrl6hsflrg0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet"> -->
 
 <link href="../web/css/style.css" rel="stylesheet">
 </head>
@@ -39,17 +36,17 @@
                 <div class="d-lg-flex align-items-center">
                 <?php 
                 if (isset($_SESSION['id_usuario'])) {
-                    echo "<a id=\"historias\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a id=\"foro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a id=\"mensajes\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
-                    echo "<a id=\"perfil\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
-                    echo "<a id=\"apps\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarApps\">Apps VR</a>";
-                    echo "<a id=\"salir\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
+                    echo "<a id=\"historias\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a id=\"foro\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a id=\"mensajes\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarMensaje\">Mensajes</a>";
+                    echo "<a id=\"perfil\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=verPerfil&id=" . $_SESSION['id_usuario'] . "\">Perfil</a>";
+                    echo "<a id=\"apps\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarApps\">Apps VR</a>";
+                    echo "<a id=\"salir\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=salirUsuario\"><i class=\"fas fa-sign-out-alt\"></i></a>";
                 }else{
-                    echo "<a id=\"historias\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
-                    echo "<a id=\"foro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
-                    echo "<a id=\"login\" class=\"nav-link nav-item bg-success text-white rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\" style=\"padding:4px;\"></i>Iniciar Sesión</a>";
-                    echo "<a id=\"registro\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Registro</a>";
+                    echo "<a id=\"historias\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarHistorias\">Historias</a>";
+                    echo "<a id=\"foro\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=listarForo\">Foro</a>";
+                    echo "<a id=\"login\" style=\"background-color: #719C34; font-size: 17px;\" class=\"nav-link nav-item text-white rounded-pill\" href=\"index.php?ctl=entrarUsuario\"><i class=\"fas fa-user-circle\" style=\"padding:4px;\"></i>Iniciar Sesión</a>";
+                    echo "<a id=\"registro\" style=\"font-size: 17px;\" class=\"nav-link nav-item text-black\" href=\"index.php?ctl=registrarUsuario\">Registro</a>";
                 }
                 ?>
                 </div>
@@ -70,7 +67,7 @@
                 </ul>
             </div>
             <div class="p-4">
-                <a class="text-success m-3 text-decoration-none" href="">2022 - unanuevavida.com</a>
+                <a class="text-success m-3 text-decoration-none" href="">2022 - unanuevavida.net</a>
             </div>
             <div class="d-flex flex-column justify-content-center">
             
