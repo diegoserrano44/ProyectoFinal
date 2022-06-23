@@ -74,31 +74,11 @@ if (! empty($errores)) {
 							data-bs-toggle="pill" data-bs-target="#pills-desc" type="button"
 							role="tab" aria-controls="pills-desc" aria-selected="true">Descripción</button>
 					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="pills-vr_apps-tab"
-							data-bs-toggle="pill" data-bs-target="#pills-vr_apps"
-							type="button" role="tab" aria-controls="pills-vr_apps"
-							aria-selected="false">Mis VR apps</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="pills-historias-tab"
-							data-bs-toggle="pill" data-bs-target="#pills-historias"
-							type="button" role="tab" aria-controls="pills-historias"
-							aria-selected="false">Mis historias</button>
-					</li>
 				</ul>
 				<div class="tab-content" id="pills-tabContent">
 					<div class="tab-pane fade show active text-justify" id="pills-desc"
 						role="tabpanel" aria-labelledby="pills-desc-tab">
 						<textarea id="descripcion" name="descripcion" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['descripcion']))?$params['descripcion']:"" ?></textarea>
-					</div>
-					<div class="tab-pane fade text-justify" id="pills-vr_apps"
-						role="tabpanel" aria-labelledby="pills-vr_apps-tab">
-						<textarea id="vr_apps" name="vr_apps" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['vr_apps']))?$params['vr_apps']:"" ?></textarea>
-					</div>
-					<div class="tab-pane fade text-justify" id="pills-historias"
-						role="tabpanel" aria-labelledby="pills-historias-tab">
-						<textarea id="historias" name="historias" onkeyup="textAreaAdjust(this)"><?php echo (isset($params['portfolio']))?$params['portfolio']:"" ?></textarea>
 					</div>
 				</div>
 			</div>

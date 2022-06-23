@@ -160,6 +160,7 @@ public function eliminarTema() {
         error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
         header('Location: index.php?ctl=error');
     }
+    require __DIR__ . './../vistas/vEliminarTema.php';
     
 }
 

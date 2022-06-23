@@ -19,7 +19,7 @@ $temas=$params['temas'];
 			if ($_SESSION['id_usuario'] == $params['id_usuario']) {
 						?>    
                 <a class="text-center mb-3" href=<?php echo "index.php?ctl=modificarPerfil&id=" . $params['id_usuario'] ?>>
-				<button class="col-md-9 col-xs-12 btn colorSecundario">Modify profile</button></a>
+				<button class="col-md-9 col-xs-12 btn colorSecundario">Modificar Perfil<br><i style="font-size: 22px; color: #719C34" class="fa fa-edit"></i></button></a>
 					<?php } ?>
 		</div>
 		<div class="col-md-10">

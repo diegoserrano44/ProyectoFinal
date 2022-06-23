@@ -6,7 +6,7 @@
 	$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 	?>
       <div class="card m-3">
-	      <div class="card-header">
+	      <div class="card-header" style="background: #dcffab;">
 
 			<?php  
 				if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $respuesta['id_usuario']) {
@@ -30,14 +30,8 @@
 	<form action="index.php?ctl=enviarRespuesta" method="POST">
 	<textarea name="respuesta" rows="6" cols="50" id="publicarRespuesta"></textarea>
 		<input type="hidden" name="id" value="<?php echo $_REQUEST['id']; ?>" />
-		<input type="submit" value="Publicar tu respuesta" name="enviarRespuesta">
+		<input class="botonRespuesta" type="submit" value="Publicar tu respuesta" name="enviarRespuesta">
 	</form>
-</div>
-</div>
-
-<div class="d-flex justify-content-center">
-    <div class="p-2">
-    <a class="btn btn-danger" href="index.php?ctl=listarForo">Volver atrás</a>
 </div>
 </div>
 

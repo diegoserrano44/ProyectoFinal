@@ -8,24 +8,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../web/img/green.jpg" class="d-block w-100" alt="..." height="300px">
+      <img src="../web/img/slider.jpg" class="d-block w-100" alt="..." height="500px">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>Iniciate a las experiencias en Realidad Virtual</h5>
+        <p>Disfruta de las muchas experiencias en realidad virtual y experimenta nuevas sensaciones.</p>
       </div>
     </div>
     <div class="carousel-item">
-    <img src="../web/img/green.jpg" class="d-block w-100" alt="..." height="300px">
+    <img src="../web/img/slider.jpg" class="d-block w-100" alt="..." height="500px">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>Adquiere unas gafas de realidad virtual</h5>
+        <p>Accede a cualquier pagina oficial de cascos de realidad virtual para comprar el tuyo.</p>
       </div>
     </div>
     <div class="carousel-item">
-    <img src="../web/img/green.jpg" class="d-block w-100" alt="..." height="300px">
+    <img src="../web/img/slider.jpg" class="d-block w-100" alt="..." height="500px">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>Algunos cascos de realidad virtual</h5>
+        <p>Algunos de los cascos VR que recomendamos para la mejor experiencia son HTC VIVE y OCULUS QUEST 2.</p>
       </div>
     </div>
   </div>

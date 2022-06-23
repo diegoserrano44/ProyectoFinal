@@ -90,16 +90,16 @@
 					?>
 				</div>
 
-				<div class="tab-pane fade show text-justify" id="pills-libre" role="tabpanel" aria-labelledby="pills-libre-tab">
-				<?php foreach ($temas as $a) {
-					$fechaOriginal = $a['fecha_tema'];
-					$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
+				<div class="tab-pane fade text-justify " id="pills-Libre" role="tabpanel" aria-labelledby="pills-Libre-tab">
+					<?php foreach ($temas as $a) {
+						$fechaOriginal = $a['fecha_tema'];
+						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
-							if ($a['categoria_tema']=='5') {	
+							if ($a['categoria_tema']=='2') {	
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
-							Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
+								Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
 							</div>
 							<div class="card-body">
 								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
@@ -108,19 +108,59 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no hay nada publicado en la categoría libre";
+							echo "Todavía no hay nada publicado en la categoría Libre";
 						}
 					}
 					?>
 				</div>
 
 
-				<div class="tab-pane fade show text-justify" id="pills-casa" role="tabpanel" aria-labelledby="pills-casa-tab">
-					<?php echo (isset($params['movilidad'])&&!empty($params['movilidad']))?$params['movilidad']:"Todavía no se ha publicado ningun tema en la categoría Casa" ?>
+				<div class="tab-pane fade text-justify " id="pills-Casa" role="tabpanel" aria-labelledby="pills-Casa-tab">
+					<?php foreach ($temas as $a) {
+						$fechaOriginal = $a['fecha_tema'];
+						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
+						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
+							if ($a['categoria_tema']=='2') {	
+						?>
+						<div class="card m-3">
+							<div class="card-header fw-light">
+								Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
+							</div>
+							<div class="card-body">
+								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
+								<p class="card-text text-muted fs-6"></p>
+							</div>
+						</div>
+					<?php } }
+						else { 
+							echo "Todavía no hay nada publicado en la categoría Casa";
+						}
+					}
+					?>
 				</div>
 
-				<div class="tab-pane fade show text-justify" id="pills-Movilidad" role="tabpanel" aria-labelledby="pills-Movilidad-tab">
-					<?php echo (isset($params['vr_apps'])&&!empty($params['vr_apps']))?$params['vr_apps']:"Todavía no se ha publicado ningun tema en la categoría Movilidad"?>
+				<div class="tab-pane fade text-justify " id="pills-Movilidad" role="tabpanel" aria-labelledby="pills-Movilidad-tab">
+					<?php foreach ($temas as $a) {
+						$fechaOriginal = $a['fecha_tema'];
+						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
+						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
+							if ($a['categoria_tema']=='2') {	
+						?>
+						<div class="card m-3">
+							<div class="card-header fw-light">
+								Tema publicado por <b><?php echo $a['usuario'];?></b><?php echo " - ".$newDate; ?>
+							</div>
+							<div class="card-body">
+								<a href="index.php?ctl=verTemaForo&id=<?php echo $a['id_tema']?>"><h5 class="card-title fs-5"><?php echo $a['asunto_tema']; ?></h5></a>
+								<p class="card-text text-muted fs-6"></p>
+							</div>
+						</div>
+					<?php } }
+						else { 
+							echo "Todavía no hay nada publicado en la categoría Movilidad";
+						}
+					}
+					?>
 				</div>
 
 				<div class="tab-pane fade show text-justify" id="pills-Adaptaciones" role="tabpanel" aria-labelledby="pills-Adaptaciones-tab">
@@ -141,7 +181,7 @@
 						</div>
 					<?php } }
 						else { 
-							echo "Todavía no hay nada publicado en la categoría Movilidad";
+							echo "Todavía no hay nada publicado en la categoría Adaptaciones";
 						}
 					}
 					?>

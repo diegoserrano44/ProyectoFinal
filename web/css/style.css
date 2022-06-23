@@ -3,16 +3,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+	font-family: 'Press Start 2P', cursive;
 }
  
 h1{
-	font-family: 'Orbitron', sans-serif;
 	text-align: center;
 }
 
-h2{
-	font-family: 'Orbitron', sans-serif;
-}
 
 footer {
 	width: 100%;
@@ -303,16 +300,18 @@ th, td {
 	margin-left: 235px;
 }
 .bMsj{
-	background-color: #fff;
+	background: #dcffab!important;
 }
 
-/* .accordion-body {
-	background-color: #212429;
+.botonRespuesta {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	float: right;
+	padding: 8px;
+	border-radius: 10px;
+	border: 1px solid #719C34;
+	background-color: #dcffab;
 }
-
-.accordion-item{
-	border: 0;
-} */
 
 .right_Mss {
 	align-self: flex-end;
@@ -323,28 +322,8 @@ th, td {
 }
 
 .botonMorado{
-	color: #7738A7;
+	color: #719C34;
 }
-
-/* .accordion-button {
-	font-size: 1.25rem;
-	text-transform: uppercase;
-	color: #7738A7;
-}
-
-
-.accordion-button::after {
-	background-image: none;
-}
-
-.accordion-button:not(.collapsed)::after {
-	background-image: none;
-}
-
-.accordion-button:not(.collapsed) {
-	color: #7738A7;
-	background-color: #fff;
-} */
 
 .icono {
 	background: none;
@@ -359,6 +338,7 @@ th, td {
 
 .rmte {
 	flex: 2;
+	color: black;
 }
 
 .fecha {

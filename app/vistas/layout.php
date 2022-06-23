@@ -67,7 +67,7 @@
                 </ul>
             </div>
             <div class="p-4">
-                <a class="text-success m-3 text-decoration-none" href="">2022 - unanuevavida.net</a>
+                <a class="text-success m-3 text-decoration-none" href="http://localhost/ProyectoFinal/web/index.php?ctl=listarHistorias">unanuevavida.net - 2022</a>
             </div>
             <div class="d-flex flex-column justify-content-center">
             
