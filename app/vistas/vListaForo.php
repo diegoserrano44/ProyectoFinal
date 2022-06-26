@@ -95,7 +95,7 @@
 						$fechaOriginal = $a['fecha_tema'];
 						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
-							if ($a['categoria_tema']=='2') {	
+							if ($a['categoria_tema']=='5') {	
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
@@ -120,7 +120,7 @@
 						$fechaOriginal = $a['fecha_tema'];
 						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
-							if ($a['categoria_tema']=='2') {	
+							if ($a['categoria_tema']=='6') {	
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
@@ -144,7 +144,7 @@
 						$fechaOriginal = $a['fecha_tema'];
 						$newDate = date("d/m/Y H:i", strtotime($fechaOriginal));
 						if (isset($a['asunto_tema'])&&!empty($a['asunto_tema'])) { 
-							if ($a['categoria_tema']=='2') {	
+							if ($a['categoria_tema']=='4') {	
 						?>
 						<div class="card m-3">
 							<div class="card-header fw-light">
@@ -187,9 +187,6 @@
 					?>
 				</div>
 
-				<div class="tab-pane fade text-justify " id="pills-adsUser"
-					role="tabpanel" aria-labelledby="pills-adsUser-tab">
-                </div>
 			</div>
 		</div>
 	</div>
