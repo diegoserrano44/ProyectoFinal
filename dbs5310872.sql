@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2022 a las 18:14:37
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 28-06-2022 a las 21:35:59
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,9 +65,8 @@ CREATE TABLE `historias` (
 --
 
 INSERT INTO `historias` (`id_historia`, `id_usuario`, `titulo`, `descripcion`, `fecha_creacion`, `idioma`) VALUES
-(62, 78, 'Historia de Admin', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2022-05-31 13:13:55', 'AAA'),
-(67, 77, 'Prueba 3 Edu', 'ssss', '2022-06-01 08:27:36', 'AAA'),
-(69, 76, 'Combustible GLP, todo lo que debes saber', 'Hola mi nombre es Diego Serrano y quiero contaros algo de esto de mi vida y como lo llevo. Es dificil de explicar...\r\n\r\nBueno lo inttentaré y es lo uniuco qiue puedo hacer porque si no no pueedo probar.', '2022-06-01 10:03:09', 'AAA');
+(1, 2, 'Nick: sin brazos, sin piernas y sin límites', '<p>Nick Vujicic naci&oacute; en Melbourne (Australia) en el a&ntilde;o 1982 y debido a una enfermedad vino al mundo sin extremidades. A pesar de las limitaciones, Nick ha logrado&nbsp;<strong>hacer paracaidismo, protagonizar cortometrajes, escribir un best-seller (<em>No legs, no arms, no worries</em>), jugar al f&uacute;tbol y al golf, convertirse en un gran orador, casarse y tener hijos</strong>.</p>\r\n<p>Nick es feliz: no piensa en lo que no tiene, sino&nbsp;que est&aacute; agradecido por lo que s&iacute; tiene, por qui&eacute;n es, y deja de lado sus miedos. Lo que transmite Nick es que es necesario aceptar la vida tal y como viene, sabiendo que podemos conseguir lo que queramos con esfuerzo y perseverancia.</p>\r\n<p><span style=\"background-color: #fbeeb8;\"><em><strong>Pablo L&oacute;pez</strong></em></span></p>', '2022-06-23 14:10:34', 'Castellano'),
+(2, 2, 'Sin poder caminar por un accidente de tráfico', '<p>Hoy en este espacio, quiero contar la historia de Carla, una joven que con tan solo 14 a&ntilde;os, tuvo que enfrentarse tanto al dolor fisco como al emocional.</p>\r\nMayo de 2019 Acude a cl&iacute;nica CEMTRO una joven derivada del hospital de Don Benito (Badajoz).\r\nD&iacute;as antes ya hab&iacute;a contactado con nosotros su padre, al haber conocido la existencia de la unidad de accidentes de tr&aacute;fico de la asociaci&oacute;n espa&ntilde;ola de lesiones deportivas.\r\nElla viajaba de copiloto y el conductor hab&iacute;a sido derivado d&iacute;as antes a nuestro hospital, pero de &eacute;l ya hablaremos en otro momento.\r\nRecuerdo la desesperaci&oacute;n de juan Carlos (padre) ante la impotencia de no darle despu&eacute;s de casi un mes el tratamiento definitivo a su hija, ver con desesperaci&oacute;n la situaci&oacute;n y las malas condiciones en la que se encontraba su hija en Don Benito.\r\nPor fin se autoriza el traslado, forzado a nuestro servicio de medicina interna para agilizarlo, debido a la infecci&oacute;n que sufr&iacute;a Carla.\r\nNo voy a negar que cuando la recib&iacute; en urgencias, me impacto, no pod&iacute;a dar cr&eacute;dito de que una paciente ingresada en un hospital casi un mes, llegara en el estado tan lamentable que llego.\r\nEse mismo d&iacute;a fue sometida a todo tipo de pruebas y anal&iacute;ticas&hellip;. Hab&iacute;a que espera la anal&iacute;tica y el tejido no estaban bien, despu&eacute;s de un largo debate los doctores Almaraz y Novoa, deciden dar un tiempo prudencial para poder intervenir con seguridad, mientras medicina interna trabaja contrarreloj para controlar la infecci&oacute;n.\r\nLos d&iacute;as pasan y su estado mejora, ha llegado el momento tan esperado y temido al mismo tiempo.\r\nSe decide que ha llegado el momento de operar&hellip;.\r\nJuan Carlos y Silvia, se miraban y esa mirada lo dec&iacute;a todo, el dolor de unos padres impotentes viendo como su &uacute;nica hija, iba camino al quir&oacute;fano con un pron&oacute;stico no muy alentador.\r\nLas horas pasaban y el nerviosismo se apoderaba de esos padres.\r\nTras 9 horas de cirug&iacute;a, suena el tel&eacute;fono, su rostro palidece ante la noticia que les puedan dar.\r\nEra el Dr. Almaraz quien estaba al otro lado de la l&iacute;nea telef&oacute;nica, hubo un silencio de segundos y la emoci&oacute;n se apodero de los padres, todo hab&iacute;a salido bien la cirug&iacute;a fue un &eacute;xito.\r\nA las pocas horas Carla estaba en la habitaci&oacute;n, ahora comienza una dura batalla por poder caminar.\r\nPas&oacute; casi un mes hasta que Carla pudo salir del hospital y empezar un largo camino de recuperaci&oacute;n.\r\nEn plena recuperaci&oacute;n, Carla sufre un duro golpe emocional, Juan Carlos, su padre y apoyo sufre una sinusitis y por desgracia o por una atenci&oacute;n inadecuada, Juan Carlos fallece d&iacute;as despu&eacute;s debido a una meningitis en Badajoz.\r\nCarla entra en una depresi&oacute;n y Silvia se queda sola con su hija al frente de la situaci&oacute;n.\r\nPese al &eacute;xito de las cirug&iacute;as, Carla debe someterse a mas intervenciones para ir acondicionando sus huesos y que pueda hacer una vida normal.\r\nSu d&iacute;a a d&iacute;a no es f&aacute;cil, Silvia tiene que hacer frente a costosas sesiones de fisioterapia que en muchas ocasiones no daban el resultado que esperaban, cambiando en varias ocasiones de cl&iacute;nicas en su pueblo.\r\nLlega el COVID 19 y no ayuda en nada a su recuperaci&oacute;n, con fuerza de voluntad madre e hija van saliendo y Carla sigue mejorando.\r\nSon muchas las barreras a las que han tenido que hacer frente, a decisiones tan absurdas como inhumanas, como es el caso del instituto donde estudia, quien la suspende educaci&oacute;n f&iacute;sica por no hacer el examen, oblig&aacute;ndola a acudir y con sus muletas a las pistas solo para mirar, situaci&oacute;n que hoy no ha cambiado. Por supuesto ella presento un informe m&eacute;dico prohibiendo no realizar ejercicio f&iacute;sico, apoyar la pierna.\r\nPero todo eso quedo atr&aacute;s&hellip;.\r\nHoy es otra historia, toca visita con el Dr. Almaraz y sorpresa, Carla deja las muletas y empieza a dar pasitos sin ellas.\r\nBaja de la consulta y acude al despacho de la unidad de accidentes de tr&aacute;fico de AELD, y me dice Paco, &iquest;quieres verme caminar sin muletas? Y ella orgullosa y feliz camino para los all&iacute; presentes.\r\nA&uacute;n queda camino por recorrer, pero es un paso m&aacute;s para devolver a Carla la normalidad de su vida.\r\nEste articulo se lo dedico a Juan Carlos, un gran hombre y un buen padre, que por desgracia su fue de este mundo sin ver caminar a su hija.\r\nY como no, a Silvia esa madre coraje, que se ha puesto el mundo por montera para luchar por su hija.\r\nMi agradecimiento a mi equipo medico, Dr. Almaraz y Dr. Novoa, a cl&iacute;nica CEMTRO por la confianza en esta unidad de accidentes de tr&aacute;fico y a Erika Gonz&aacute;lez la abogada que ha conseguido que se haga justicia con Carla.\r\n&nbsp;\r\nNo nos enga&ntilde;emos en nuestro d&iacute;a a d&iacute;a tenemos muchas Carlas, y por ellos nos dejamos la piel.\r\n&nbsp;\r\n<span style=\"background-color: #fbeeb8;\"><em><strong>Pablo L&oacute;pez</strong></em></span>', '2022-06-23 14:13:41', 'Castellano');
 
 -- --------------------------------------------------------
 
@@ -83,18 +82,6 @@ CREATE TABLE `historias_deleted` (
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
   `idioma` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `historias_deleted`
---
-
-INSERT INTO `historias_deleted` (`id_deleted`, `id_usuario`, `titulo`, `descripcion`, `fecha_creacion`, `idioma`) VALUES
-(17, 77, 'Prueba 4 Edu', 'aaaaaa', '2022-06-01 08:28:25', 'AAA'),
-(18, 77, 'Prueba1 escrita por Edu', 'aaaa', '2022-06-01 08:30:02', 'Castellano'),
-(19, 77, 'Prueba 2 Edu', 'aaaaaaaa', '2022-06-01 08:31:32', 'AAA'),
-(20, 76, 'Problemas de conducir a bajas revoluciones', 'Hola quiero hacer esto.\r\n\r\nContinuar aquí', '2022-06-02 08:03:44', 'Castellano'),
-(21, 76, 'Todos los modelos Subaru en Japan Lesseps', 'Mi historia\nAqu&iacute; explico los modelos subaru. alli esto\n&nbsp;\nAqu&iacute; lo otro\nEsto es muy importante', '2022-06-02 09:08:27', 'Castellano'),
-(22, 76, 'Todo sobre el Subaru XV', '<p><strong><span style=\"font-size: 18pt;\">Probando las historias enriquecidas</span></strong></p>\r\n<p>Esto es <strong>importante</strong>. Y <em>esto</em></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"background-color: #bfedd2;\">Diego Serrano</span></p>', '2022-06-02 16:11:05', 'AAA');
 
 -- --------------------------------------------------------
 
@@ -120,16 +107,8 @@ CREATE TABLE `mensajes` (
 --
 
 INSERT INTO `mensajes` (`id_mensaje`, `id_hilo`, `envia`, `id_profesor`, `id_alumno`, `asunto`, `mensaje`, `fecha_creacion`, `profesorV`, `alumnoV`) VALUES
-(112, 1, 77, 76, 77, 'prueba', 'hola', '2022-05-31 12:53:08', 0, 1),
-(113, 2, 78, 76, 78, 'fffff', 'ffffff', '2022-05-31 13:09:58', 1, 1),
-(114, 2, 76, 76, 78, 'fffff', 'hola admin que pasa?', '2022-05-31 13:10:28', 1, 1),
-(115, 3, 77, 76, 77, 'sss', 'ssss', '2022-05-31 13:11:16', 0, 1),
-(116, 4, 77, 76, 77, 'dfef', 'fewrfewrgf', '2022-05-31 13:11:29', 0, 1),
-(117, 5, 79, 78, 79, 'aaaaaaaaaa', 'aaaaaaaaaaaaa', '2022-05-31 13:14:25', 1, 1),
-(118, 6, 79, 78, 79, 'bbbbbbbb', 'bbbbbbbbbbb', '2022-05-31 13:14:34', 1, 1),
-(119, 7, 79, 78, 79, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '2022-05-31 13:16:43', 1, 0),
-(120, 8, 76, 78, 76, 'aaaaa', 'aaaaaaaaaaa', '2022-06-01 08:22:12', 1, 0),
-(121, 9, 77, 76, 77, 'dewfe', 'gfrgrtg', '2022-06-01 12:54:10', 0, 0);
+(1, 1, 3, 2, 3, 'Historia sin límites', 'Hola Nick podrias ayudarme?', '2022-06-23 14:15:09', 1, 1),
+(2, 1, 2, 2, 3, 'Historia sin límites', 'Hola María, claro que sí', '2022-06-28 14:44:16', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -150,16 +129,7 @@ CREATE TABLE `respuestas_foro` (
 --
 
 INSERT INTO `respuestas_foro` (`id_respuesta`, `contenido_respuesta`, `fecha_respuesta`, `tema_respuesta`, `by_respuesta`) VALUES
-(1, 'Hola esto es una pregunta de deportes?', '2022-05-10 22:00:00', 11, 70),
-(4, 'Si y esto es una respuesta de deportes', '2022-05-10 22:00:00', 11, 70),
-(75, 'sdeg&lt;srgv', '2022-05-26 16:12:16', 79, 76),
-(76, 'gergerge', '2022-05-26 16:12:25', 79, 76),
-(82, '<p><span style=\"font-size: 18pt; background-color: #bfedd2;\">Hola </span></p>\r\n<p><strong>probando</strong></p>', '2022-06-02 08:01:15', 105, 76),
-(83, '<p>prueba de respuesta</p>', '2022-06-02 09:04:08', 109, 76),
-(84, '<p><strong>Otra vez yo</strong></p>', '2022-06-02 09:04:20', 109, 76),
-(87, '<p>Holaaaa</p>', '2022-06-02 15:13:03', 108, 76),
-(88, '<p>Adioooos</p>', '2022-06-02 15:13:12', 108, 76),
-(89, '<p>Hola diego pesado</p>', '2022-06-02 15:22:41', 108, 77);
+(1, '<p>Hola esto es una prueba de la categoria General, alguien puede contestarme?</p>\r\n<p><strong>Pablo</strong></p>', '2022-06-23 15:43:03', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -180,9 +150,12 @@ CREATE TABLE `temas_foro` (
 --
 
 INSERT INTO `temas_foro` (`id_tema`, `asunto_tema`, `fecha_tema`, `categoria_tema`, `by_tema`) VALUES
-(105, 'Tema 3 deportes', '2022-06-01 08:32:46', 2, 77),
-(108, '¿Por qué elegir coches híbridos?', '2022-06-02 08:35:01', 1, 76),
-(109, 'Combustible GLP, todo lo que debes saber', '2022-06-02 09:03:22', 1, 76);
+(1, 'Prueba de tema general', '2022-06-23 15:36:51', 1, 2),
+(2, 'Prueba de tema deportes', '2022-06-23 15:37:02', 2, 2),
+(3, 'Prueba de tema adaptaciones', '2022-06-23 15:37:13', 3, 2),
+(4, 'Prueba de tema movilidad', '2022-06-23 15:37:28', 4, 2),
+(5, 'Prueba de tema libre', '2022-06-23 15:37:40', 5, 2),
+(7, 'Prueba de tema casa', '2022-06-23 15:41:03', 6, 2);
 
 -- --------------------------------------------------------
 
@@ -200,7 +173,6 @@ CREATE TABLE `usuarios` (
   `telefono` varchar(12) DEFAULT NULL,
   `fecha_nac` date DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
-  `vr_apps` text DEFAULT NULL,
   `foto_perfil` varchar(100) NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT current_timestamp(),
   `rol` int(11) NOT NULL,
@@ -212,10 +184,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellidos`, `email`, `telefono`, `fecha_nac`, `descripcion`, `vr_apps`, `foto_perfil`, `fecha_creacion`, `rol`, `activo`, `google`) VALUES
-(76, 'diego', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Diego', 'Serrano', 'diego@gmail.com', '600619959', '2001-11-16', 'Hola soy diego', '', 'img/diego.png', '2022-05-31 15:12:45', 1, 1, 0),
-(77, 'edu', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Edu', 'Romeu', 'edu@gmail.com', '123456789', '1995-03-11', '', '', 'img/edu.png', '2022-05-24 17:39:19', 1, 1, 0),
-(78, 'admin', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Diego', 'Serrano', 'admin@gmail.com', '600619959', '2001-11-16', '', '', 'img/diego.png', '2022-05-24 17:28:18', 1, 1, 0);
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellidos`, `email`, `telefono`, `fecha_nac`, `descripcion`, `foto_perfil`, `fecha_creacion`, `rol`, `activo`, `google`) VALUES
+(1, 'admin', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Diego', 'Serrano', 'diego@gmail.com', '600619959', '2001-11-16', NULL, 'img/default_user.png', '2022-06-23 16:02:26', 1, 1, 0),
+(2, 'pablo', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'Pablo', 'López', 'pablolopez@gmail.com', '123456789', '1995-03-12', '', 'img/default_user.png', '2022-06-23 16:03:08', 1, 1, 0),
+(3, 'maria', '$2a$07$usesomesillystringforeh6tvwDNOAiEn9PYXfY79K3vDiKj6Ib6', 'María', 'García', 'maria@gmail.com', '673928674', '1998-09-15', NULL, 'img/default_user.png', '2022-06-23 16:04:19', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -234,7 +206,9 @@ CREATE TABLE `usuario_tokens` (
 --
 
 INSERT INTO `usuario_tokens` (`id_user`, `token`, `fecha`) VALUES
-(79, '33036a8cf615b35fb8eba3efeea1d8d4a2a4a757', '2022-07-01');
+(1, 'd8ebefb69f52144fd8af41327a04d3b85eed05bd', '2022-07-23'),
+(2, '6f864f8217fa74bf1372047964fd8b4ae20369b7', '2022-07-23'),
+(3, '6c0b2d353a6c234f362ad5863cddd4b0a507a1b4', '2022-07-23');
 
 --
 -- Índices para tablas volcadas
@@ -314,37 +288,37 @@ ALTER TABLE `categorias_foro`
 -- AUTO_INCREMENT de la tabla `historias`
 --
 ALTER TABLE `historias`
-  MODIFY `id_historia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_historia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `historias_deleted`
 --
 ALTER TABLE `historias_deleted`
-  MODIFY `id_deleted` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_deleted` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas_foro`
 --
 ALTER TABLE `respuestas_foro`
-  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_respuesta` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `temas_foro`
 --
 ALTER TABLE `temas_foro`
-  MODIFY `id_tema` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id_tema` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

@@ -5,7 +5,7 @@ ob_start();
 <h3>Se ha eliminado la historia</h3>
 </div>
 <div class="d-flex justify-content-center">
-    <a class="btn btn-danger" href="index.php?ctl=verPerfil&id=76">Volver atrás</a>
+    <a class="btn btn-danger" href="index.php?ctl=inicio">Volver atrás</a>
 </div>
 </div>
 <?php 

@@ -6,12 +6,12 @@ ob_start();
         <?php if(isset($params['mensaje'])){
                 echo $params['mensaje'];
         }?>
-        <h4>This is your first time on the site. Please set your user name.</h4>
+        <h4>Es tu primera vez en este sitio web, establece un nombre de usuario.</h4>
         <form method="POST" action="index.php?ctl=registroGoogle">
-            <label for="nameUser" class="form-label">Username</label>
+            <label for="nameUser" class="form-label">Usuario</label>
             <input type="text" class="form-control" id="nameUser"  name="nameUser" onkeyup="filtra(this.value)">
             <div class="mt-1" id="resultado"></div>
-            <button class="btn my-3 w-100 py-2 fw-bold botonAzul" type="submit" name="bUsername">Send</button>
+            <button class="btn my-3 w-100 py-2 fw-bold botonAzul" type="submit" name="bUsername">Enviar</button>
         </form>
     </div>
 </div>
@@ -27,7 +27,7 @@ if (str.length == 0) {
         if (this.readyState == 4 && this.status == 200) {
                 ms= JSON.parse(this.responseText);
             if(ms !== false){                        
-                 document.getElementById("resultado").innerHTML = "This user already exists.";
+                 document.getElementById("resultado").innerHTML = "El nombre de usuario ya existe";
                 document.getElementById("resultado").style.color="red";
                 document.getElementById("usuario").style.backgroundColor="pink";
 

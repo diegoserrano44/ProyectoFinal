@@ -47,20 +47,20 @@ if(isset($params['mensaje'])){
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
       <label class="form-check-label" for="invalidCheck">
-        Accept terms and conditions
+        Aceptar términos y condiciones
       </label>
       <div class="valid-feedback">
       Genial!
     </div>
       <div class="invalid-feedback">
-        You must agree to the terms before proceeding
+        Debes aceptar los términos y condiciones
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="crearHistoria">Publicar la historia</button>
+    <button class="btn boton" type="submit" name="crearHistoria">Publicar la historia</button>
   </div>
   </div>
 </form>

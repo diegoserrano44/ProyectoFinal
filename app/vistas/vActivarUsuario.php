@@ -6,7 +6,7 @@ ob_start();
 <h3>El usuario ha sido activado, ya puedes <a href="index.php?ctl=entrarUsuario">Iniciar Sesión</a</h3>
 </div>
 <div class="d-flex justify-content-center">
-    <a class="btn botonAzul" href="index.php?ctl=entrarUsuario">Go to login</a>
+    <a class="btn boton" href="index.php?ctl=entrarUsuario">Iniciar Sesión</a>
 </div>
 
 <?php 

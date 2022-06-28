@@ -48,7 +48,7 @@
   <div class="card-body">
     <h5 class="card-title">Basquet VR</h5>
     <p class="card-text">Juego de basquet para marcar la pelota dentro de la canasta, anímate a jugar y divertirte un rato</p>
-    <a href="https://ada.is/basketball-demo/" target="_blank" class="btn btn-primary">Go somewhere</a>
+    <a href="https://ada.is/basketball-demo/" target="_blank" class="btn boton">Jugar</a>
   </div>
 </div>
 

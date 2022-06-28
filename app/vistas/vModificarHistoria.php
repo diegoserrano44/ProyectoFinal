@@ -21,7 +21,7 @@ if(isset($params['mensaje'])){
     <label for="titulo" class="form-label">Titulo</label>
     <input type="text" class="form-control" name="titulo" id="cTituloAnuncio" value="<?php echo $historia['titulo'];?>" max=100 required>
     <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
     <div class="invalid-feedback">
     Please select the language in which the class will be held
@@ -31,7 +31,7 @@ if(isset($params['mensaje'])){
     <label for="idioma" class="form-label">Idioma</label>
     <input type="text" class="form-control" id="idioma" name="idioma" value="<?php echo $historia['idioma']; ?>" required>
     <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
     <div class="invalid-feedback">
     Please select the language in which the class will be held
@@ -41,7 +41,7 @@ if(isset($params['mensaje'])){
     <label for="contenidoHistoria" class="form-label">Contenido de la historia</label>
     <textarea class="form-control text-black parrafo" name="contenidoHistoria" id="contenidoModificarHistoria" rows="6"><?php echo $historia['descripcion'] ?></textarea>
     <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
     <div class="invalid-feedback">
       Explain in detail what you are going to offer.
@@ -51,25 +51,24 @@ if(isset($params['mensaje'])){
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
       <label class="form-check-label" for="invalidCheck">
-        Accept terms and conditions
+        Aceptar términos y condiciones
       </label>
       <div class="valid-feedback">
-      Looks good!
+      Genial!
     </div>
       <div class="invalid-feedback">
-        You must agree to the terms before proceeding
+       Debes aceptar los términos y condiciones
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver a Inicio</a></button>
-    <button class="btn colorSecundario" type="submit" name="modificarHistoria">Modificar la historia</button>
+    <button class="btn boton" type="submit" name="modificarHistoria">Modificar la historia</button>
   </div>
   </div>
 </form>
 </div>
-<!-- <script src="./../web/js/textoenriquecido.js"></script> -->
 
  <?php $contenido = ob_get_clean() ?>
  <?php include __DIR__ . '/layout.php' ?>

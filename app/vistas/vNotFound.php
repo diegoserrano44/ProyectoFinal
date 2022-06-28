@@ -238,9 +238,9 @@
         <div class='c'>
             <div class='_404'>404</div>
             <hr>
-            <div class='_1'>THE PAGE</div>
-            <div class='_2'>WAS NOT FOUND</div>
-            <a class='btn' href='#'>BACK TO MARS</a>
+            <div class='_2'>LA PÁGINA</div>
+            <div class='_2'>NO SE ENCUENTRA</div><br><br>
+            <a class='btn' href='http://www.localhost/proyectofinal/web/index.php?ctl=inicio'>VOLVER A UNV</a>
 </div>
 </body>
 </html>

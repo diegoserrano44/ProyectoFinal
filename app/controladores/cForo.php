@@ -52,15 +52,12 @@ class cForo {
             $categoria_tema = recogeCheckArray('form-select');
             $by_tema = $_SESSION['id_usuario'];
             $contenido_respuesta = recoge('contenidoTema');
-            $id = recoge('id');
-            //$tema_respuesta = getIdTema($by_tema);
-            //$tema = $tema['id_tema'];        
 
             try {
                 $a = new Foro();
                 if ($a->crearTema($asunto_tema, $categoria_tema, $by_tema, $contenido_respuesta)) {
-                   //$a->enviarRespuesta($contenido_respuesta, '79', $by_tema);
-                    //header("Location: index.php?ctl=verTemaForo&id=$id");
+                    //$a->enviarRespuesta($contenido_respuesta, '12', $by_tema);
+                    header("Location: index.php?ctl=verTemaForo&id=");
                 }
                 else{
                     $params['mensaje']="Hubo un error al crear el tema. Vuelve a intentarlo";
@@ -88,7 +85,7 @@ public function modificarTema() {
         $titulo = recoge('titulo');
         $descripcion = recoge('contenidoTema');
         $id_historia = recoge('id');
-        $categoria = recogeCheck('form-select');
+        $categoria = recogeCheckArray('form-select');
 
         if (isset($_SESSION['id_usuario'])) {
             $id_usuario = $_SESSION['id_usuario'];
@@ -211,7 +208,6 @@ public function eliminarRespuesta() {
             try {
                 $a = new Foro();
                 if ($a->enviarRespuesta($contenido_respuesta, $tema_respuesta, $by_respuesta)) {
-                    //$_SESSION['mensaje']="El anuncio ha sido creado";
                     header('Location: index.php?ctl=verTemaForo&id='.$tema_respuesta);
                 }
                 else{

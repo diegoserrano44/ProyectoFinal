@@ -8,7 +8,7 @@ ob_start();
 <div class="d-flex justify-content-center">
     <div class="p-2">
     <a class="btn btn-danger" href="index.php?ctl=inicio">Volver al Inicio</a>
-    <a class="btn botonAzul" name="inicio" href="index.php?ctl=entrarUsuario">Iniciar Sesión</a>
+    <a class="btn boton" name="inicio" href="index.php?ctl=entrarUsuario">Iniciar Sesión</a>
 </div>
 </div>
 

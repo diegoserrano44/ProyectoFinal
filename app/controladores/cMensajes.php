@@ -17,7 +17,7 @@ class cMensajes {
             if($listado = $mensaje->listarHilos($_SESSION['id_usuario'])){
                 $params['hilos']=json_encode($listado);
             }else{
-                $params['mensajes']=array('asunto'=>'You don\'t have any messages yet.');
+                $params['mensajes']=array('asunto'=>'No tienes mensajes todavía.');
             }
             
         }catch (PDOException $e) {
@@ -60,13 +60,13 @@ class cMensajes {
                 if($_SESSION['id_usuario'] !== $id['id_usuario']){
               
                if($mensaje->crearMensaje($datos)){
-                    $_SESSION['mensajes']='Message sent';
+                    $_SESSION['mensajes']='mensaje enviado';
                     header('location:index.php?ctl=listarMensaje');
                 }else{
-                    $params['mensajes']=array('asunto'=>'You don\'t have any messages yet.');
+                    $params['mensajes']=array('asunto'=>'No tienes mensajes todavía.');
                 }
             }else{
-                $params['mensajes']=array('asunto'=>'You can\'t send messages to yourself');
+                $params['mensajes']=array('asunto'=>'No puedes enviarte mensajes a ti mismo');
             }
             
             }catch (PDOException $e) {

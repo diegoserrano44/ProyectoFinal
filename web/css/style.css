@@ -236,8 +236,8 @@ ul.ks-cboxtags li input[type="radio"]:checked + label::before {
 }
 
 ul.ks-cboxtags li input[type="radio"]:checked + label {
-    border: 2px solid #1bdbf8;
-    background-color: #12bbd4;
+    border: 2px solid #000000;
+    background-color: #719C34;
     color: #fff;
     transition: all .2s;
 }
@@ -250,7 +250,7 @@ ul.ks-cboxtags li input[type="radio"] {
   opacity: 0;
 }
 ul.ks-cboxtags li input[type="radio"]:focus + label {
-  border: 2px solid #e9a1ff;
+  border: 2px solid #719C34;
 }
 
 th, td {

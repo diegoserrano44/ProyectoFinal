@@ -170,7 +170,7 @@ class cUsuarios
                             header('Location: index.php?ctl=inicioAdmin');
                         } else {
                             $params = array(
-                                'mensaje' => 'The user ' . $usuario . ' can\'t access through here.',
+                                'mensaje' => 'El usuario ' . $usuario . ' no puede acceder por aquí',
                                 'usuario' => $usuario,
                                 'password' => ''
                             );
@@ -316,7 +316,7 @@ class cUsuarios
                         }
                     } else {
                         $params = array(
-                            'mensaje' => 'The user ' . $usuario . ' already exists.',
+                            'mensaje' => 'El usuario ' . $usuario . ' ya existe.',
                             'usuario' => $usuario,
                             'password' => '',
                             'nombre' => $nombre,
@@ -447,7 +447,7 @@ class cUsuarios
                         $params['mensaje'] = "Usuario activado";
                     }
                 } else {
-                    $params['mensaje'] = "The link has expired. Request a new one.";
+                    $params['mensaje'] = "El link ha expirado. Solicita uno nuevo.";
                 }
             }
         } catch (Exception $e) {
@@ -509,58 +509,6 @@ class cUsuarios
         require __DIR__ . '/../vistas/vEnviaActivacion.php';
     }
 
-    /*public function recordarPassword()
-    {
-        try {
-            if (!isset($_GET['id'])) {
-                throw new Exception('Page not found');
-            }
-            $token = recoge('id');
-            $user = new Usuario();
-            if (($datos = $user->devolverToken($token))) {
-                $fecha_act = strtotime(date('Y-m-d'), time());
-                if ($fecha_act < strtotime($datos['fecha'])) {
-                    $_SESSION['token'] = $datos['id_user'];
-                }
-            } else {
-                $params['mensaje'] = "The link has expired. Request a new one.";
-                // habría que mandarlo a una página de error
-            }
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-        require __DIR__ . './../vistas/vRecordarPassword.php';
-    }
-
-    public function cambiarPassword()
-    {
-        if (isset($_POST['rPass'])) {
-            $datos = $_SESSION['token'];
-            $pass1 = recoge('password');
-            $pass2 = recoge('repeatPassword');
-            if ($pass1 == $pass2) {
-                $password = crypt_password($pass1);
-                $cambia = array(
-                    'id' => $datos,
-                    'password' => $password
-                );
-                $user = new Usuario();
-                if ($user->updateUsuario($cambia)) {
-                    $user->deleteToken($datos);
-                    $params['mensajeInfo'] = "Password changed";
-                    header('location:index.php?ctl=entrarUsuario');
-                }
-            } else {
-                $params['mensajeError'] = "Both passwords have to be the same.";
-            }
-        }
-
-        require __DIR__ . './../vistas/vRecordarPassword.php';
-    }*/
 
     public function listarUsuarios()
     {
@@ -629,9 +577,8 @@ class cUsuarios
                     'telefono' => recoge('tel'),
                     'fecha_nac' => recoge('fNacimiento'),
                     'foto_perfil' => $_FILES['foto_perfil'],
-                    'descripcion' => recogeEnriquecido('descripcion'),
-                    'vr_apps' => recogeEnriquecido('vr_apps')
-                );
+                    'descripcion' => recogeEnriquecido('descripcion')
+                    );
 
                 $validacion = new Validacion();
                 $datos['nombre'] = $params_aux['nombre'];
@@ -641,8 +588,6 @@ class cUsuarios
                 $datos['fecha_nac'] = $params_aux['fecha_nac'];
                 $datos['foto_perfil'] = $params_aux['foto_perfil'];
                 $datos['descripcion'] = $params_aux['descripcion'];
-                $datos['vr_apps'] = $params_aux['vr_apps'];
-
                 $regla = array(
                     array(
                         'name' => 'nombre',
@@ -686,12 +631,6 @@ class cUsuarios
                     );
                 }
 
-                if (!empty($params_aux['vr_apps'])) {
-                    $regla[0] += array(
-                        'name' => 'vr_apps',
-                        'regla' => 'noEmpty'
-                    );
-                }
 
                 if ($validacion->rules($regla, $datos) == true) {
                     if (!empty($params_aux['foto_perfil'])) {
@@ -715,7 +654,6 @@ class cUsuarios
                                 'telefono' => $params_aux['telefono'],
                                 'fecha_nac' => $params_aux['fecha_nac'],
                                 'descripcion' => $params_aux['descripcion'],
-                                'vr_apps' => $params_aux['vr_apps'],
                                 'usuario' => $params['usuario'],
                                 'foto_perfil' => $params['foto_perfil']
                             );
@@ -729,7 +667,6 @@ class cUsuarios
                             'telefono' => $params_aux['telefono'],
                             'fecha_nac' => $params_aux['fecha_nac'],
                             'descripcion' => $params_aux['descripcion'],
-                            'vr_apps' => $params_aux['vr_apps'],
                             'usuario' => $params['usuario'],
                             'foto_perfil' => $params['foto_perfil']
                         );
@@ -743,7 +680,6 @@ class cUsuarios
                         'telefono' => $params_aux['telefono'],
                         'fecha_nac' => $params_aux['fecha_nac'],
                         'descripcion' => $params_aux['descripcion'],
-                        'vr_apps' => $params_aux['vr_apps'],
                         'usuario' => $params['usuario'],
                         'foto_perfil' => $params['foto_perfil']
                     );

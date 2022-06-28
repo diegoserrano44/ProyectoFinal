@@ -27,10 +27,6 @@
                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if (isset($_GET['ctl'])) {
                     if((($_GET['ctl'] != 'inicio') || ($_GET['ctl'] == ""))){?>
-                <!-- <form class="d-flex" method="POST" action="index.php?ctl=buscar">
-                <input class="navSearch form-control me-2 rounded-pill bg-dark border text-light border-secondary "  name="buscador" type="search" placeholder="Search ..." aria-label="Search">
-                <button class="btn btn-outline-success rounded-circle" type="submit" name="buscar" value="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form> -->
                 <?php }};?>
                 </div>
                 <div class="d-lg-flex align-items-center">
